@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     object.cpp \
     cliframe.cpp \
     july5.cpp \
-    rustyknife.cpp
+    rustyknife.cpp \
+    consoleutilities.cpp
 
 HEADERS  += mainwindow.h \
     object.h \
     cliframe.h \
     july5.h \
-    rustyknife.h
+    rustyknife.h \
+    consoleutilities.h
 
 FORMS    += mainwindow.ui \
     cliframe.ui

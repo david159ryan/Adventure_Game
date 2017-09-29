@@ -1,13 +1,15 @@
 #include "rustyknife.h"
+using namespace std;
+
+RustyKnife::RustyKnife( string name) :
+    Object(name)
+{
+
+}
 
 RustyKnife::RustyKnife() :
     Object("Rusty Knife")
 {
 
-}
-
-std::string RustyKnife::PickUp()
-{
-    return "You picked up the " + Name();
 }
 
