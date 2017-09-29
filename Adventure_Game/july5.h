@@ -3,6 +3,7 @@
 
 #include "object.h"
 #include "rustyknife.h"
+#include "consoleutilities.h"
 
 class July5
 {
