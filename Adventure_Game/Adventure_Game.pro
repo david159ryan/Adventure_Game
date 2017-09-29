@@ -14,9 +14,18 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    object.cpp
+    object.cpp \
+    cliframe.cpp \
+    july5.cpp \
+    rustyknife.cpp
 
 HEADERS  += mainwindow.h \
-    object.h
+    object.h \
+    cliframe.h \
+    july5.h \
+    rustyknife.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    cliframe.ui
+
+QMAKE_CXXFLAGS += -std=c++11
