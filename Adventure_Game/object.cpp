@@ -1,38 +1,131 @@
 #include "object.h"
+#include <stdio.h>
+
+using namespace std;
+
+
+Object::Object(string name)
+{
+    name_ = name;
+    push_ = "I can't push that.";
+    pull_ = "Granny wouldn't want me to pull that.";
+    pickUp_ = "I can't pick that up. That's Grandma's.";
+    use_ = "I don't know what to do with that. Maybe Granny knows.";
+    useTarget_ = "I don't think I should use this on the %s.";
+    lick_ = "That tastes funny.";
+    lookAt_ = "Hmm.. that didn't look that way earlier.";
+    talkTo_ = "Hello. Can you hear me? Do you want to be my friend?";
+    close_ = "I can't close that.";
+    open_ = "It won't open.";
+    openTarget_ = "It won't open the %s.";
+}
 
 Object::Object()
 {
-    name_ = "Unknown Item";
+    Object("Invalid Object");
 }
 
-Object::Object(std::string name)
+string Object::Push()
 {
-    name_ = name;
+    return push_;
 }
 
-std::string Object::Push()
+string Object::Pull()
 {
-    return name_ + " cannot be pushed.";
+    return pull_;
 }
 
-std::string Object::Pull()
+string Object::PickUp()
 {
-    return name_ + " cannot be pulled.";
+    return pickUp_;
 }
 
-std::string Object::PickUp()
+string Object::Use(Object target)
 {
-    return name_ + " cannot be picked up.";
+    return useTarget_;
 }
 
-std::string Object::Use(Object target)
+string Object::Use()
 {
-    return "cannot use " + name_ + " on " + target.Name();
+    return use_;
 }
 
+string Object::Open()
+{
+    return open_;
+}
 
-std::string Object::Name() const
+string Object::Open(Object target)
+{
+    return openTarget_;
+}
+
+string Object::Close()
+{
+    return close_;
+}
+
+string Object::Lick()
+{
+    return lick_;
+}
+
+string Object::LookAt()
+{
+    return lookAt_;
+}
+
+string Object::TalkTo()
+{
+    return talkTo_;
+}
+
+string Object::Name() const
 {
     return name_;
 }
 
+void Object::SetPushString(string newString)
+{
+    push_ = newString;
+}
+void Object::SetPullString(string newString)
+{
+    pull_ = newString;
+}
+void Object::SetPickUpString(string newString)
+{
+    pickUp_ = newString;
+}
+void Object::SetUseTargetString(string newString)
+{
+    useTarget_ = newString;
+}
+void Object::SetUseString(string newString)
+{
+    use_ = newString;
+}
+void Object::SetOpenString(string newString)
+{
+    open_ = newString;
+}
+void Object::SetOpenTargetString(string newString)
+{
+    openTarget_ = newString;
+}
+void Object::SetCloseString(string newString)
+{
+    close_ = newString;
+}
+void Object::SetLickString(string newString)
+{
+    lick_ = newString;
+}
+void Object::SetLookAtString(string newString)
+{
+    lookAt_ = newString;
+}
+void Object::SetTalkToString(string newString)
+{
+    talkTo_ = newString;
+}
