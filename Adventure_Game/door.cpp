@@ -1,9 +1,9 @@
 #include "door.h"
 
-Door::Door(int keyID,int roomID)
+Door::Door(int keyID,int locationID, int id, string name) : Object(id, name)
 {
     keyID_ = keyID;
-    roomID_ = roomID;
+    locationID_ = locationID;
     setType("door");
 }
 
@@ -17,7 +17,7 @@ void Door::setKeyID(int keyID)
     keyID_ = keyID;
 }
 
-int Door::getRoomID()
+int Door::getLocationID()
 {
-    return roomID_;
+    return locationID_;
 }

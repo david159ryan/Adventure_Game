@@ -4,9 +4,10 @@
 using namespace std;
 
 
-Object::Object(string name)
+Object::Object(int id, string name)
 {
     name_ = name;
+    id_ = id;
     push_ = "I can't push that.";
     pull_ = "Granny wouldn't want me to pull that.";
     pickUp_ = "I can't pick that up. That's Grandma's.";
@@ -20,9 +21,9 @@ Object::Object(string name)
     openTarget_ = "It won't open the %s.";
 }
 
-Object::Object()
+Object::Object(int id)
 {
-    Object("Invalid Object");
+    Object(id, "Invalid Object");
 }
 
 string Object::Push()
@@ -40,7 +41,7 @@ string Object::PickUp()
     return pickUp_;
 }
 
-string Object::Use(Object target)
+string Object::Use(Object * target)
 {
     return useTarget_;
 }
@@ -55,7 +56,7 @@ string Object::Open()
     return open_;
 }
 
-string Object::Open(Object target)
+string Object::Open(Object *target)
 {
     return openTarget_;
 }

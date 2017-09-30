@@ -8,13 +8,15 @@ using namespace std;
 class Location
 {
 public:
-    Location(int id);
-    void AddObject(Object o);
-    void RemoveObject(Object o);
+    Location(int id, string name);
+    void AddObject(Object * o);
+    Object * GetObject(string name);
+    void RemoveObject(Object * o);
 
 private:
-    vector<Object> objects_;
+    vector<Object *> objects_;
     int locID_;
+    string name_;
 };
 
 #endif // LOCATION_H

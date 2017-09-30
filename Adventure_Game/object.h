@@ -8,16 +8,17 @@ using namespace std;
 class Object
 {
 public:
-    Object();
-    Object(string name);
+    Object(int id);
+    Object(int id, string name);
     string Name() const;
+    int ID() const;
     virtual string Push();
     virtual string Pull();
     virtual string PickUp();
-    virtual string Use(Object target);
+    virtual string Use(Object * target);
     virtual string Use();
     virtual string Open();
-    virtual string Open(Object target);
+    virtual string Open(Object * target);
     virtual string Close();
     virtual string Lick();
     virtual string LookAt();
@@ -39,6 +40,7 @@ public:
 
 private:
     string type_;
+    int id_;
     string name_;
     string push_;
     string pull_;

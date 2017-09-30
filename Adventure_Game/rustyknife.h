@@ -8,7 +8,7 @@ class RustyKnife : public Object
 {
 public:
     RustyKnife();
-    RustyKnife(string name);
+    RustyKnife(int id, string name);
 };
 
 #endif // RUSTYKNIFE_H

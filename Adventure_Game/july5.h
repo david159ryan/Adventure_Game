@@ -2,6 +2,7 @@
 #define JULY5_H
 
 #include "object.h"
+#include "location.h"
 #include "rustyknife.h"
 #include "consoleutilities.h"
 

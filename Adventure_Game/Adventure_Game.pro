@@ -13,7 +13,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     object.cpp \
     cliframe.cpp \
     july5.cpp \
@@ -33,7 +32,7 @@ HEADERS  += mainwindow.h \
     door.h \
     key.h
 
-FORMS    += mainwindow.ui \
+FORMS    += \
     cliframe.ui
 
 QMAKE_CXXFLAGS += -std=c++11
