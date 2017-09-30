@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     consoleutilities.cpp \
     location.cpp \
     door.cpp \
-    key.cpp
+    key.cpp \
+    inventoryobject.cpp \
+    inventory.cpp
 
 HEADERS  += mainwindow.h \
     object.h \
@@ -31,7 +33,9 @@ HEADERS  += mainwindow.h \
     consoleutilities.h \
     location.h \
     door.h \
-    key.h
+    key.h \
+    inventoryobject.h \
+    inventory.h
 
 FORMS    += mainwindow.ui \
     cliframe.ui

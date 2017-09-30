@@ -10,7 +10,10 @@ class Object
 public:
     Object();
     Object(string name);
-    string Name() const;
+
+    string GetName();
+    void SetName(string name);
+
     virtual string Push();
     virtual string Pull();
     virtual string PickUp();
@@ -22,6 +25,7 @@ public:
     virtual string Lick();
     virtual string LookAt();
     virtual string TalkTo();
+
     virtual void SetPushString(string newString);
     virtual void SetPullString(string newString);
     virtual void SetPickUpString(string newString);

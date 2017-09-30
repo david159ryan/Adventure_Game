@@ -80,9 +80,14 @@ string Object::TalkTo()
     return talkTo_;
 }
 
-string Object::Name() const
+string Object::GetName()
 {
     return name_;
+}
+
+void Object::SetName(string name)
+{
+    name_ = name;
 }
 
 void Object::SetPushString(string newString)

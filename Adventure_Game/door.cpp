@@ -1,23 +1,41 @@
 #include "door.h"
 
-Door::Door(int keyID,int roomID)
+Door::Door(int lockID,int locID)
 {
-    keyID_ = keyID;
-    roomID_ = roomID;
+    lockID_ = lockID;
+    locID_ = locID;
     setType("door");
 }
 
-int Door::getkeyID()
+void Door::SetKeyID(int keyID)
 {
-    return keyID_;
+    lockID_ = keyID;
 }
 
-void Door::setKeyID(int keyID)
+int Door::GetRoomID()
 {
-    keyID_ = keyID;
+    return locID_;
 }
 
-int Door::getRoomID()
+bool Door::Unlock(Key * key)
 {
-    return roomID_;
+    if(key->GetKeyID()==lockID_)
+    {
+        lockID_ = 0;
+        return true;
+    }
+    return false;
 }
+
+string Door::GoThroughDoor()
+{
+    if(lockID_ != 0)
+        return "The door is firmly locked";
+
+    //next room transition
+    return "You walk through the door";
+}
+
+
+
+

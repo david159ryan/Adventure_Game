@@ -5,7 +5,8 @@
 class Key : public Object
 {
 public:
-    Key(int keyID);
+    Key(string name,int keyID);
+    int GetKeyID();
     string Use(Object target);
 private:
     int keyID_;

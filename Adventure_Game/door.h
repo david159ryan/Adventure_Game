@@ -1,18 +1,22 @@
 #ifndef DOOR_H
 #define DOOR_H
 #include "object.h"
+#include "key.h"
 
 class Door : public Object
 {
 public:
-    Door(int keyID,int roomID);
-    int getkeyID();
-    void setKeyID(int keyID);
-    int getRoomID();
+    Door(int lockID, int locID);
+    void SetKeyID(int keyID);
+    int GetRoomID();
+    bool Unlock(Key * key);
 
 private:
-    int keyID_;     //If != 0 then keyID is the ID of the key that unlocks this door
-    int roomID_;    //ID of the room this door will take you to
+    string GoThroughDoor();
+
+private:
+    int lockID_;     //If != 0 then lockID is the ID of the key that unlocks this door
+    int locID_;    //ID of the room this door will take you to
 };
 
 #endif // DOOR_H
