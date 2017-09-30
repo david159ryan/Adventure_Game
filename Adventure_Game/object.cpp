@@ -3,6 +3,11 @@
 
 using namespace std;
 
+Object::Object()
+{
+    id_ = 0;
+    name_ = "Invalid Object";
+}
 
 Object::Object(int id, string name, July5 * game)
 {

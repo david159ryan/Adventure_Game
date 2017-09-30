@@ -24,6 +24,13 @@ InventoryObject * Inventory::GetItemByID(int ItemID)
     return nullptr;
 }
 
-
+string Inventory::ToString()
+{
+    string result = "";
+    list<InventoryObject*>::iterator it;
+    for(it=items_.begin();it!=items_.end();it++)
+        result += (*it)->GetName() + "\n";
+    return result;
+}
 
 

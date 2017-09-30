@@ -9,6 +9,7 @@ using namespace std;
 class Object
 {
 public:
+    Object();
     Object(int id, string name, July5 *game);
     string GetName();
     void SetName(string name);

@@ -12,6 +12,7 @@ public:
     void AddItem(InventoryObject * o);
     void RemoveItem(InventoryObject * o);
     InventoryObject* GetItemByID(int ItemID);
+    string ToString();
 
 private:
     list<InventoryObject *> items_;
