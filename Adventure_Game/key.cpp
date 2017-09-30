@@ -1,7 +1,7 @@
 #include "key.h"
 #include "door.h"
 
-Key::Key(int id, string name, July5 * game, int keyID) : Object(id, name, game)
+Key::Key(int id, string name, July5 * game, int keyID) : InventoryObject(id, name, game)
 {
     keyID_ = keyID;
     setType("key");

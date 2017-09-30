@@ -9,10 +9,11 @@ using namespace std;
 class Object
 {
 public:
+    Object();
     Object(int id, string name, July5 *game);
     string GetName();
     void SetName(string name);
-    int ID() const;
+    int GetID();
     virtual string Push();
     virtual string Pull();
     virtual string PickUp();
@@ -39,8 +40,10 @@ public:
 
     string getType();
     void setType(string type);
+
 protected:
     July5 * game_;
+
 private:
     int id_;
     string name_;

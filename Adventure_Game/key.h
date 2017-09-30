@@ -1,8 +1,8 @@
 #ifndef KEY_H
 #define KEY_H
-#include "object.h"
+#include "inventoryobject.h"
 
-class Key : public Object
+class Key : public InventoryObject
 {
 public:
     Key(int id, string name, July5 *game, int keyID);

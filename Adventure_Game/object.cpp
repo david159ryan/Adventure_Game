@@ -3,6 +3,11 @@
 
 using namespace std;
 
+Object::Object()
+{
+    id_ = 0;
+    name_ = "Invalid Object";
+}
 
 Object::Object(int id, string name, July5 * game)
 {
@@ -20,6 +25,11 @@ Object::Object(int id, string name, July5 * game)
     close_ = "I can't close that.";
     open_ = "It won't open.";
     openTarget_ = "It won't open the %s.";
+}
+
+int Object::GetID()
+{
+    return id_;
 }
 
 string Object::Push()

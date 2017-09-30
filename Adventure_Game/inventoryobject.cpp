@@ -8,5 +8,6 @@ InventoryObject::InventoryObject(int id, string name, July5 * game) :
 
 string InventoryObject::PickUp()
 {
+    //string x = game_->ProcessCommand("hi");
     return "";
 }

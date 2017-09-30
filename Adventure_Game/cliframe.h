@@ -17,7 +17,7 @@ public:
     ~CliFrame();
 
 public slots:
-    void processCommand();
+    void ProcessCommand();
 
 private:
     Ui::CliFrame *ui;

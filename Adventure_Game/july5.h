@@ -3,16 +3,26 @@
 
 #include "locationmanager.h"
 #include "consoleutilities.h"
+
 #include "object.h"
+#include "inventory.h"
+#include "key.h"
+#include "door.h"
+
+using namespace std;
 
 class July5
 {
 public:
     July5();
+    Inventory PlayerInventory;
+    Object ** items;
     LocationManager locationManager;
 
 public:
-    std::string processCommand(std::string command);
+    string ProcessCommand(string command);
+
+    void TEST_MakeSomeItems();
 };
 
 #endif // JULY5_H
