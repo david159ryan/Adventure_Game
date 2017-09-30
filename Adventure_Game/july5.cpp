@@ -1,8 +1,16 @@
 #include "july5.h"
 
-July5::July5()
+July5::July5() :
+    locationManager(2)
 {
     TEST_MakeSomeItems();
+      
+      // Setting up locations
+    Location * newLocation;
+    newLocation = locationManager.AddLocation("kitchen");
+    // use newLocation to add objects to the location
+    newLocation = locationManager.AddLocation("hallway");
+    locationManager.GoToLocation(1);
 }
 
 string July5::ProcessCommand(string command)

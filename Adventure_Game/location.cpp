@@ -1,9 +1,20 @@
 #include "location.h"
 
+Location::Location()
+{
+    locID_ = 0;
+    name_ = "Invalid Location";
+}
+
 Location::Location(int id, string name)
 {
     locID_ = id;
     name_ = name;
+}
+
+Location::~Location()
+{
+    // Destroy stuff
 }
 
 void Location::AddObject(Object * o)
@@ -26,4 +37,14 @@ Object * Location::GetObject(string name)
         }
     }
     return nullptr;
+}
+
+int Location::GetID()
+{
+    return locID_;
+}
+
+string Location::GetName()
+{
+    return name_;
 }

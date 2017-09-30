@@ -1,7 +1,7 @@
 #ifndef JULY5_H
 #define JULY5_H
 
-#include "location.h"
+#include "locationmanager.h"
 #include "consoleutilities.h"
 
 #include "object.h"
@@ -17,6 +17,7 @@ public:
     July5();
     Inventory PlayerInventory;
     Object ** items;
+    LocationManager locationManager;
 
 public:
     string ProcessCommand(string command);

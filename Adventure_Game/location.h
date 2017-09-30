@@ -8,7 +8,11 @@ using namespace std;
 class Location
 {
 public:
+    Location();
     Location(int id, string name);
+    ~Location();
+    int GetID();
+    string GetName();
     void AddObject(Object * o);
     Object * GetObject(string name);
     void RemoveObject(Object * o);
