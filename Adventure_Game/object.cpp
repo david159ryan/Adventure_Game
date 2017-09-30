@@ -22,6 +22,11 @@ Object::Object(int id, string name, July5 * game)
     openTarget_ = "It won't open the %s.";
 }
 
+int Object::GetID()
+{
+    return id_;
+}
+
 string Object::Push()
 {
     return push_;

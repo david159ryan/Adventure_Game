@@ -12,7 +12,7 @@ public:
     Object(int id, string name, July5 *game);
     string GetName();
     void SetName(string name);
-    int ID() const;
+    int GetID();
     virtual string Push();
     virtual string Pull();
     virtual string PickUp();

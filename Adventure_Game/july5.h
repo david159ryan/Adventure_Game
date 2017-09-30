@@ -5,13 +5,15 @@
 #include "consoleutilities.h"
 #include "object.h"
 
+using namespace std;
+
 class July5
 {
 public:
     July5();
 
 public:
-    std::string processCommand(std::string command);
+    string ProcessCommand(string command);
 };
 
 #endif // JULY5_H

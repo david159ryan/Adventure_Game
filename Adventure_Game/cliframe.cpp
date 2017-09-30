@@ -8,12 +8,12 @@ CliFrame::CliFrame(QWidget *parent) :
         ui->setupUi(this);
         game = new July5;
         QObject::connect(ui->input, SIGNAL(returnPressed()),
-                         this, SLOT(processCommand()));
+                         this, SLOT(ProcessCommand()));
     }
 
-void CliFrame::processCommand()
+void CliFrame::ProcessCommand()
 {
-    QString text = QString(game->processCommand(
+    QString text = QString(game->ProcessCommand(
                 ui->input->text().toStdString()).c_str());
     QListWidgetItem *item = new QListWidgetItem(text);
     ui->terminal->addItem(item);

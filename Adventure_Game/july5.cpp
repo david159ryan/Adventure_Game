@@ -5,7 +5,7 @@ July5::July5()
 
 }
 
-std::string July5::processCommand(std::string command)
+string July5::ProcessCommand(string command)
 {
     Location *myRoom = new Location(1, "Kitchen");
     Object *o = new Object(1, "Rusty Knife", this);
