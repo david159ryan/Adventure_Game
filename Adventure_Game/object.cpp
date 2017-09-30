@@ -129,3 +129,11 @@ void Object::SetTalkToString(string newString)
 {
     talkTo_ = newString;
 }
+void Object::setType(string type)
+{
+    type_ = type;
+}
+string Object::getType()
+{
+    return type_;
+}

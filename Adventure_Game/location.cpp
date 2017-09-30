@@ -1,16 +1,16 @@
 #include "location.h"
 
-Location::Location()
+Location::Location(int id)
 {
-
+    locID_ = id;
 }
 
-Location::AddObject(Object o)
+void Location::AddObject(Object o)
 {
     objects_.push_back(o);
 }
 
-Location::RemoveObject(Object o)
+void Location::RemoveObject(Object o)
 {
 
 }

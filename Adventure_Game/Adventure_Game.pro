@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     july5.cpp \
     rustyknife.cpp \
     consoleutilities.cpp \
-    location.cpp
+    location.cpp \
+    door.cpp \
+    key.cpp
 
 HEADERS  += mainwindow.h \
     object.h \
@@ -27,7 +29,9 @@ HEADERS  += mainwindow.h \
     july5.h \
     rustyknife.h \
     consoleutilities.h \
-    location.h
+    location.h \
+    door.h \
+    key.h
 
 FORMS    += mainwindow.ui \
     cliframe.ui

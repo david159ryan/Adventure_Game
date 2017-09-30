@@ -34,7 +34,11 @@ public:
     virtual void SetLookAtString(string newString);
     virtual void SetTalkToString(string newString);
 
+    string getType();
+    void setType(string type);
+
 private:
+    string type_;
     string name_;
     string push_;
     string pull_;
