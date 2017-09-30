@@ -16,21 +16,23 @@ SOURCES += main.cpp\
     object.cpp \
     cliframe.cpp \
     july5.cpp \
-    rustyknife.cpp \
     consoleutilities.cpp \
     location.cpp \
     door.cpp \
-    key.cpp
+    key.cpp \
+    inventoryobject.cpp \
+    inventory.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     object.h \
     cliframe.h \
     july5.h \
-    rustyknife.h \
     consoleutilities.h \
     location.h \
     door.h \
-    key.h
+    key.h \
+    inventoryobject.h \
+    inventory.h
 
 FORMS    += \
     cliframe.ui

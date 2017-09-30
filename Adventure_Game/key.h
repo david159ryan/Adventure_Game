@@ -5,8 +5,9 @@
 class Key : public Object
 {
 public:
-    Key(int id, string name, int keyID);
-    string Use(Object *target);
+    Key(int id, string name, July5 *game, int keyID);
+    int GetKeyID();
+    string Use(Object *target) override;
 private:
     int keyID_;
 };

@@ -18,11 +18,12 @@ void Location::RemoveObject(Object * o)
 
 Object * Location::GetObject(string name)
 {
-    for(int i = 0; i < objects_.size(); i++)
+    for(unsigned long i = 0; i < objects_.size(); i++)
     {
-        if (objects_.at(i)->Name() == name)
+        if (objects_.at(i)->GetName() == name)
         {
             return objects_.at(i);
         }
     }
+    return nullptr;
 }

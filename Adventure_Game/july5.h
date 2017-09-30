@@ -1,10 +1,9 @@
 #ifndef JULY5_H
 #define JULY5_H
 
-#include "object.h"
 #include "location.h"
-#include "rustyknife.h"
 #include "consoleutilities.h"
+#include "object.h"
 
 class July5
 {

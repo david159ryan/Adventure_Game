@@ -2,15 +2,16 @@
 #define OBJECT_H
 
 #include <string>
+class July5;
 
 using namespace std;
 
 class Object
 {
 public:
-    Object(int id);
-    Object(int id, string name);
-    string Name() const;
+    Object(int id, string name, July5 *game);
+    string GetName();
+    void SetName(string name);
     int ID() const;
     virtual string Push();
     virtual string Pull();
@@ -23,6 +24,7 @@ public:
     virtual string Lick();
     virtual string LookAt();
     virtual string TalkTo();
+
     virtual void SetPushString(string newString);
     virtual void SetPullString(string newString);
     virtual void SetPickUpString(string newString);
@@ -39,9 +41,10 @@ public:
     void setType(string type);
 
 private:
-    string type_;
     int id_;
     string name_;
+    July5 * game_;
+    string type_;
     string push_;
     string pull_;
     string pickUp_;
