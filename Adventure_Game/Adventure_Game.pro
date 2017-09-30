@@ -13,21 +13,28 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     object.cpp \
     cliframe.cpp \
     july5.cpp \
-    rustyknife.cpp \
-    consoleutilities.cpp
+    consoleutilities.cpp \
+    location.cpp \
+    door.cpp \
+    key.cpp \
+    inventoryobject.cpp \
+    inventory.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     object.h \
     cliframe.h \
     july5.h \
-    rustyknife.h \
-    consoleutilities.h
+    consoleutilities.h \
+    location.h \
+    door.h \
+    key.h \
+    inventoryobject.h \
+    inventory.h
 
-FORMS    += mainwindow.ui \
+FORMS    += \
     cliframe.ui
 
 QMAKE_CXXFLAGS += -std=c++11

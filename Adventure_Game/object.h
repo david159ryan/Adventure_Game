@@ -2,26 +2,29 @@
 #define OBJECT_H
 
 #include <string>
+class July5;
 
 using namespace std;
 
 class Object
 {
 public:
-    Object();
-    Object(string name);
-    string Name() const;
+    Object(int id, string name, July5 *game);
+    string GetName();
+    void SetName(string name);
+    int ID() const;
     virtual string Push();
     virtual string Pull();
     virtual string PickUp();
-    virtual string Use(Object target);
+    virtual string Use(Object * target);
     virtual string Use();
     virtual string Open();
-    virtual string Open(Object target);
+    virtual string Open(Object * target);
     virtual string Close();
     virtual string Lick();
     virtual string LookAt();
     virtual string TalkTo();
+
     virtual void SetPushString(string newString);
     virtual void SetPullString(string newString);
     virtual void SetPickUpString(string newString);
@@ -34,8 +37,14 @@ public:
     virtual void SetLookAtString(string newString);
     virtual void SetTalkToString(string newString);
 
+    string getType();
+    void setType(string type);
+
 private:
+    int id_;
     string name_;
+    July5 * game_;
+    string type_;
     string push_;
     string pull_;
     string pickUp_;
