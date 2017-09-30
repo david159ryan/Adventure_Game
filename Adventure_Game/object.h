@@ -39,11 +39,11 @@ public:
 
     string getType();
     void setType(string type);
-
+protected:
+    July5 * game_;
 private:
     int id_;
     string name_;
-    July5 * game_;
     string type_;
     string push_;
     string pull_;
