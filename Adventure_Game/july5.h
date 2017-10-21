@@ -15,9 +15,8 @@ class July5
 {
 public:
     July5();
-    Inventory PlayerInventory;
+    Inventory playerInventory;
     Object ** items;
-    LocationManager locationManager;
 
 public:
     string ProcessCommand(string command);

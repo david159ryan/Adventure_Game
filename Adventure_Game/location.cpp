@@ -2,13 +2,11 @@
 
 Location::Location()
 {
-    locID_ = 0;
     name_ = "Invalid Location";
 }
 
-Location::Location(int id, string name)
+Location::Location(string name)
 {
-    locID_ = id;
     name_ = name;
 }
 
@@ -37,11 +35,6 @@ Object * Location::GetObject(string name)
         }
     }
     return nullptr;
-}
-
-int Location::GetID()
-{
-    return locID_;
 }
 
 string Location::GetName()

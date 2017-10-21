@@ -9,9 +9,8 @@ class Location
 {
 public:
     Location();
-    Location(int id, string name);
+    Location(string name);
     ~Location();
-    int GetID();
     string GetName();
     void AddObject(Object * o);
     Object * GetObject(string name);
@@ -19,7 +18,6 @@ public:
 
 private:
     vector<Object *> objects_;
-    int locID_;
     string name_;
 };
 

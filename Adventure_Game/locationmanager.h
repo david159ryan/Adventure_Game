@@ -1,20 +1,23 @@
 #ifndef LOCATIONMANAGER_H
 #define LOCATIONMANAGER_H
 #include "location.h"
+#include "eventmanager.h"
+#include <vector>
 
 using namespace std;
 
 class LocationManager
 {
 private:
-    int locationsSize_;
     Location * currentLocation_;
-    Location ** locations_;
+    vector<Location> locations_;
 public:
-    LocationManager(int locationNum);
+    LocationManager();
     Location * AddLocation(string locName);
     Location * GetCurrentLocation();
-    string GoToLocation(int locationId);
+    void GoToLocation(string locationName);
 };
+
+extern LocationManager locationManager;
 
 #endif // LOCATIONMANAGER_H

@@ -6,15 +6,15 @@
 class Door : public Object
 {
 public:
-    Door(int id, string name, July5 *game, int keyID, int locationID);
+    Door(int id, string name, July5 *game, int keyID, string locationName);
     void SetKeyID(int keyID);
-    int GetLocationID();
+    string GetLocationName();
     bool Unlock(Key * key);
     string Use() override;
 
 private:
     int lockID_;     //If != 0 then keyID is the ID of the key that unlocks this door
-    int locationID_;    //ID of the room this door will take you to
+    string locationName_;    //Name of the room this door will take you to
 };
 
 #endif // DOOR_H
