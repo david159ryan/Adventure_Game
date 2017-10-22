@@ -19,8 +19,13 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QHBoxLayout *layout = new QHBoxLayout;
-
-    LocationUI *locationUI = new LocationUI("July 5th", layout);
+    MainWindow *window = new MainWindow;
+    window->setWindowTitle("July 5th");
+    layout->addWidget(window);
+    window->setWindowState(Qt::WindowFullScreen);
+    new LocationUI(window);
+    new July5();
+    window->show();
 
     return a.exec();
 }

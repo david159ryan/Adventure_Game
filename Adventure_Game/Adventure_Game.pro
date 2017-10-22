@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,7 +25,8 @@ SOURCES += main.cpp\
     locationmanager.cpp \
     eventmanager.cpp \
     locationui.cpp \
-    updateable.cpp
+    updateable.cpp \
+    mainwindow.cpp
 
 HEADERS  += \
     object.h \
@@ -39,10 +41,12 @@ HEADERS  += \
     locationmanager.h \
     eventmanager.h \
     updateable.h \
-    locationui.h
+    locationui.h \
+    mainwindow.h
 
 FORMS    += \
-    cliframe.ui
+    cliframe.ui \
+    mainwindow.ui
 
 QMAKE_CXXFLAGS += -std=c++11
 QMAKE_MAC_SDK = macosx10.13
