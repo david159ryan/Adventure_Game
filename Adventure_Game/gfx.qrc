@@ -3,5 +3,6 @@
         <file>gfx/backgrounds/hall.png</file>
         <file>gfx/backgrounds/kitchen.png</file>
         <file>sfx/music/kitchen.mp3</file>
+        <file>gfx/interactables/door.png</file>
     </qresource>
 </RCC>

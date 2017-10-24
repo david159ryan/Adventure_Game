@@ -8,6 +8,8 @@
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 #include <QFile>
+#include <QToolButton>
+#include "object.h"
 
 using namespace std;
 
@@ -27,11 +29,14 @@ public:
     Ui::MainWindow *ui;
     QGraphicsView * GetGraphicsView();
     void PlayMusic(string name);
+    void ConnectButton(QToolButton * b, Object * o);
+    void ClickButton();
 
 private:
     QGraphicsScene *scene;
     QMediaPlayer * player;
     QMediaPlaylist * playlist;
+    Object * object;
 };
 
 #endif // MAINWINDOW_H

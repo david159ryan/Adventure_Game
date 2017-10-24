@@ -1,22 +1,25 @@
 #include "key.h"
 #include "door.h"
 
-Key::Key(int id, string name, July5 * game, int keyID) : InventoryObject(id, name, game)
+Key::Key(string name) : InventoryObject(name)
 {
-    keyID_ = keyID;
-    setType("key");
-}
-
-int Key::GetKeyID()
-{
-    return keyID_;
 }
 
 string Key::Use(Object * target)
 {
-    if(target->getType()=="door")
-        //if(dynamic_cast<Door>(target).Unlock(this))
-            return "The door is unlocked now!";
-          else
-            return "Invalid key!";
+    Door* door = dynamic_cast<Door*>(target);
+    if (door) {
+        if(door->Unlock(this))
+        {
+            return "The " + this->GetName() + " unlocks the " + door->GetName() + ".";
+        }
+        else
+        {
+            return "The " + this->GetName() + " doesn't work on the " + door->GetName() + ".";
+        }
+    }
+    else
+    {
+        return InventoryObject::Use(target);
+    }
 }

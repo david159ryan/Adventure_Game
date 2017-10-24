@@ -5,15 +5,12 @@ using namespace std;
 
 Object::Object()
 {
-    id_ = 0;
     name_ = "Invalid Object";
 }
 
-Object::Object(int id, string name, July5 * game)
+Object::Object(string name)
 {
-    id_ = id;
     name_ = name;
-    game_ = game;
     push_ = "I can't push that.";
     pull_ = "Granny wouldn't want me to pull that.";
     pickUp_ = "I can't pick that up. That's Grandma's.";
@@ -25,11 +22,6 @@ Object::Object(int id, string name, July5 * game)
     close_ = "I can't close that.";
     open_ = "It won't open.";
     openTarget_ = "It won't open the %s.";
-}
-
-int Object::GetID()
-{
-    return id_;
 }
 
 string Object::Push()

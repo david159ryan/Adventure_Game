@@ -4,11 +4,9 @@ LocationManager::LocationManager()
 {
 }
 
-Location * LocationManager::AddLocation(string locName)
+Location * LocationManager::AddLocation(Location location)
 {
-    Location *p = new Location(locName);
-    locations_.push_back(*p);
-    return p;
+    locations_.push_back(location);
 }
 
 Location * LocationManager::GetCurrentLocation()

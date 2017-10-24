@@ -1,17 +1,21 @@
 #include "door.h"
 #include "locationmanager.h"
 
-Door::Door(int id, string name, July5 * game, int lockID,string locationName) :
-    Object(id, name, game)
+Door::Door(string name, string keyName,string locationName) :
+    Object(name)
 {
-    lockID_ = lockID;
+    keyName_ = keyName;
+    locked_ = true;
     locationName_ = locationName;
     setType("door");
 }
 
-void Door::SetKeyID(int keyID)
+Door::Door(string name, string locationName) :
+    Object(name)
 {
-    lockID_ = keyID;
+    locked_ = false; // No key provided
+    locationName_ = locationName;
+    setType("door");
 }
 
 string Door::GetLocationName()
@@ -21,9 +25,9 @@ string Door::GetLocationName()
 
 bool Door::Unlock(Key * key)
 {
-    if(key->GetKeyID()==lockID_)
+    if(key->GetName()==keyName_)
     {
-        lockID_ = 0;
+        locked_ = true;
         return true;
     }
     return false;
@@ -31,7 +35,7 @@ bool Door::Unlock(Key * key)
 
 string Door::Use()
 {
-    if(lockID_ != 0)
+    if(locked_)
     {
         return "The door is firmly locked";
     }

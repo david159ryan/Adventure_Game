@@ -8,6 +8,7 @@
 #include <QString>
 #include <QGraphicsScene>
 #include <map>
+#include <QToolButton>
 
 using namespace std;
 

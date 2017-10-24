@@ -10,10 +10,9 @@ class Object
 {
 public:
     Object();
-    Object(int id, string name, July5 *game);
+    Object(string name);
     string GetName();
     void SetName(string name);
-    int GetID();
     virtual string Push();
     virtual string Pull();
     virtual string PickUp();
@@ -45,7 +44,6 @@ protected:
     July5 * game_;
 
 private:
-    int id_;
     string name_;
     string type_;
     string push_;

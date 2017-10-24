@@ -39,12 +39,22 @@ void MainWindow::PlayMusic(string name)
 }
 
 void MainWindow::showEvent(QShowEvent *) {
-    cout << scene->width() << endl;
     ui->graphicsView->fitInView(scene->sceneRect(),Qt::KeepAspectRatio);
-    cout << scene->width() << endl;
 }
 
 QGraphicsView * MainWindow::GetGraphicsView()
 {
     return ui->graphicsView;
 }
+
+void MainWindow::ClickButton()
+{
+    object->Use();
+}
+
+void MainWindow::ConnectButton(QToolButton * b, Object * o)
+{
+    object = o;
+    QObject::connect(b, SIGNAL(clicked()), this, SLOT(ClickButton()));
+}
+
