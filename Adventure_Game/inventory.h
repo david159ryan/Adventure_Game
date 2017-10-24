@@ -11,7 +11,7 @@ public:
     Inventory();
     void AddItem(InventoryObject * o);
     void RemoveItem(InventoryObject * o);
-    InventoryObject* GetItemByID(int ItemID);
+    InventoryObject* GetItem(string item);
     string ToString();
 
 private:

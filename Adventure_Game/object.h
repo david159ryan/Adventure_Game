@@ -1,19 +1,22 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
+#include "mainwindow.h"
+#include <QApplication>
 #include <string>
-class July5;
 
 using namespace std;
 
-class Object
+class Object: public QObject
 {
+    Q_OBJECT
+
 public:
-    Object();
-    Object(int id, string name, July5 *game);
+    Object(QObject *parent) : QObject(parent)
+    {}
+    Object(string name);
     string GetName();
     void SetName(string name);
-    int GetID();
     virtual string Push();
     virtual string Pull();
     virtual string PickUp();
@@ -40,12 +43,12 @@ public:
 
     string getType();
     void setType(string type);
+    void ConnectButton(QToolButton * b);
 
-protected:
-    July5 * game_;
+public slots:
+    void Interact();
 
 private:
-    int id_;
     string name_;
     string type_;
     string push_;

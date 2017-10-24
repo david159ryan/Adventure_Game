@@ -1,28 +1,33 @@
 #include "door.h"
+#include "locationmanager.h"
 
-Door::Door(int id, string name, July5 * game, int lockID,int locationID) :
-    Object(id, name, game)
+Door::Door(string name, string keyName,string locationName) :
+    Object(name)
 {
-    lockID_ = lockID;
-    locationID_ = locationID;
+    keyName_ = keyName;
+    locked_ = true;
+    locationName_ = locationName;
     setType("door");
 }
 
-void Door::SetKeyID(int keyID)
+Door::Door(string name, string locationName) :
+    Object(name)
 {
-    lockID_ = keyID;
+    locked_ = false; // No key provided
+    locationName_ = locationName;
+    setType("door");
 }
 
-int Door::GetLocationID()
+string Door::GetLocationName()
 {
-    return locationID_;
+    return locationName_;
 }
 
 bool Door::Unlock(Key * key)
 {
-    if(key->GetKeyID()==lockID_)
+    if(key->GetName()==keyName_)
     {
-        lockID_ = 0;
+        locked_ = true;
         return true;
     }
     return false;
@@ -30,11 +35,15 @@ bool Door::Unlock(Key * key)
 
 string Door::Use()
 {
-    if(lockID_ != 0)
+    if(locked_)
+    {
         return "The door is firmly locked";
-
-    //next room transition
-    return "You walk through the door";
+    }
+    else
+    {
+        locationManager.GoToLocation(this->GetLocationName());
+        return "You walk through the door";
+    }
 }
 
 

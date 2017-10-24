@@ -1,14 +1,15 @@
 #include "location.h"
 
+#include "iostream"
+
+
 Location::Location()
 {
-    locID_ = 0;
     name_ = "Invalid Location";
 }
 
-Location::Location(int id, string name)
+Location::Location(string name)
 {
-    locID_ = id;
     name_ = name;
 }
 
@@ -22,9 +23,19 @@ void Location::AddObject(Object * o)
     objects_.push_back(o);
 }
 
-void Location::RemoveObject(Object * o)
+void Location::RemoveObject(Object o)
 {
 
+}
+
+Object * Location::GetObjectAt(int i)
+{
+    return objects_.at(i);
+}
+
+int Location::GetObjectNum()
+{
+    return objects_.size();
 }
 
 Object * Location::GetObject(string name)
@@ -33,15 +44,10 @@ Object * Location::GetObject(string name)
     {
         if (objects_.at(i)->GetName() == name)
         {
-            return objects_.at(i);
+            return (objects_.at(i));
         }
     }
     return nullptr;
-}
-
-int Location::GetID()
-{
-    return locID_;
 }
 
 string Location::GetName()

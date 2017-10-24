@@ -9,17 +9,17 @@ class Location
 {
 public:
     Location();
-    Location(int id, string name);
+    Location(string name);
     ~Location();
-    int GetID();
     string GetName();
-    void AddObject(Object * o);
+    void AddObject(Object *o);
+    Object * GetObjectAt(int i);
+    int GetObjectNum();
     Object * GetObject(string name);
-    void RemoveObject(Object * o);
+    void RemoveObject(Object o);
 
 private:
-    vector<Object *> objects_;
-    int locID_;
+    vector<Object*> objects_;
     string name_;
 };
 

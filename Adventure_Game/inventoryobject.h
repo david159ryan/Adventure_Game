@@ -7,7 +7,7 @@
 class InventoryObject : public Object
 {
 public:
-    InventoryObject(int id, string name, July5 *game);
+    InventoryObject(string name);
     string PickUp() override;
 };
 
