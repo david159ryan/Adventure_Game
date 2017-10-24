@@ -47,14 +47,8 @@ QGraphicsView * MainWindow::GetGraphicsView()
     return ui->graphicsView;
 }
 
-void MainWindow::ClickButton()
-{
-    object->Use();
-}
-
-void MainWindow::ConnectButton(QToolButton * b, Object * o)
-{
-    object = o;
-    QObject::connect(b, SIGNAL(clicked()), this, SLOT(ClickButton()));
-}
+//void MainWindow::ConnectButton(QToolButton * b, Object * o)
+//{
+//    QObject::connect(b, SIGNAL(clicked()), o, SLOT(Interact()));
+//}
 

@@ -29,14 +29,12 @@ public:
     Ui::MainWindow *ui;
     QGraphicsView * GetGraphicsView();
     void PlayMusic(string name);
-    void ConnectButton(QToolButton * b, Object * o);
-    void ClickButton();
+//    void ConnectButton(QToolButton * b);
 
 private:
     QGraphicsScene *scene;
     QMediaPlayer * player;
     QMediaPlaylist * playlist;
-    Object * object;
 };
 
 #endif // MAINWINDOW_H

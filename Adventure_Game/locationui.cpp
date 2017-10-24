@@ -41,11 +41,12 @@ void LocationUI::Update(void)
             b->setIconSize(pixmap.rect().size());
             b->setStyleSheet("QToolButton { background-color: rgba(0,0,0,0) }");
             b->setGeometry(500,500,pixmap.rect().size().width(),pixmap.rect().size().height());
-            window->ConnectButton(b, o);
+            o->ConnectButton(b);
             scenes[name]->addWidget(b);
         }
     }
     QGraphicsScene * scene = scenes[name];
+    // Both need to fade
     window->LoadScene(scene);
     window->PlayMusic(name);
 }

@@ -3,11 +3,6 @@
 
 using namespace std;
 
-Object::Object()
-{
-    name_ = "Invalid Object";
-}
-
 Object::Object(string name)
 {
     name_ = name;
@@ -140,4 +135,14 @@ void Object::setType(string type)
 string Object::getType()
 {
     return type_;
+}
+
+void Object::ConnectButton(QToolButton *b)
+{
+    QObject::connect(b, SIGNAL(clicked()), this, SLOT(Interact()));
+}
+
+void Object::Interact()
+{
+    this->Use(); // Change to take verbs into account.
 }

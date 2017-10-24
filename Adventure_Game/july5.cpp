@@ -7,16 +7,14 @@ July5::July5()
 
     Location * newLocation = new Location("kitchen");
     // use newLocation to add objects to the location
-    Door * d = new Door("door","key","hallway");
-    newLocation->AddObject(*d);
+    newLocation->AddObject(new Door("door", "hallway"));
     locationManager.AddLocation(*newLocation);
 
     Location * newLocation2 = new Location("hallway");
-    // use newLocation to add objects to the location
-    Door * d2 = new Door("door","key","kitchen");
+    newLocation2->AddObject(new Door("door", "kitchen"));
     locationManager.AddLocation(*newLocation2);
-    newLocation->AddObject(*d);
-    locationManager.GoToLocation("kitchen");
+
+    locationManager.GoToLocation("hallway");
 }
 
 string July5::ProcessCommand(string command)

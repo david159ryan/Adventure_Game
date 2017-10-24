@@ -13,7 +13,7 @@ private:
     vector<Location> locations_;
 public:
     LocationManager();
-    Location * AddLocation(Location location);
+    void AddLocation(Location location);
     Location * GetCurrentLocation();
     void GoToLocation(string locationName);
 };
