@@ -146,3 +146,8 @@ void Object::Interact()
 {
     this->Use(); // Change to take verbs into account.
 }
+
+string Object::ToString()
+{
+    return name_;
+}

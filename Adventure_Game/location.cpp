@@ -54,3 +54,16 @@ string Location::GetName()
 {
     return name_;
 }
+
+string Location::ToString()
+{
+    string s = GetName()+"\n";
+    if(GetObjectNum()!=0)
+    {
+        for(int i = 0;i<objects_.size();i++)
+        {
+            s+="-"+objects_[i]->ToString()+"\n";
+        }
+    }
+    return s+"\n\n";
+}

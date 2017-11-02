@@ -16,6 +16,7 @@ public:
     {}
     Object(string name);
     string GetName();
+    string ToString();
     void SetName(string name);
     virtual string Push();
     virtual string Pull();

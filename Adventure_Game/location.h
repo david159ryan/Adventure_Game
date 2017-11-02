@@ -17,6 +17,7 @@ public:
     int GetObjectNum();
     Object * GetObject(string name);
     void RemoveObject(Object o);
+    string ToString();
 
 private:
     vector<Object*> objects_;
