@@ -1,0 +1,10 @@
+l,kitchen
+d,sitting room door,sitting room
+o,knife
+o,table
+o,chair
+
+l,sitting room
+d,kitchen door,kitchen
+o,couch
+o,couch
