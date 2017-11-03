@@ -1,10 +1,9 @@
-l,kitchen
-d,sitting room door,sitting room
-o,knife
-o,table
-o,chair
+l,name:kitchen
+d,name:Sitting Room Door,location:sitting room,x:100,y:100,tex:door
 
-l,sitting room
-d,kitchen door,kitchen
-o,couch
-o,couch
+l,name:sitting room
+d,name:Kitchen Door,location:kitchen,x:100,y:900,tex:door
+d,name:Stairs,location:upstairs,x:500,y:500,tex:door
+
+l,name:upstairs
+d,name:Stairs,location:sitting room,x:500,y:500,tex:door

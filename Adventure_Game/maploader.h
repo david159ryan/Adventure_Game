@@ -1,6 +1,9 @@
 #ifndef MAPLOADER_H
 #define MAPLOADER_H
 
+#define TAG 0
+#define DESC 1
+
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -17,15 +20,12 @@ class MapLoader
 {
 public:
     MapLoader();
-    void LoadMap(string filename, LocationManager lm);
+    void LoadMap(string filename);
 
 private:
     void ProcessLine(string line);
     std::vector<string> Split(string str, char delimiter);
-
     std::vector<Location> locations_;
-    LocationManager lm_;
-
 };
 
 #endif // MAPLOADER_H

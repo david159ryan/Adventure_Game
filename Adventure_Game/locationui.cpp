@@ -35,12 +35,12 @@ void LocationUI::Update(void)
             Object * o = newLocation->GetObjectAt(i);
             cout << "making button " << o->GetName() << endl;
             QToolButton * b = new QToolButton();
-            QPixmap pixmap = QPixmap::fromImage(GetObjectImageString(o->GetName()));
+            QPixmap pixmap = QPixmap::fromImage(GetObjectImageString(o->GetTexture()));
             QIcon ButtonIcon(pixmap);
             b->setIcon(ButtonIcon);
             b->setIconSize(pixmap.rect().size());
             b->setStyleSheet("QToolButton { background-color: rgba(0,0,0,0) }");
-            b->setGeometry(500,500,pixmap.rect().size().width(),pixmap.rect().size().height());
+            b->setGeometry(o->GetX(),o->GetY(),pixmap.rect().size().width(),pixmap.rect().size().height());
             o->ConnectButton(b);
             scenes[name]->addWidget(b);
         }
