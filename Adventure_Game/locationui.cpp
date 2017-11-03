@@ -40,7 +40,7 @@ void LocationUI::Update(void)
             b->setIcon(ButtonIcon);
             b->setIconSize(pixmap.rect().size());
             b->setStyleSheet("QToolButton { background-color: rgba(0,0,0,0) }");
-            b->setGeometry(500,500,pixmap.rect().size().width(),pixmap.rect().size().height());
+            b->setGeometry(100,100,pixmap.rect().size().width(),pixmap.rect().size().height());
             o->ConnectButton(b);
             scenes[name]->addWidget(b);
         }
