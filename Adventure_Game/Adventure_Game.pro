@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     eventmanager.cpp \
     locationui.cpp \
     updateable.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    verbmanager.cpp
 
 HEADERS  += \
     object.h \
@@ -42,14 +43,15 @@ HEADERS  += \
     eventmanager.h \
     updateable.h \
     locationui.h \
-    mainwindow.h
+    mainwindow.h \
+    verb.h \
+    verbmanager.h
 
 FORMS    += \
     cliframe.ui \
     mainwindow.ui
 
 QMAKE_CXXFLAGS += -std=c++11
-QMAKE_MAC_SDK = macosx10.13
 
 RESOURCES += \
     gfx.qrc

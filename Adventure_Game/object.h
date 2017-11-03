@@ -1,9 +1,11 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
-#include "mainwindow.h"
+#include <QToolButton>
 #include <QApplication>
 #include <string>
+#include "verb.h"
+#include "verbmanager.h"
 
 using namespace std;
 

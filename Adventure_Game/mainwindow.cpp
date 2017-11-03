@@ -52,3 +52,19 @@ QGraphicsView * MainWindow::GetGraphicsView()
 //    QObject::connect(b, SIGNAL(clicked()), o, SLOT(Interact()));
 //}
 
+
+
+void MainWindow::on_openButton_clicked()
+{
+    VerbManager::getInstance().SetVerb(Verb::OPEN);
+}
+
+void MainWindow::on_lickButton_clicked()
+{
+    VerbManager::getInstance().SetVerb(Verb::LICK);
+}
+
+void MainWindow::on_useButton_clicked()
+{
+    VerbManager::getInstance().SetVerb(Verb::USE);
+}

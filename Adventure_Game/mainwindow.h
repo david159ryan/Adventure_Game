@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QToolButton>
 #include "object.h"
+#include "verbmanager.h"
 
 using namespace std;
 
@@ -30,6 +31,13 @@ public:
     QGraphicsView * GetGraphicsView();
     void PlayMusic(string name);
 //    void ConnectButton(QToolButton * b);
+
+private slots:
+    void on_openButton_clicked();
+
+    void on_lickButton_clicked();
+
+    void on_useButton_clicked();
 
 private:
     QGraphicsScene *scene;
