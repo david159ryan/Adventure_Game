@@ -2,6 +2,7 @@
 
 LocationManager::LocationManager()
 {
+
 }
 
 void LocationManager::AddLocation(Location location)
@@ -16,7 +17,8 @@ Location * LocationManager::GetCurrentLocation()
 
 void LocationManager::GoToLocation(string locationName)
 {
-    for(vector<Location>::iterator it = locations_.begin(); it != locations_.end(); ++it) {
+    for(vector<Location>::iterator it = locations_.begin(); it != locations_.end(); ++it)
+    {
         if(it->GetName() == locationName )
         {
             currentLocation_ = &*it;

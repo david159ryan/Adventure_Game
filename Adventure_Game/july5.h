@@ -1,6 +1,7 @@
 #ifndef JULY5_H
 #define JULY5_H
 
+#include "maploader.h"
 #include "locationmanager.h"
 #include "consoleutilities.h"
 

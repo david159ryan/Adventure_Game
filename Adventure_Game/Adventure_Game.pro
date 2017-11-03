@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     eventmanager.cpp \
     locationui.cpp \
     updateable.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    maploader.cpp
 
 HEADERS  += \
     object.h \
@@ -42,7 +43,8 @@ HEADERS  += \
     eventmanager.h \
     updateable.h \
     locationui.h \
-    mainwindow.h
+    mainwindow.h \
+    maploader.h
 
 FORMS    += \
     cliframe.ui \
@@ -53,3 +55,5 @@ QMAKE_MAC_SDK = macosx10.13
 
 RESOURCES += \
     gfx.qrc
+
+DISTFILES +=

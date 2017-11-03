@@ -46,6 +46,16 @@ string Door::Use()
     }
 }
 
+void Door::SetLocation(string location)
+{
+    locationName_ = location;
+}
+
+void Door::SetKey(string key)
+{
+    keyName_ = key;
+    locked_ = true;
+}
 
 
 

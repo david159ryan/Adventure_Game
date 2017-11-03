@@ -79,6 +79,21 @@ string Object::GetName()
     return name_;
 }
 
+int Object::GetX()
+{
+    return x_;
+}
+
+int Object::GetY()
+{
+    return y_;
+}
+
+string Object::GetTexture()
+{
+    return texture_;
+}
+
 void Object::SetName(string name)
 {
     name_ = name;
@@ -128,6 +143,18 @@ void Object::SetTalkToString(string newString)
 {
     talkTo_ = newString;
 }
+void Object::SetX(int x)
+{
+    x_=x;
+}
+void Object::SetY(int y)
+{
+    y_=y;
+}
+void Object::SetTexture(string tex)
+{
+    texture_=tex;
+}
 void Object::setType(string type)
 {
     type_ = type;
@@ -145,4 +172,9 @@ void Object::ConnectButton(QToolButton *b)
 void Object::Interact()
 {
     this->Use(); // Change to take verbs into account.
+}
+
+string Object::ToString()
+{
+    return name_;
 }

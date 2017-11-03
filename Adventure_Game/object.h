@@ -16,6 +16,7 @@ public:
     {}
     Object(string name);
     string GetName();
+    string ToString();
     void SetName(string name);
     virtual string Push();
     virtual string Pull();
@@ -28,6 +29,9 @@ public:
     virtual string Lick();
     virtual string LookAt();
     virtual string TalkTo();
+    int GetX();
+    int GetY();
+    string GetTexture();
 
     virtual void SetPushString(string newString);
     virtual void SetPullString(string newString);
@@ -40,6 +44,9 @@ public:
     virtual void SetLickString(string newString);
     virtual void SetLookAtString(string newString);
     virtual void SetTalkToString(string newString);
+    void SetX(int x);
+    void SetY(int y);
+    void SetTexture(string tex);
 
     string getType();
     void setType(string type);
@@ -49,6 +56,9 @@ public slots:
     void Interact();
 
 private:
+    int x_;
+    int y_;
+    string texture_;
     string name_;
     string type_;
     string push_;
