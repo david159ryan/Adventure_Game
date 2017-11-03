@@ -10,10 +10,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->graphicsView->setFrameStyle(QFrame::NoFrame);
     QRect rec = QApplication::desktop()->screenGeometry();
-    ui->graphicsView->setFixedHeight(rec.height());
-    ui->graphicsView->setFixedWidth(rec.width());
+    ui->centralwidget->setFixedHeight(rec.height());
+    ui->centralwidget->setFixedWidth(rec.width());
     ui->graphicsView->setBackgroundBrush(Qt::black);
-    setCentralWidget(ui->graphicsView);
+    setCentralWidget(ui->centralwidget);
     player = new QMediaPlayer;
 }
 
