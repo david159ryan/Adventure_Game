@@ -5,7 +5,7 @@ Key::Key(string name) : InventoryObject(name)
 {
 }
 
-string Key::Use(Object * target)
+string Key::Interact(Verb verb, Object * target)
 {
     Door* door = dynamic_cast<Door*>(target);
     if (door) {
@@ -20,6 +20,6 @@ string Key::Use(Object * target)
     }
     else
     {
-        return InventoryObject::Use(target);
+        return InventoryObject::Interact(verb, target);
     }
 }

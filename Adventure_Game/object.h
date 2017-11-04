@@ -2,6 +2,7 @@
 #define OBJECT_H
 
 #include <string>
+#include <map>
 #include "verb.h"
 
 using namespace std;
@@ -12,57 +13,26 @@ public:
     Object(string name);
     string GetName();
     void SetName(string name);
-    virtual string Push();
-    virtual string Pull();
-    virtual string PickUp();
-    virtual string Use(Object * target);
-    virtual string Use();
-    virtual string Open();
-    virtual string Open(Object * target);
-    virtual string Close();
-    virtual string Lick();
-    virtual string LookAt();
-    virtual string TalkTo();
     int GetX();
     int GetY();
     string GetTexture();
-
-    virtual void SetPushString(string newString);
-    virtual void SetPullString(string newString);
-    virtual void SetPickUpString(string newString);
-    virtual void SetUseTargetString(string newString);
-    virtual void SetUseString(string newString);
-    virtual void SetOpenString(string newString);
-    virtual void SetOpenTargetString(string newString);
-    virtual void SetCloseString(string newString);
-    virtual void SetLickString(string newString);
-    virtual void SetLookAtString(string newString);
-    virtual void SetTalkToString(string newString);
+    void setActionText(string action, string text);
     void SetX(int x);
     void SetY(int y);
     void SetTexture(string tex);
 
     string getType();
     void setType(string type);
-    string Interact(Verb verb);
+    virtual string Interact(Verb verb);
+    virtual string Interact(Verb verb, Object * target);
 
 private:
+    map<Verb, string> actionMap_;
+    string name_;
+    string texture_;
+    string type_;
     int x_;
     int y_;
-    string texture_;
-    string name_;
-    string type_;
-    string push_;
-    string pull_;
-    string pickUp_;
-    string use_;
-    string useTarget_;
-    string lick_;
-    string lookAt_;
-    string talkTo_;
-    string close_;
-    string open_;
-    string openTarget_;
 };
 
 #endif // OBJECT_H

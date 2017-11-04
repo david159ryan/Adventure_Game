@@ -32,7 +32,6 @@ void July5::AddLocation(Location * location)
 void July5::SetLastActionText(string text)
 {
     lastActionText_ = text;
-    eventManager.FireEvent(Event::ActionPerformed);
 }
 
 string July5::GetLastActionText()

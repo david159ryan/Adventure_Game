@@ -6,7 +6,7 @@ class Key : public InventoryObject
 {
 public:
     Key(string name);
-    string Use(Object *target) override;
+    string Interact(Verb verb, Object *target) override;
 };
 
 #endif // KEY_H

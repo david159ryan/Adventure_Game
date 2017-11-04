@@ -7,7 +7,10 @@
 #include <QDesktopWidget>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
+#include <QPropertyAnimation>
+#include <QGraphicsOpacityEffect>
 #include <QFile>
+#include <QTimer>
 #include <QToolButton>
 #include <QFrame>
 #include "july5.h"
