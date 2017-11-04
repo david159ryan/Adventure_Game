@@ -1,7 +1,157 @@
-l,name:livingroom
-d,name:Kitchen Door,location:kitchen,x:64,y:14,tex:door
-o,name:Granny's Lamp,x:510,y:70,tex:smallLamp
-o,name:Ominous Blood Stain,x:311,y:253,tex:stain
-o,name:Gran's Drawers,x:214,y:172,tex:drawers
-o,name:Grand Piano,x:908,y:100,tex:piano
-o,name:Music Sheets,x:960,y:176,tex:musicSheet
+{
+type:location
+name:livingroom
+}
+
+{
+type:door
+name:Kitchen door
+location:kitchen
+x:62
+y:14
+tex:door
+}
+
+{
+type:object
+name:Grandma's Lamp
+x:510
+y:70
+tex:smallLamp
+}
+
+{
+type:object
+name:Small stain
+x:311
+y:253
+tex:stain
+}
+
+{
+type:object
+name:Locked Drawers
+x:214
+y:172
+tex:drawers
+}
+
+{
+type:object
+name:Grand Piano
+x:908
+y:100
+tex:piano
+}
+
+{
+type:object
+name:Music Sheets
+x:960
+y:176
+tex:musicSheet
+}
+
+{
+type:object
+name:Broken Fingers
+x:898
+y:338
+tex:fingers
+}
+
+{
+type:object
+name:Short Stool
+x:834
+y:300
+tex:stool
+}
+
+{
+type:object
+name:Grandma's Rocking Chair
+x:628
+y:92
+tex:rockingChair
+}
+
+{
+type:object
+name:Tall Lamp
+x:780
+y:30
+tex:tallLamp
+}
+
+{
+type:object
+name:TV
+x:14
+y:236
+tex:tv
+}
+
+{
+type:object
+name:Bust of Grandma
+x:220
+y:30
+tex:statue
+}
+
+{
+type:object
+name:Cookie Jar
+x:284
+y:90
+tex:cookieJar
+}
+
+{
+type:object
+name:Old History Book
+x:334
+y:116
+tex:blueBook
+}
+
+{
+type:object
+name:Snowball's first scratch marks
+x:286
+y:18
+tex:clawPicture
+}
+
+{
+type:object
+name:Big book of Rituals
+x:272
+y:112
+tex:greenBook
+}
+
+{
+type:object
+name:Troll Doll
+x:410
+y:66
+tex:troll
+}
+
+{
+type:object
+name:Picture of Yarn
+x:352
+y:28
+tex:yarnPicture
+}
+
+{
+type:object
+name:Picture of Snowball
+x:486
+y:12
+tex:catPicture
+}

@@ -22,7 +22,7 @@ public:
     void LoadMap(string filename);
 
 private:
-    void ProcessLine(string line);
+    void ProcessChunk(string line);
     std::vector<string> Split(string str, char delimiter);
     std::vector<Location *> locations_;
 };
