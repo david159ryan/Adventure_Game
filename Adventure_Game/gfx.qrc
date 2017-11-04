@@ -10,5 +10,18 @@
         <file>gfx/interactables/musicSheet.png</file>
         <file>gfx/interactables/piano.png</file>
         <file>gfx/interactables/stain.png</file>
+        <file>gfx/interactables/blueBook.png</file>
+        <file>gfx/interactables/catPicture.png</file>
+        <file>gfx/interactables/clawPicture.png</file>
+        <file>gfx/interactables/cookieJar.png</file>
+        <file>gfx/interactables/fingers.png</file>
+        <file>gfx/interactables/greenBook.png</file>
+        <file>gfx/interactables/rockingChair.png</file>
+        <file>gfx/interactables/statue.png</file>
+        <file>gfx/interactables/stool.png</file>
+        <file>gfx/interactables/tallLamp.png</file>
+        <file>gfx/interactables/troll.png</file>
+        <file>gfx/interactables/tv.png</file>
+        <file>gfx/interactables/yarnPicture.png</file>
     </qresource>
 </RCC>
