@@ -4,5 +4,51 @@
         <file>gfx/backgrounds/kitchen.png</file>
         <file>sfx/music/kitchen.mp3</file>
         <file>gfx/interactables/door.png</file>
+        <file>gfx/backgrounds/livingroom.png</file>
+        <file>gfx/interactables/smallLamp.png</file>
+        <file>gfx/interactables/drawers.png</file>
+        <file>gfx/interactables/musicSheet.png</file>
+        <file>gfx/interactables/piano.png</file>
+        <file>gfx/interactables/stain.png</file>
+        <file>gfx/interactables/blueBook.png</file>
+        <file>gfx/interactables/catPicture.png</file>
+        <file>gfx/interactables/clawPicture.png</file>
+        <file>gfx/interactables/cookieJar.png</file>
+        <file>gfx/interactables/fingers.png</file>
+        <file>gfx/interactables/greenBook.png</file>
+        <file>gfx/interactables/rockingChair.png</file>
+        <file>gfx/interactables/statue.png</file>
+        <file>gfx/interactables/stool.png</file>
+        <file>gfx/interactables/tallLamp.png</file>
+        <file>gfx/interactables/troll.png</file>
+        <file>gfx/interactables/tv.png</file>
+        <file>gfx/interactables/yarnPicture.png</file>
+        <file>gfx/interactables/books.png</file>
+        <file>gfx/interactables/candletable.png</file>
+        <file>gfx/interactables/chandelier.png</file>
+        <file>gfx/interactables/chicken.png</file>
+        <file>gfx/interactables/clock.png</file>
+        <file>gfx/interactables/crack.png</file>
+        <file>gfx/interactables/eastDoor.png</file>
+        <file>gfx/interactables/flowers.png</file>
+        <file>gfx/interactables/glassFlowers.png</file>
+        <file>gfx/interactables/marblePlant.png</file>
+        <file>gfx/interactables/notes.png</file>
+        <file>gfx/interactables/pigHead.png</file>
+        <file>gfx/interactables/plate.png</file>
+        <file>gfx/interactables/platesCupboard.png</file>
+        <file>gfx/interactables/potions.png</file>
+        <file>gfx/interactables/potionsbooks.png</file>
+        <file>gfx/interactables/radishes.png</file>
+        <file>gfx/interactables/smallDoor.png</file>
+        <file>gfx/interactables/southDoor.png</file>
+        <file>gfx/interactables/spinach.png</file>
+        <file>gfx/interactables/splatter1.png</file>
+        <file>gfx/interactables/splatter2.png</file>
+        <file>gfx/interactables/Stove.png</file>
+        <file>gfx/interactables/tea.png</file>
+        <file>gfx/interactables/vent.png</file>
+        <file>gfx/interactables/window.png</file>
+        <file>gfx/interactables/wine.png</file>
     </qresource>
 </RCC>

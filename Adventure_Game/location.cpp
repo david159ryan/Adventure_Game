@@ -50,6 +50,11 @@ Object * Location::GetObject(string name)
     return nullptr;
 }
 
+void Location::SetName(string name)
+{
+    name_ = name;
+}
+
 string Location::GetName()
 {
     return name_;
