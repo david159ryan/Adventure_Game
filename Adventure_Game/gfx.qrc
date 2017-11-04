@@ -4,5 +4,11 @@
         <file>gfx/backgrounds/kitchen.png</file>
         <file>sfx/music/kitchen.mp3</file>
         <file>gfx/interactables/door.png</file>
+        <file>gfx/backgrounds/livingroom.png</file>
+        <file>gfx/interactables/smallLamp.png</file>
+        <file>gfx/interactables/drawers.png</file>
+        <file>gfx/interactables/musicSheet.png</file>
+        <file>gfx/interactables/piano.png</file>
+        <file>gfx/interactables/stain.png</file>
     </qresource>
 </RCC>
