@@ -2,31 +2,28 @@
 
 using namespace std;
 
-map<string, list<Updateable*>> events;
-
 EventManager::EventManager()
 {
 
 }
 
-void EventManager::RegisterListener(string eventName, Updateable * updateable)
+void EventManager::RegisterListener(Event event, Updateable * updateable)
 {
-    if(events.find(eventName) == events.end())
+    if(events.find(event) == events.end())
     {
-        list<Updateable*> newList;
-        events[eventName] = newList;
+        events[event] = list<Updateable*>();
     }
-    events[eventName].push_back(updateable);
+    events[event].push_back(updateable);
 }
 
-void EventManager::FireEvent(string eventName)
+void EventManager::FireEvent(Event event)
 {
-    if(events.find(eventName) != events.end())
+    if(events.find(event) != events.end())
     {
-        for(list<Updateable*>::iterator list_iter = events[eventName].begin();
-            list_iter != events[eventName].end(); list_iter++)
+        for(list<Updateable*>::iterator list_iter = events[event].begin();
+            list_iter != events[event].end(); list_iter++)
         {
-            (*list_iter)->Update();
+            (*list_iter)->Update(event);
         }
     }
 }

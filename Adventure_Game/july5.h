@@ -1,10 +1,11 @@
 #ifndef JULY5_H
 #define JULY5_H
 
-#include "locationmanager.h"
-#include "consoleutilities.h"
+#include "string"
 
-#include "object.h"
+#include "locationmanager.h"
+#include "verbmanager.h"
+#include "eventmanager.h"
 #include "inventory.h"
 #include "key.h"
 #include "door.h"
@@ -14,14 +15,32 @@ using namespace std;
 class July5
 {
 public:
-    July5();
+    static July5& GetInstance()
+    {
+        static July5 instance;
+        return instance;
+    }
     Inventory playerInventory;
-    Object ** items;
+    void GoToLocation(string locationName);
+    void RegisterListener(Event event, Updateable *updateable);
+    Location * GetCurrentLocation();
 
-public:
-    string ProcessCommand(string command);
+    void SetLastActionText(string text);
+    string GetLastActionText();
+    Verb CurrentVerb();
+    void SetVerb(Verb verb);
+    void Start();
 
-    void TEST_MakeSomeItems();
+private:
+    July5();
+    July5(July5 const&);            // Don't Implement.
+    void operator=(July5 const&);   // Don't implement
+
+    LocationManager locationManager;
+    EventManager eventManager;
+    VerbManager verbManager;
+
+    string lastActionText_;
 };
 
 #endif // JULY5_H

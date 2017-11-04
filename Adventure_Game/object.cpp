@@ -1,5 +1,6 @@
 #include "object.h"
 #include <stdio.h>
+#include <iostream>
 
 using namespace std;
 
@@ -137,12 +138,45 @@ string Object::getType()
     return type_;
 }
 
-void Object::ConnectButton(QToolButton *b)
-{
-    QObject::connect(b, SIGNAL(clicked()), this, SLOT(Interact()));
-}
 
-void Object::Interact()
+string Object::Interact( Verb verb )
 {
-    this->Use(); // Change to take verbs into account.
+    switch (verb) {
+    case PUSH:
+        return this->Push();
+        break;
+    case PULL:
+        return this->Pull();
+        break;
+    case PICKUP:
+        return this->PickUp();
+        break;
+    case USE:
+        return this->Use();
+        break;
+    case USETARGET:
+        return this->Use();
+        break;
+    case OPEN:
+        return this->Open();
+        break;
+    case OPENTARGET:
+        return this->Open();
+        break;
+    case CLOSE:
+        return this->Close();
+        break;
+    case LICK:
+        return this->Lick();
+        break;
+    case LOOKAT:
+        return this->LookAt();
+        break;
+    case TALKTO:
+        return this->TalkTo();
+        break;
+    default:
+        return this->Use();
+        break;
+    }
 }

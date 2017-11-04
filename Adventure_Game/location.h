@@ -1,7 +1,8 @@
 #ifndef LOCATION_H
 #define LOCATION_H
-#include "object.h"
+
 #include <vector>
+#include "object.h"
 
 using namespace std;
 

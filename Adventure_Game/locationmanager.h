@@ -10,14 +10,15 @@ class LocationManager
 {
 private:
     Location * currentLocation_;
-    vector<Location> locations_;
+    vector<Location*> locations_;
+    map<string, list<Updateable*>> events;
+
 public:
     LocationManager();
-    void AddLocation(Location location);
+
+    void AddLocation(Location *location);
     Location * GetCurrentLocation();
     void GoToLocation(string locationName);
 };
-
-extern LocationManager locationManager;
 
 #endif // LOCATIONMANAGER_H

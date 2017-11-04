@@ -9,12 +9,28 @@ LocationUI::LocationUI(MainWindow * window) :
     Updateable()
 {
     this->window = window;
-    eventManager.RegisterListener("LocationChange", this);
+    July5::GetInstance().RegisterListener(Event::LocationChanged, this);
+    July5::GetInstance().RegisterListener(Event::ActionPerformed, this);
 }
 
-void LocationUI::Update(void)
+void LocationUI::Update(Event event)
 {
-    Location * newLocation = locationManager.GetCurrentLocation();
+    switch(event)
+    {
+    case Event::ActionPerformed:
+        ActionPerformed();
+        break;
+    case Event::LocationChanged:
+        LocationChanged();
+        break;
+    default:
+        break;
+    }
+}
+
+void LocationUI::LocationChanged()
+{
+    Location * newLocation = July5::GetInstance().GetCurrentLocation();
     string name = newLocation->GetName();
 
     if(scenes.find(name) == scenes.end())
@@ -34,14 +50,12 @@ void LocationUI::Update(void)
         {
             Object * o = newLocation->GetObjectAt(i);
             cout << "making button " << o->GetName() << endl;
-            QToolButton * b = new QToolButton();
+            ObjectButton * b = new ObjectButton(o);
             QPixmap pixmap = QPixmap::fromImage(GetObjectImageString(o->GetName()));
             QIcon ButtonIcon(pixmap);
             b->setIcon(ButtonIcon);
             b->setIconSize(pixmap.rect().size());
-            b->setStyleSheet("QToolButton { background-color: rgba(0,0,0,0) }");
             b->setGeometry(100,100,pixmap.rect().size().width(),pixmap.rect().size().height());
-            o->ConnectButton(b);
             scenes[name]->addWidget(b);
         }
     }
@@ -49,6 +63,11 @@ void LocationUI::Update(void)
     // Both need to fade
     window->LoadScene(scene);
     window->PlayMusic(name);
+}
+
+void LocationUI::ActionPerformed()
+{
+    window->SetActionLabelText(July5::GetInstance().GetLastActionText());
 }
 
 QImage GetBackgroundString(string name)

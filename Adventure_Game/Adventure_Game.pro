@@ -14,7 +14,6 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     object.cpp \
-    cliframe.cpp \
     july5.cpp \
     consoleutilities.cpp \
     location.cpp \
@@ -26,11 +25,12 @@ SOURCES += main.cpp\
     eventmanager.cpp \
     locationui.cpp \
     updateable.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    verbmanager.cpp \
+    objectbutton.cpp
 
 HEADERS  += \
     object.h \
-    cliframe.h \
     july5.h \
     consoleutilities.h \
     location.h \
@@ -42,14 +42,16 @@ HEADERS  += \
     eventmanager.h \
     updateable.h \
     locationui.h \
-    mainwindow.h
+    mainwindow.h \
+    verb.h \
+    verbmanager.h \
+    objectbutton.h \
+    event.h
 
 FORMS    += \
-    cliframe.ui \
     mainwindow.ui
 
 QMAKE_CXXFLAGS += -std=c++11
-QMAKE_MAC_SDK = macosx10.13
 
 RESOURCES += \
     gfx.qrc

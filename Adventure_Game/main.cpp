@@ -1,20 +1,14 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QBoxLayout>
-#include "cliframe.h"
-#include "eventmanager.h"
 #include "locationui.h"
+#include "july5.h"
 
 using namespace std;
-
-EventManager eventManager;
-LocationManager locationManager;
 
 int main(int argc, char *argv[])
 {
     Q_INIT_RESOURCE(gfx);
-    eventManager = EventManager();
-    locationManager = LocationManager();
 
     QApplication a(argc, argv);
 
@@ -23,8 +17,10 @@ int main(int argc, char *argv[])
     window->setWindowTitle("July 5th");
     layout->addWidget(window);
     window->setWindowState(Qt::WindowFullScreen);
+
     new LocationUI(window);
-    new July5();
+    July5::GetInstance().Start();
+
     window->show();
 
     return a.exec();

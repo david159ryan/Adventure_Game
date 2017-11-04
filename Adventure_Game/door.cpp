@@ -1,5 +1,5 @@
 #include "door.h"
-#include "locationmanager.h"
+#include "july5.h"
 
 Door::Door(string name, string keyName,string locationName) :
     Object(name)
@@ -41,11 +41,7 @@ string Door::Use()
     }
     else
     {
-        locationManager.GoToLocation(this->GetLocationName());
+        July5::GetInstance().GoToLocation(this->GetLocationName());
         return "You walk through the door";
     }
 }
-
-
-
-
