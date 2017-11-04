@@ -10,11 +10,10 @@
 #include <fstream>
 #include <vector>
 
-#include "locationmanager.h"
-
 #include "location.h"
 #include "object.h"
 #include "door.h"
+#include "july5.h"
 
 class MapLoader
 {
@@ -25,7 +24,7 @@ public:
 private:
     void ProcessLine(string line);
     std::vector<string> Split(string str, char delimiter);
-    std::vector<Location> locations_;
+    std::vector<Location *> locations_;
 };
 
 #endif // MAPLOADER_H

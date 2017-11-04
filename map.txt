@@ -1,9 +1,0 @@
-l,name:kitchen
-d,name:Sitting Room Door,location:sitting room,x:100,y:100,tex:door
-
-l,name:sitting room
-d,name:Kitchen Door,location:kitchen,x:100,y:900,tex:door
-d,name:Stairs,location:upstairs,x:500,y:500,tex:door
-
-l,name:upstairs
-d,name:Stairs,location:sitting room,x:500,y:500,tex:door

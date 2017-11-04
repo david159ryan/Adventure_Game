@@ -9,6 +9,7 @@
 #include "inventory.h"
 #include "key.h"
 #include "door.h"
+#include "maploader.h"
 
 using namespace std;
 
@@ -24,6 +25,7 @@ public:
     void GoToLocation(string locationName);
     void RegisterListener(Event event, Updateable *updateable);
     Location * GetCurrentLocation();
+    void AddLocation(Location *);
 
     void SetLastActionText(string text);
     string GetLastActionText();

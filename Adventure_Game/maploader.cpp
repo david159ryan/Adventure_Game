@@ -30,9 +30,9 @@ void MapLoader::LoadMap(string filename)
     inFile.close();
     for(int i = 0;i<locations_.size();i++)
     {
-        locationManager.AddLocation(locations_[i]);
+        July5::GetInstance().AddLocation(locations_[i]);
     }
-    locationManager.GoToLocation("kitchen");
+    July5::GetInstance().GoToLocation("kitchen");
     cout<<"Map Loaded!"<<endl;
 }
 
@@ -62,7 +62,7 @@ void MapLoader::ProcessLine(string line)
             {
                 l = new Location(c[DESC]);
             }
-            locations_.push_back(*l);
+            locations_.push_back(l);
         }
     }
 
@@ -103,7 +103,7 @@ void MapLoader::ProcessLine(string line)
             else if(c[TAG]=="tex")
                 o->SetTexture(c[DESC]);
         }
-        locations_.back().AddObject(o);
+        locations_.back()->AddObject(o);
     }
 
     else if(input[TAG]=="d")  //Door
@@ -147,6 +147,6 @@ void MapLoader::ProcessLine(string line)
             else if(c[TAG]=="tex")
                 d->SetTexture(c[DESC]);
         }
-        locations_.back().AddObject(d);
+        locations_.back()->AddObject(d);
     }
 }

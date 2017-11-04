@@ -51,11 +51,12 @@ void LocationUI::LocationChanged()
             Object * o = newLocation->GetObjectAt(i);
             cout << "making button " << o->GetName() << endl;
             ObjectButton * b = new ObjectButton(o);
-            QPixmap pixmap = QPixmap::fromImage(GetObjectImageString(o->GetName()));
+            QPixmap pixmap = QPixmap::fromImage(GetObjectImageString(o->GetTexture()));
             QIcon ButtonIcon(pixmap);
             b->setIcon(ButtonIcon);
             b->setIconSize(pixmap.rect().size());
-            b->setGeometry(100,100,pixmap.rect().size().width(),pixmap.rect().size().height());
+            b->setGeometry(o->GetX(),o->GetY(),
+                           pixmap.rect().size().width(),pixmap.rect().size().height());
             scenes[name]->addWidget(b);
         }
     }
