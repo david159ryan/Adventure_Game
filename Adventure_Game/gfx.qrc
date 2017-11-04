@@ -62,5 +62,10 @@
         <file>gfx/interactables/vanityDrawers.png</file>
         <file>gfx/interactables/westDoor.png</file>
         <file>gfx/backgrounds/backhallway.png</file>
+        <file>gfx/interactables/basementStairs.png</file>
+        <file>gfx/interactables/gargoyle.png</file>
+        <file>gfx/interactables/northDoor.png</file>
+        <file>gfx/interactables/stairs.png</file>
+        <file>gfx/backgrounds/fronthallway.png</file>
     </qresource>
 </RCC>
