@@ -24,6 +24,7 @@ public:
     Inventory playerInventory;
     void GoToLocation(string locationName);
     void RegisterListener(Event event, Updateable *updateable);
+    void FireEvent(Event event);
     Location * GetCurrentLocation();
     void AddLocation(Location *);
 

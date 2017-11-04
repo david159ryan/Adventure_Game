@@ -10,6 +10,9 @@ void MapLoader::LoadMap(string filename)
     cout << "MapLoader Started!" << endl;
     string line;
     std::ifstream inFile;
+    string chunk;
+    std::vector<string> chunks;
+    bool read=false;
     inFile.open(filename);
 
     if (!inFile)
@@ -21,18 +24,33 @@ void MapLoader::LoadMap(string filename)
     {
         while (std::getline(inFile, line))
         {
-            if(line!="")
+            if(line=="{")
             {
-                ProcessLine(line);
+                read=true;
+            }
+            else if(line=="}")
+            {
+                read=false;
+                chunks.push_back(chunk.substr(0,chunk.length()-1));
+                chunk="";
+            }
+            if(read&&line!="{")
+            {
+                chunk+=line+"/";
             }
         }
     }
     inFile.close();
-    for(int i = 0;i<locations_.size();i++)
+    for(size_t i = 0;i<chunks.size();i++)
     {
+        ProcessChunk(chunks[i]);
+    }
+    for(size_t i = 0;i<locations_.size();i++)
+    {
+        cout<<locations_[i]->GetName()<<endl;
         July5::GetInstance().AddLocation(locations_[i]);
     }
-    July5::GetInstance().GoToLocation("kitchen");
+    July5::GetInstance().GoToLocation("livingroom");
     cout<<"Map Loaded!"<<endl;
 }
 
@@ -48,105 +66,57 @@ std::vector<string> MapLoader::Split(string str,char delimiter)
     return result;
 }
 
-void MapLoader::ProcessLine(string line)
+void MapLoader::ProcessChunk(string chunk)
 {
-    std::vector<string> input = Split(line,',');
-
-    if(input[TAG]=="l")       //Location
+    std::vector<string> input = Split(chunk,'/');
+    std::vector<string> type = Split(input[0],':');
+    if(type[TAG]=="type")
     {
-        Location* l;
-        for(int i=1;i<input.size();i++)
+        if(type[DESC]=="location")
         {
-            std::vector<string> c = Split(input[i],':');
-            if(c[TAG]=="name")
+            Location *l = new Location("???");
+            for(size_t i=1;i<input.size();i++)
             {
-                l = new Location(c[DESC]);
+                std::vector<string> line = Split(input[i],':');
+                if(line[TAG]=="name")
+                    l->SetName(line[DESC]);
             }
             locations_.push_back(l);
         }
-    }
-
-    else if(input[TAG]=="o")  //Object
-    {
-        Object *o = new Object("Mysterious Object");
-        for(int i=1;i<input.size();i++)
+        else
         {
-            std::vector<string> c = Split(input[i],':');
-            if(c[TAG]=="name")
-                o->SetName(c[DESC]);
-            else if(c[TAG]=="push")
-                o->SetPushString(c[DESC]);
-            else if(c[TAG]=="pull")
-                o->SetPullString(c[DESC]);
-            else if(c[TAG]=="pickup")
-                o->SetPickUpString(c[DESC]);
-            else if(c[TAG]=="usetarget")
-                o->SetUseTargetString(c[DESC]);
-            else if(c[TAG]=="use")
-                o->SetUseString(c[DESC]);
-            else if(c[TAG]=="open")
-                o->SetOpenString(c[DESC]);
-            else if(c[TAG]=="opentarget")
-                o->SetOpenTargetString(c[DESC]);
-            else if(c[TAG]=="close")
-                o->SetCloseString(c[DESC]);
-            else if(c[TAG]=="lick")
-                o->SetLickString(c[DESC]);
-            else if(c[TAG]=="lookat")
-                o->SetLookAtString(c[DESC]);
-            else if(c[TAG]=="talk")
-                o->SetTalkToString(c[DESC]);
-            else if(c[TAG]=="x")
-                o->SetX(stoi(c[DESC]));
-            else if(c[TAG]=="y")
-                o->SetY(stoi(c[DESC]));
-            else if(c[TAG]=="tex")
-                o->SetTexture(c[DESC]);
-        }
-        locations_.back()->AddObject(o);
-    }
+            Object *o;
+            if(type[DESC]=="object")
+                o=new Object("Mysterious Object");
+            else if(type[DESC]=="door")
+                o=new Door("Mysterious Door","???");
+            else if(type[DESC]=="key")
+                o=new Key("Mysterious Key");
 
-    else if(input[TAG]=="d")  //Door
-    {
-        Door *d = new Door("Mysterious Door,","???");
-        for(int i=1;i<input.size();i++)
-        {
-            std::vector<string> c = Split(input[i],':');
-            if(c[TAG]=="name")
-                d->SetName(c[DESC]);
-            else if(c[TAG]=="location")
-                d->SetLocation(c[DESC]);
-            else if(c[TAG]=="key")
-                d->SetKey(c[TAG]);
-            else if(c[TAG]=="push")
-                d->SetPushString(c[DESC]);
-            else if(c[TAG]=="pull")
-                d->SetPullString(c[DESC]);
-            else if(c[TAG]=="pickup")
-                d->SetPickUpString(c[DESC]);
-            else if(c[TAG]=="usetarget")
-                d->SetUseTargetString(c[DESC]);
-            else if(c[TAG]=="use")
-                d->SetUseString(c[DESC]);
-            else if(c[TAG]=="open")
-                d->SetOpenString(c[DESC]);
-            else if(c[TAG]=="opentarget")
-                d->SetOpenTargetString(c[DESC]);
-            else if(c[TAG]=="close")
-                d->SetCloseString(c[DESC]);
-            else if(c[TAG]=="lick")
-                d->SetLickString(c[DESC]);
-            else if(c[TAG]=="lookat")
-                d->SetLookAtString(c[DESC]);
-            else if(c[TAG]=="talk")
-                d->SetTalkToString(c[DESC]);
-            else if(c[TAG]=="x")
-                d->SetX(stoi(c[DESC]));
-            else if(c[TAG]=="y")
-                d->SetY(stoi(c[DESC]));
-            else if(c[TAG]=="tex")
-                d->SetTexture(c[DESC]);
+
+            for(size_t i=1;i<input.size();i++)
+            {
+                std::vector<string> line = Split(input[i],':');
+                if(line[TAG]=="action")
+                {
+                    std::vector<string> out = Split(line[DESC],';');
+                    o->setActionText(out[0],out[1]);
+                }
+                else if(line[TAG]=="name")
+                    o->SetName(line[DESC]);
+                else if(line[TAG]=="x")
+                    o->SetX(stoi(line[DESC]));
+                else if(line[TAG]=="y")
+                    o->SetY(stoi(line[DESC]));
+                else if(line[TAG]=="tex")
+                    o->SetTexture(line[DESC]);
+
+                else if(line[TAG]=="location")
+                    ((Door*)o)->SetLocation(line[DESC]);
+                else if(line[TAG]=="key")
+                    ((Door*)o)->SetKey(line[TAG]);
+            }
+            locations_.back()->AddObject(o);
         }
-        locations_.back()->AddObject(d);
     }
 }

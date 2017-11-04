@@ -33,16 +33,35 @@ bool Door::Unlock(Key * key)
     return false;
 }
 
-string Door::Use()
+void Door::Interact(Verb verb)
+{
+    if(verb == Verb::NONE)
+    {
+        verb = Verb::USE;
+    }
+
+    switch(verb)
+    {
+    case USE:
+        Use();
+        break;
+    default:
+        Object::Interact(verb);
+        break;
+    }
+
+}
+
+void Door::Use()
 {
     if(locked_)
     {
-        return "The door is firmly locked";
+        July5::GetInstance().SetLastActionText( "The door is firmly locked");
     }
     else
     {
         July5::GetInstance().GoToLocation(this->GetLocationName());
-        return "You walk through the door";
+        July5::GetInstance().SetLastActionText("You walk through the door");
     }
 }
 

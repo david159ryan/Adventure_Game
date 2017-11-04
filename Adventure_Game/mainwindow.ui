@@ -76,17 +76,20 @@
        </property>
       </widget>
       <widget class="QLabel" name="actionLabel">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="geometry">
         <rect>
          <x>50</x>
          <y>50</y>
-         <width>611</width>
+         <width>1151</width>
          <height>122</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">font: 75 italic 36pt &quot;URW Chancery L&quot;;
-background-color: rgba(0, 0, 0, 100);
+background-color: rgba(0, 0, 0, 150);
 color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
@@ -289,8 +292,8 @@ color: rgb(255, 255, 255);</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>926</width>
-            <height>242</height>
+            <width>935</width>
+            <height>248</height>
            </rect>
           </property>
          </widget>
