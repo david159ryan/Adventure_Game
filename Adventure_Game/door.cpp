@@ -35,6 +35,11 @@ bool Door::Unlock(Key * key)
 
 void Door::Interact(Verb verb)
 {
+    if(verb == Verb::NONE)
+    {
+        verb = Verb::USE;
+    }
+
     switch(verb)
     {
     case USE:

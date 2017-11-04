@@ -81,6 +81,10 @@ string Object::getType()
 
 void Object::Interact( Verb verb )
 {
+    if(verb == Verb::NONE)
+    {
+        verb = Verb::LOOKAT;
+    }
     July5::GetInstance().SetLastActionText(actionMap_[verb]);
     July5::GetInstance().FireEvent(Event::ActionPerformed);
 }
