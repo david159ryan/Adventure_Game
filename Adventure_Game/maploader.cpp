@@ -36,7 +36,7 @@ void MapLoader::LoadMap(string filename)
             }
             if(read&&line!="{")
             {
-                chunk+=line+",";
+                chunk+=line+"/";
             }
         }
     }
@@ -68,7 +68,7 @@ std::vector<string> MapLoader::Split(string str,char delimiter)
 
 void MapLoader::ProcessChunk(string chunk)
 {
-    std::vector<string> input = Split(chunk,',');
+    std::vector<string> input = Split(chunk,'/');
     std::vector<string> type = Split(input[0],':');
     if(type[TAG]=="type")
     {
@@ -97,36 +97,11 @@ void MapLoader::ProcessChunk(string chunk)
             for(size_t i=1;i<input.size();i++)
             {
                 std::vector<string> line = Split(input[i],':');
-                if(line[TAG]=="name")
-                    o->SetName(line[DESC]);
-                else if(line[TAG]=="push")
-                    o->SetPushString(line[DESC]);
-                else if(line[TAG]=="pull")
-                    o->SetPullString(line[DESC]);
-                else if(line[TAG]=="pickup")
-                    o->SetPickUpString(line[DESC]);
-                else if(line[TAG]=="usetarget")
-                    o->SetUseTargetString(line[DESC]);
-                else if(line[TAG]=="use")
-                    o->SetUseString(line[DESC]);
-                else if(line[TAG]=="open")
-                    o->SetOpenString(line[DESC]);
-                else if(line[TAG]=="opentarget")
-                    o->SetOpenTargetString(line[DESC]);
-                else if(line[TAG]=="close")
-                    o->SetCloseString(line[DESC]);
-                else if(line[TAG]=="lick")
-                    o->SetLickString(line[DESC]);
-                else if(line[TAG]=="lookat")
-                    o->SetLookAtString(line[DESC]);
-                else if(line[TAG]=="talk")
-                    o->SetTalkToString(line[DESC]);
-                else if(line[TAG]=="x")
-                    o->SetX(stoi(line[DESC]));
-                else if(line[TAG]=="y")
-                    o->SetY(stoi(line[DESC]));
-                else if(line[TAG]=="tex")
-                    o->SetTexture(line[DESC]);
+                if(line[TAG]=="action")
+                {
+                    std::vector<string> out = Split(line[DESC],';');
+                    //o->yourmethod(out[0],out[1]);
+                }
                 else if(line[TAG]=="location")
                     ((Door*)o)->SetLocation(line[DESC]);
                 else if(line[TAG]=="key")
