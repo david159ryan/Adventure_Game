@@ -45,3 +45,17 @@ string Door::Use()
         return "You walk through the door";
     }
 }
+
+void Door::SetLocation(string location)
+{
+    locationName_ = location;
+}
+
+void Door::SetKey(string key)
+{
+    keyName_ = key;
+    locked_ = true;
+}
+
+
+

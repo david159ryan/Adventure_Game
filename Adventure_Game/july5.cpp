@@ -24,6 +24,11 @@ Location *July5::GetCurrentLocation()
     return locationManager.GetCurrentLocation();
 }
 
+void July5::AddLocation(Location * location)
+{
+    locationManager.AddLocation(location);
+}
+
 void July5::SetLastActionText(string text)
 {
     lastActionText_ = text;
@@ -47,6 +52,9 @@ void July5::SetVerb(Verb verb)
 
 void July5::Start()
 {
+    MapLoader mp;
+    mp.LoadMap("../Adventure_Game/map/map.txt");
+    /*
     Location * newLocation = new Location("kitchen");
     newLocation->AddObject(new Door("door", "hallway"));
     locationManager.AddLocation(newLocation);
@@ -55,5 +63,6 @@ void July5::Start()
     newLocation2->AddObject(new Door("door", "kitchen"));
     locationManager.AddLocation(newLocation2);
     GoToLocation(newLocation->GetName());
+    */
 }
 
