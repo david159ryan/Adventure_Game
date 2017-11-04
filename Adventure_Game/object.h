@@ -23,8 +23,8 @@ public:
 
     string getType();
     void setType(string type);
-    virtual string Interact(Verb verb);
-    virtual string Interact(Verb verb, Object * target);
+    virtual void Interact(Verb verb);
+    virtual void Interact(Verb verb, Object * target);
 
 private:
     map<Verb, string> actionMap_;

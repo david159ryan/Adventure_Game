@@ -1,6 +1,5 @@
 #include "object.h"
-#include <stdio.h>
-#include <iostream>
+#include "july5.h"
 
 using namespace std;
 
@@ -20,6 +19,11 @@ Object::Object(string name)
         { OPEN , "It won't open." },
         { OPENTARGET , "It won't open the ." }
     };
+}
+
+string Object::GetName()
+{
+    return name_;
 }
 
 int Object::GetX()
@@ -75,12 +79,14 @@ string Object::getType()
     return type_;
 }
 
-string Object::Interact( Verb verb )
+void Object::Interact( Verb verb )
 {
-    return actionMap_[verb];
+    July5::GetInstance().SetLastActionText(actionMap_[verb]);
+    July5::GetInstance().FireEvent(Event::ActionPerformed);
 }
 
-string Object::Interact(Verb verb, Object *target)
+void Object::Interact(Verb verb, Object *target)
 {
-    return actionMap_[verb] + target->GetName();
+    July5::GetInstance().SetLastActionText(actionMap_[verb] + target->GetName());
+    July5::GetInstance().FireEvent(Event::ActionPerformed);
 }

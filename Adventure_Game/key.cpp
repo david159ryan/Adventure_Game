@@ -1,25 +1,28 @@
 #include "key.h"
 #include "door.h"
+#include "july5.h"
 
 Key::Key(string name) : InventoryObject(name)
 {
 }
 
-string Key::Interact(Verb verb, Object * target)
+void Key::Interact(Verb verb, Object * target)
 {
     Door* door = dynamic_cast<Door*>(target);
+    string text;
     if (door) {
         if(door->Unlock(this))
         {
-            return "The " + this->GetName() + " unlocks the " + door->GetName() + ".";
+            text = "The " + this->GetName() + " unlocks the " + door->GetName() + ".";
         }
         else
         {
-            return "The " + this->GetName() + " doesn't work on the " + door->GetName() + ".";
+            text = "The " + this->GetName() + " doesn't work on the " + door->GetName() + ".";
         }
     }
     else
     {
-        return InventoryObject::Interact(verb, target);
+        InventoryObject::Interact(verb, target);
     }
+    July5::GetInstance().SetLastActionText(text);
 }

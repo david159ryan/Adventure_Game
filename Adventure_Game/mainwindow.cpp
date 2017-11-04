@@ -95,3 +95,24 @@ void MainWindow::on_closeButton_clicked()
 {
     July5::GetInstance().SetVerb(Verb::CLOSE);
 }
+
+void MainWindow::on_lookAtButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::LOOKAT);
+
+}
+
+void MainWindow::on_talkToButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::TALKTO);
+}
+
+void MainWindow::on_pickUpButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::PICKUP);
+}
+
+void MainWindow::on_pullButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::PULL);
+}

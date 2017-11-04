@@ -6,7 +6,7 @@ class Key : public InventoryObject
 {
 public:
     Key(string name);
-    string Interact(Verb verb, Object *target) override;
+    void Interact(Verb verb, Object *target) override;
 };
 
 #endif // KEY_H

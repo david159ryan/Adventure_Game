@@ -19,6 +19,11 @@ void July5::RegisterListener(Event event, Updateable *updateable)
     eventManager.RegisterListener(event, updateable);
 }
 
+void July5::FireEvent(Event event)
+{
+    eventManager.FireEvent(event);
+}
+
 Location *July5::GetCurrentLocation()
 {
     return locationManager.GetCurrentLocation();

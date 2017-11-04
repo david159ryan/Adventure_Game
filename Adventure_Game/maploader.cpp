@@ -100,7 +100,7 @@ void MapLoader::ProcessChunk(string chunk)
                 if(line[TAG]=="action")
                 {
                     std::vector<string> out = Split(line[DESC],';');
-                    //o->yourmethod(out[0],out[1]);
+                    o->setActionText(out[0],out[1]);
                 }
                 else if(line[TAG]=="name")
                     o->SetName(line[DESC]);

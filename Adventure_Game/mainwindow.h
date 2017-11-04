@@ -47,6 +47,14 @@ private slots:
 
     void on_closeButton_clicked();
 
+    void on_lookAtButton_clicked();
+
+    void on_talkToButton_clicked();
+
+    void on_pickUpButton_clicked();
+
+    void on_pullButton_clicked();
+
 private:
     QGraphicsScene *scene;
     QMediaPlayer * player;
