@@ -102,6 +102,15 @@ void MapLoader::ProcessChunk(string chunk)
                     std::vector<string> out = Split(line[DESC],';');
                     //o->yourmethod(out[0],out[1]);
                 }
+                else if(line[TAG]=="name")
+                    o->SetName(line[DESC]);
+                else if(line[TAG]=="x")
+                    o->SetX(stoi(line[DESC]));
+                else if(line[TAG]=="y")
+                    o->SetY(stoi(line[DESC]));
+                else if(line[TAG]=="tex")
+                    o->SetTexture(line[DESC]);
+
                 else if(line[TAG]=="location")
                     ((Door*)o)->SetLocation(line[DESC]);
                 else if(line[TAG]=="key")
