@@ -9,8 +9,8 @@
 #include <QMediaPlaylist>
 #include <QFile>
 #include <QToolButton>
-#include "object.h"
-#include "verbmanager.h"
+#include <QFrame>
+#include "july5.h"
 
 using namespace std;
 
@@ -30,6 +30,7 @@ public:
     Ui::MainWindow *ui;
     QGraphicsView * GetGraphicsView();
     void PlayMusic(string name);
+    void SetActionLabelText(string text);
 //    void ConnectButton(QToolButton * b);
 
 private slots:
@@ -38,6 +39,10 @@ private slots:
     void on_lickButton_clicked();
 
     void on_useButton_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_closeButton_clicked();
 
 private:
     QGraphicsScene *scene;

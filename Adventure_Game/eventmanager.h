@@ -1,23 +1,23 @@
 #ifndef EVENTMANAGER_H
 #define EVENTMANAGER_H
 #include <map>
-#include <string>
 #include <iterator>
 #include <list>
+#include <iostream>
 #include "updateable.h"
+#include "event.h"
 
 using namespace std;
 
 class EventManager
 {
 private:
-    map<string, list<Updateable *> > events;
+    map<Event, list<Updateable *> > events;
+
 public:
     EventManager();
-    void RegisterListener(string eventName, Updateable * updateable);
-    void FireEvent(string eventName);
+    void RegisterListener(Event event, Updateable * updateable);
+    void FireEvent(Event event);
 };
-
-extern EventManager eventManager;
 
 #endif // EVENTMANAGER_H

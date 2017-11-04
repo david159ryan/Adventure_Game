@@ -138,54 +138,45 @@ string Object::getType()
     return type_;
 }
 
-void Object::ConnectButton(QToolButton *b)
-{
-    QObject::connect(b, SIGNAL(clicked()), this, SLOT(Interact()));
-    b->setToolTip(QString::fromStdString(name_));
-    b->setToolTipDuration(0);
-    //b->setAttribute(Qt::WA_Hover);
-}
 
-void Object::Interact()
+string Object::Interact( Verb verb )
 {
-    Verb verb = VerbManager::getInstance().CurrentVerb();
-    cout << verb << endl;
     switch (verb) {
     case PUSH:
-        this->Push();
+        return this->Push();
         break;
     case PULL:
-        this->Pull();
+        return this->Pull();
         break;
     case PICKUP:
-        this->PickUp();
+        return this->PickUp();
         break;
     case USE:
-        this->Use();
+        return this->Use();
         break;
     case USETARGET:
-        this->Use();
+        return this->Use();
         break;
     case OPEN:
-        this->Open();
+        return this->Open();
         break;
     case OPENTARGET:
-        this->Open();
+        return this->Open();
         break;
     case CLOSE:
-        this->Close();
+        return this->Close();
         break;
     case LICK:
-        this->Lick();
+        return this->Lick();
         break;
     case LOOKAT:
-        this->LookAt();
+        return this->LookAt();
         break;
     case TALKTO:
-        this->TalkTo();
+        return this->TalkTo();
         break;
     default:
-        this->Use();
+        return this->Use();
         break;
     }
 }

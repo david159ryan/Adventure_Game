@@ -14,7 +14,6 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     object.cpp \
-    cliframe.cpp \
     july5.cpp \
     consoleutilities.cpp \
     location.cpp \
@@ -27,11 +26,11 @@ SOURCES += main.cpp\
     locationui.cpp \
     updateable.cpp \
     mainwindow.cpp \
-    verbmanager.cpp
+    verbmanager.cpp \
+    objectbutton.cpp
 
 HEADERS  += \
     object.h \
-    cliframe.h \
     july5.h \
     consoleutilities.h \
     location.h \
@@ -45,10 +44,11 @@ HEADERS  += \
     locationui.h \
     mainwindow.h \
     verb.h \
-    verbmanager.h
+    verbmanager.h \
+    objectbutton.h \
+    event.h
 
 FORMS    += \
-    cliframe.ui \
     mainwindow.ui
 
 QMAKE_CXXFLAGS += -std=c++11

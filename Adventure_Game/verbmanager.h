@@ -7,19 +7,13 @@
 class VerbManager
 {
     public:
-        static VerbManager& getInstance()
-        {
-            static VerbManager instance;
-            return instance;
-        }
+        VerbManager();
 
         Verb CurrentVerb();
         void SetVerb(Verb verb);
     private:
         Verb verb_;
-        VerbManager() {}
-        VerbManager(VerbManager const&);    // Don't Implement.
-        void operator=(VerbManager const&); // Don't implement
+
  };
 
 #endif // VERBMANAGER_H

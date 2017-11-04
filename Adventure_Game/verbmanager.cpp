@@ -1,5 +1,10 @@
 #include "verbmanager.h"
 
+VerbManager::VerbManager()
+{
+
+}
+
 Verb VerbManager::CurrentVerb()
 {
     return verb_;

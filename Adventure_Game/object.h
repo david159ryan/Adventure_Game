@@ -1,21 +1,14 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
-#include <QToolButton>
-#include <QApplication>
 #include <string>
 #include "verb.h"
-#include "verbmanager.h"
 
 using namespace std;
 
-class Object: public QObject
+class Object
 {
-    Q_OBJECT
-
 public:
-    Object(QObject *parent) : QObject(parent)
-    {}
     Object(string name);
     string GetName();
     void SetName(string name);
@@ -45,10 +38,7 @@ public:
 
     string getType();
     void setType(string type);
-    void ConnectButton(QToolButton * b);
-
-public slots:
-    void Interact();
+    string Interact(Verb verb);
 
 private:
     string name_;

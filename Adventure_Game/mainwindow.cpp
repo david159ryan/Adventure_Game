@@ -38,8 +38,13 @@ void MainWindow::PlayMusic(string name)
     player->play();
 }
 
+void MainWindow::SetActionLabelText(string text)
+{
+    ui->actionLabel->setText(QString::fromStdString(text));
+}
+
 void MainWindow::showEvent(QShowEvent *) {
-    ui->graphicsView->fitInView(scene->sceneRect(),Qt::KeepAspectRatio);
+    //ui->graphicsView->fitInView(scene->sceneRect(),Qt::KeepAspectRatio);
 }
 
 QGraphicsView * MainWindow::GetGraphicsView()
@@ -56,15 +61,25 @@ QGraphicsView * MainWindow::GetGraphicsView()
 
 void MainWindow::on_openButton_clicked()
 {
-    VerbManager::getInstance().SetVerb(Verb::OPEN);
+    July5::GetInstance().SetVerb(Verb::OPEN);
 }
 
 void MainWindow::on_lickButton_clicked()
 {
-    VerbManager::getInstance().SetVerb(Verb::LICK);
+    July5::GetInstance().SetVerb(Verb::LICK);
 }
 
 void MainWindow::on_useButton_clicked()
 {
-    VerbManager::getInstance().SetVerb(Verb::USE);
+    July5::GetInstance().SetVerb(Verb::USE);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::PUSH);
+}
+
+void MainWindow::on_closeButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::CLOSE);
 }

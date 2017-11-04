@@ -2,26 +2,58 @@
 
 July5::July5()
 {
-      // Setting up locations
+    eventManager = EventManager();
+    verbManager = VerbManager();
 
+    locationManager = LocationManager();
+}
+
+void July5::GoToLocation(string locationName)
+{
+    locationManager.GoToLocation(locationName);
+    eventManager.FireEvent(Event::LocationChanged);
+}
+
+void July5::RegisterListener(Event event, Updateable *updateable)
+{
+    eventManager.RegisterListener(event, updateable);
+}
+
+Location *July5::GetCurrentLocation()
+{
+    return locationManager.GetCurrentLocation();
+}
+
+void July5::SetLastActionText(string text)
+{
+    lastActionText_ = text;
+    eventManager.FireEvent(Event::ActionPerformed);
+}
+
+string July5::GetLastActionText()
+{
+    return lastActionText_;
+}
+
+Verb July5::CurrentVerb()
+{
+    return verbManager.CurrentVerb();
+}
+
+void July5::SetVerb(Verb verb)
+{
+    return verbManager.SetVerb(verb);
+}
+
+void July5::Start()
+{
     Location * newLocation = new Location("kitchen");
-    // use newLocation to add objects to the location
     newLocation->AddObject(new Door("door", "hallway"));
-    locationManager.AddLocation(*newLocation);
+    locationManager.AddLocation(newLocation);
 
     Location * newLocation2 = new Location("hallway");
     newLocation2->AddObject(new Door("door", "kitchen"));
-    locationManager.AddLocation(*newLocation2);
-
-    locationManager.GoToLocation("hallway");
+    locationManager.AddLocation(newLocation2);
+    GoToLocation(newLocation->GetName());
 }
 
-string July5::ProcessCommand(string command)
-{
-    string result = "";
-        if(command=="open door")
-        {
-            result = locationManager.GetCurrentLocation()->GetObject("door")->Use();
-        }
-    return result;
-}
