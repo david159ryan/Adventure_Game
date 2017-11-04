@@ -44,7 +44,7 @@ void MainWindow::SetActionLabelText(string text)
 }
 
 void MainWindow::showEvent(QShowEvent *) {
-    //ui->graphicsView->fitInView(scene->sceneRect(),Qt::KeepAspectRatio);
+    ui->graphicsView->fitInView(scene->sceneRect(),Qt::KeepAspectRatio);
 }
 
 QGraphicsView * MainWindow::GetGraphicsView()

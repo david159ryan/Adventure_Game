@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     updateable.cpp \
     mainwindow.cpp \
     verbmanager.cpp \
-    objectbutton.cpp
+    objectbutton.cpp \
+    maploader.cpp
 
 HEADERS  += \
     object.h \
@@ -46,7 +47,8 @@ HEADERS  += \
     verb.h \
     verbmanager.h \
     objectbutton.h \
-    event.h
+    event.h \
+    maploader.h
 
 FORMS    += \
     mainwindow.ui
@@ -55,3 +57,6 @@ QMAKE_CXXFLAGS += -std=c++11
 
 RESOURCES += \
     gfx.qrc
+
+DISTFILES += \
+    map/map.txt

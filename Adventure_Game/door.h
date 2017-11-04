@@ -11,6 +11,8 @@ public:
     string GetLocationName();
     bool Unlock(Key * key);
     string Use();
+    void SetLocation(string location);
+    void SetKey(string key);
 
 private:
     string keyName_;     //If != 0 then keyID is the ID of the key that unlocks this door
