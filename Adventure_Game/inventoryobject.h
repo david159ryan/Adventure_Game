@@ -8,7 +8,7 @@ class InventoryObject : public Object
 {
 public:
     InventoryObject(std::string name);
-    std::string PickUp() override;
+    std::string PickUp();
 };
 
 #endif // INVENTORYOBJECT_H

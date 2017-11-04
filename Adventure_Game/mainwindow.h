@@ -7,7 +7,10 @@
 #include <QDesktopWidget>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
+#include <QPropertyAnimation>
+#include <QGraphicsOpacityEffect>
 #include <QFile>
+#include <QTimer>
 #include <QToolButton>
 #include <QFrame>
 #include "july5.h"
@@ -43,6 +46,14 @@ private slots:
     void on_pushButton_clicked();
 
     void on_closeButton_clicked();
+
+    void on_lookAtButton_clicked();
+
+    void on_talkToButton_clicked();
+
+    void on_pickUpButton_clicked();
+
+    void on_pullButton_clicked();
 
 private:
     QGraphicsScene *scene;

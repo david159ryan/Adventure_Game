@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->centralwidget->setFixedHeight(rec.height());
     ui->centralwidget->setFixedWidth(rec.width());
     ui->graphicsView->setBackgroundBrush(Qt::black);
+    ui->actionLabel->setVisible(false);
     setCentralWidget(ui->centralwidget);
     player = new QMediaPlayer;
 }
@@ -41,6 +42,17 @@ void MainWindow::PlayMusic(string name)
 void MainWindow::SetActionLabelText(string text)
 {
     ui->actionLabel->setText(QString::fromStdString(text));
+    ui->actionLabel->setVisible(true);
+
+    QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
+    eff->setOpacity(1);
+    ui->actionLabel->setGraphicsEffect(eff);
+    QPropertyAnimation *a = new QPropertyAnimation(eff,"opacity");
+    a->setDuration(2000);
+    a->setStartValue(1);
+    a->setEndValue(0);
+    a->setEasingCurve(QEasingCurve::Linear);
+    QTimer::singleShot(3000, a, SLOT(start()));
 }
 
 void MainWindow::showEvent(QShowEvent *) {
@@ -82,4 +94,25 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_closeButton_clicked()
 {
     July5::GetInstance().SetVerb(Verb::CLOSE);
+}
+
+void MainWindow::on_lookAtButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::LOOKAT);
+
+}
+
+void MainWindow::on_talkToButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::TALKTO);
+}
+
+void MainWindow::on_pickUpButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::PICKUP);
+}
+
+void MainWindow::on_pullButton_clicked()
+{
+    July5::GetInstance().SetVerb(Verb::PULL);
 }
