@@ -50,5 +50,17 @@
         <file>gfx/interactables/vent.png</file>
         <file>gfx/interactables/window.png</file>
         <file>gfx/interactables/wine.png</file>
+        <file>gfx/interactables/alivePlant.png</file>
+        <file>gfx/interactables/barrel.png</file>
+        <file>gfx/interactables/catBlackPicture.png</file>
+        <file>gfx/interactables/catFullPicture.png</file>
+        <file>gfx/interactables/deadPlant.png</file>
+        <file>gfx/interactables/fishPicture.png</file>
+        <file>gfx/interactables/nightWindow.png</file>
+        <file>gfx/interactables/redFlowers.png</file>
+        <file>gfx/interactables/scaredCatPicture.png</file>
+        <file>gfx/interactables/vanityDrawers.png</file>
+        <file>gfx/interactables/westDoor.png</file>
+        <file>gfx/backgrounds/backhallway.png</file>
     </qresource>
 </RCC>
