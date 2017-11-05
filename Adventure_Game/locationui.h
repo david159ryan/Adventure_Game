@@ -9,6 +9,7 @@
 #include <map>
 #include <QToolButton>
 #include "objectbutton.h"
+#include "imageutilities.h"
 
 using namespace std;
 

@@ -7,17 +7,22 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    July5::GetInstance().RegisterListener(Event::InventoryChanged, this);
+
     ui->setupUi(this);
     ui->graphicsView->setFrameStyle(QFrame::NoFrame);
     QRect rec = QApplication::desktop()->screenGeometry();
     ui->centralwidget->setFixedHeight(rec.height());
     ui->centralwidget->setFixedWidth(rec.width());
     ui->graphicsView->setBackgroundBrush(Qt::black);
+    ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
+    ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
+    ui->actionLabel->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    ui->actionLabel->setWindowOpacity(0);
     ui->actionLabel->setVisible(false);
     setCentralWidget(ui->centralwidget);
     player = new QMediaPlayer;
     PlayMusic("kitchen");
-
 }
 
 MainWindow::~MainWindow()
@@ -27,9 +32,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::LoadScene(QGraphicsScene * scene)
 {
+
     this->scene = scene;
     ui->graphicsView->setScene(scene);
-//    ui->graphicsView->fitInView(scene->sceneRect(),Qt::KeepAspectRatio);
 }
 
 void MainWindow::PlayMusic(string name)
@@ -47,15 +52,24 @@ void MainWindow::SetActionLabelText(string text)
     ui->actionLabel->setVisible(true);
 
     QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
-    eff->setOpacity(1);
+    eff->setProperty("opacity", 0);
     ui->actionLabel->setGraphicsEffect(eff);
     QPropertyAnimation *a = new QPropertyAnimation(eff,"opacity");
-    a->setDuration(2000);
-    a->setStartValue(1);
-    a->setEndValue(0);
+    a->setDuration(1000);
+    a->setStartValue(0);
+    a->setEndValue(1);
     a->setEasingCurve(QEasingCurve::Linear);
-    QTimer::singleShot(3000, a, SLOT(start()));
+    a->start();
+
+    QPropertyAnimation *b = new QPropertyAnimation(eff, "opacity");
+    b->setDuration(2000);
+    b->setStartValue(1);
+    b->setEndValue(0);
+    b->setEasingCurve(QEasingCurve::Linear);
+    QTimer::singleShot(4000, b, SLOT(start()));
+
 }
+
 
 void MainWindow::showEvent(QShowEvent *) {
     ui->graphicsView->fitInView(scene->sceneRect(),Qt::KeepAspectRatio);
@@ -116,4 +130,24 @@ void MainWindow::on_pickUpButton_clicked()
 void MainWindow::on_pullButton_clicked()
 {
     July5::GetInstance().SetVerb(Verb::PULL);
+}
+
+void MainWindow::Update(Event event)
+{
+    if(event == Event::InventoryChanged)
+    {
+        list<InventoryObject *> inv = July5::GetInstance().GetItems();
+        int count = 1;
+        list<InventoryObject*>::iterator it;
+        for(it = inv.begin(); it != inv.end() ; ++it, ++count)
+        {
+            string s = "inventory" + to_string(count);
+            cout << s << endl;
+            QToolButton * qt = ui->playerInventory->findChild<QToolButton *>(QString::fromStdString(s));
+            QPixmap pixmap = QPixmap::fromImage(ImageUtilities::GetObjectImageString((*it)->GetTexture()));
+            QIcon icon(pixmap);
+            qt->setIcon(QIcon(pixmap));
+            qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
+        }
+    }
 }

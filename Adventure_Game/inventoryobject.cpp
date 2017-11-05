@@ -1,4 +1,5 @@
 #include "inventoryobject.h"
+#include "july5.h"
 
 InventoryObject::InventoryObject(string name) :
     Object(name)
@@ -6,7 +7,22 @@ InventoryObject::InventoryObject(string name) :
 
 }
 
-string InventoryObject::PickUp()
+void InventoryObject::Interact(Verb verb)
 {
-    return "You pick up the " + this->GetName() + ".";
+    switch(verb)
+    {
+    case PICKUP:
+        July5::GetInstance().AddToInventory(this);
+        break;
+    default:
+        Object::Interact(verb);
+        break;
+    }
 }
+
+void InventoryObject::Interact(Verb verb, Object * target)
+{
+    Object::Interact(verb, target);
+}
+
+

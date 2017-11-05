@@ -53,7 +53,7 @@ tex:musicSheet
 }
 
 {
-type:object
+type:inventoryobject
 name:Broken Fingers
 x:898
 y:338
@@ -155,14 +155,6 @@ x:486
 y:12
 tex:catPicture
 }
-
-
-
-
-
-
-
-
 
 {
 type:location

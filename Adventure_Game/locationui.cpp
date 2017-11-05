@@ -37,7 +37,7 @@ void LocationUI::LocationChanged()
     {
         // set up a scene.. add background image
         scenes[name] = new QGraphicsScene();
-        QImage qimage = GetBackgroundString(name);
+        QImage qimage = ImageUtilities::GetBackgroundString(name);
         QPixmap image = QPixmap::fromImage(qimage);
         QGraphicsPixmapItem* pPixmap = scenes[name]->addPixmap(image);
         window->GetGraphicsView()->fitInView(pPixmap);
@@ -51,7 +51,7 @@ void LocationUI::LocationChanged()
             Object * o = newLocation->GetObjectAt(i);
             cout << "making button " << o->GetName() << endl;
             ObjectButton * b = new ObjectButton(o);
-            QPixmap pixmap = QPixmap::fromImage(GetObjectImageString(o->GetTexture()));
+            QPixmap pixmap = QPixmap::fromImage(ImageUtilities::GetObjectImageString(o->GetTexture()));
             QIcon ButtonIcon(pixmap);
             b->setIcon(ButtonIcon);
             b->setIconSize(pixmap.rect().size());
@@ -68,20 +68,4 @@ void LocationUI::LocationChanged()
 void LocationUI::ActionPerformed()
 {
     window->SetActionLabelText(July5::GetInstance().GetLastActionText());
-}
-
-QImage GetBackgroundString(string name)
-{
-    string imageName = ":/gfx/backgrounds/" + name + ".png";
-    QString qImageString = QString::fromLocal8Bit(imageName.c_str());
-    QImage image(qImageString);
-    return image;
-}
-
-QImage GetObjectImageString(string name)
-{
-    string imageName = ":/gfx/interactables/" + name + ".png";
-    QString qImageString = QString::fromLocal8Bit(imageName.c_str());
-    QImage image(qImageString);
-    return image;
 }

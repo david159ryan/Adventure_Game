@@ -1,10 +1,10 @@
 #include "july5.h"
+#include "maploader.h"
 
 July5::July5()
 {
     eventManager = EventManager();
     verbManager = VerbManager();
-
     locationManager = LocationManager();
 }
 
@@ -52,6 +52,17 @@ Verb July5::CurrentVerb()
 void July5::SetVerb(Verb verb)
 {
     return verbManager.SetVerb(verb);
+}
+
+void July5::AddToInventory(InventoryObject *o)
+{
+    playerInventory.AddItem(o);
+    FireEvent(InventoryChanged);
+}
+
+list<InventoryObject *> July5::GetItems()
+{
+    return playerInventory.GetItems();
 }
 
 void July5::Start()

@@ -13,7 +13,9 @@
 #include <QTimer>
 #include <QToolButton>
 #include <QFrame>
+#include <QThread>
 #include "july5.h"
+#include "imageutilities.h"
 
 using namespace std;
 
@@ -21,7 +23,7 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, Updateable
 {
     Q_OBJECT
 
@@ -59,6 +61,11 @@ private:
     QGraphicsScene *scene;
     QMediaPlayer * player;
     QMediaPlaylist * playlist;
+
+
+    // Updateable interface
+public:
+    void Update(Event event);
 };
 
 #endif // MAINWINDOW_H

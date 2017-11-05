@@ -7,7 +7,10 @@ Inventory::Inventory()
 
 void Inventory::AddItem(InventoryObject * o)
 {
-    items_.push_back(o);
+    if(items_.size() < 10)
+    {
+        items_.push_back(o);
+    }
 }
 
 void Inventory::RemoveItem(InventoryObject * o)
@@ -22,6 +25,11 @@ InventoryObject * Inventory::GetItem(string item)
         if((*it)->GetName()==item)
             return (*it);
     return nullptr;
+}
+
+list<InventoryObject *> Inventory::GetItems()
+{
+    return items_;
 }
 
 string Inventory::ToString()
