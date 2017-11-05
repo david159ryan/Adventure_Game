@@ -345,7 +345,7 @@ tex:window
 {
 type:door
 name:smallDoor
-location:outside
+location:garden
 x:320
 y:40
 tex:smallDoor
@@ -713,14 +713,17 @@ action:close;I can't close him
 
 
 
-
-
 {
-type:object
-name:basementStairs
+type:location
+name:basement
+}
+{
+type:door
+location:fronthallway
+name:basementStairs1
 x:140
 y:0
-tex:basementStairs
+tex:basementStairs1
 }
 {
 type:object
@@ -870,7 +873,10 @@ tex:monsterPlate
 
 
 
-
+{
+type:location
+name:garden
+}
 {
 type:object
 name:kitchenDoor
@@ -991,7 +997,10 @@ tex:branchLamps
 
 
 
-
+{
+type:location
+name:maze1
+}
 {
 type:object
 name:southRoad
@@ -1063,7 +1072,10 @@ tex:symbol
 
 
 
-
+{
+type:location
+name:maze2
+}
 {
 type:object
 name:southRoad
@@ -1134,7 +1146,10 @@ tex:symbol
 
 
 
-
+{
+type:location
+name:maze3
+}
 {
 type:object
 name:southRoad
