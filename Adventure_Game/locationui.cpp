@@ -63,7 +63,6 @@ void LocationUI::LocationChanged()
     QGraphicsScene * scene = scenes[name];
     // Both need to fade
     window->LoadScene(scene);
-    window->PlayMusic(name);
 }
 
 void LocationUI::ActionPerformed()

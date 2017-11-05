@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->actionLabel->setVisible(false);
     setCentralWidget(ui->centralwidget);
     player = new QMediaPlayer;
+    PlayMusic("kitchen");
+
 }
 
 MainWindow::~MainWindow()
