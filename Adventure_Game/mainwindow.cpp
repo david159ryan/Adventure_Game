@@ -101,7 +101,6 @@ void MainWindow::on_closeButton_clicked()
 void MainWindow::on_lookAtButton_clicked()
 {
     July5::GetInstance().SetVerb(Verb::LOOKAT);
-
 }
 
 void MainWindow::on_talkToButton_clicked()
