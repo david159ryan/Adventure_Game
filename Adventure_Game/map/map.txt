@@ -10,6 +10,12 @@ location:kitchen
 x:62
 y:14
 tex:door
+action:lookat;It's an old heavy wooden door
+action:lick;Tastes like old mahogany
+action:pickup;I can't pick up a door
+action:talkto;I don't think it wants to talk
+action:open;This goes to the kitchen
+action:close;It's already closed
 }
 
 {
@@ -18,6 +24,15 @@ name:Grandma's Lamp
 x:510
 y:70
 tex:smallLamp
+action:lookat;It's Grandma's lamp
+action:push;It may fall off
+action:pull;I probably shouldn't do that
+action:lick;Tingly
+action:pickup;I shouldn't mess with Grandma's things
+action:talkto;Hello Lampy
+action:use;Grandma told me not to play with the lights
+action:open;I can't open a lamp
+action:close;I can't close a lamp
 }
 
 {
@@ -26,6 +41,15 @@ name:Small stain
 x:311
 y:253
 tex:stain
+action:lookat;There's stains like this all over the house
+action:push;It's slimy
+action:pull;I shouldn't touch that
+action:lick;Tastes metallic
+action:pickup;I'd need a container
+action:talkto;Where did you come from?
+action:use;I can't use this
+action:open;I can't open this
+action:close;I can't close this
 }
 
 {
@@ -34,6 +58,15 @@ name:Locked Drawers
 x:214
 y:172
 tex:drawers
+action:lookat;Gran always keeps these locked
+action:push;I can't push that
+action:pull;It's locked
+action:lick;Tastes like wood
+action:pickup;I can't pick this up
+action:talkto;Hello drawers!
+action:use;I can't use this
+action:open;It's locked
+action:close;I can't close this
 }
 
 {
@@ -42,6 +75,15 @@ name:Grand Piano
 x:908
 y:100
 tex:piano
+action:lookat;It's Grandpa's grand piano
+action:push;I can't push that
+action:pull;I can't pull that
+action:lick;I can taste notes of varnish and old ebony
+action:pickup;I can't pick this up
+action:talkto;Will you play for me again?
+action:use;*tink tink tink*
+action:open;The keys are made from ivory
+action:close;Those fingers are stopping it from closing
 }
 
 {
@@ -50,6 +92,14 @@ name:Music Sheets
 x:960
 y:176
 tex:musicSheet
+action:lookat;These are music sheets for "Victory Hail Victoria"
+action:push;I can't push that
+action:pull;I can't pull that
+action:lick;It's dry and papery
+action:pickup;I shouldn't take Grandpa's music sheets
+action:use;I can't play the piano
+action:open;Its full of music notes
+action:close;Good bye squiggly lines
 }
 
 {
@@ -58,6 +108,15 @@ name:Broken Fingers
 x:898
 y:338
 tex:fingers
+action:lookat;These fingers weren't here yesterday
+action:push;I don't want to push that
+action:pull;I don't want to pull that
+action:lick;No thanks
+action:pickup;I don't want those
+action:talkto;Were you the ones playing the piano earlier?
+action:use;I can't use these
+action:open;I can't do that
+action:close;I can't do that
 }
 
 {
@@ -66,6 +125,15 @@ name:Short Stool
 x:834
 y:300
 tex:stool
+action:lookat;It's a simple stool
+action:push;It's wobbly
+action:pull;I don't want it to fall
+action:lick;Tastes like wood
+action:pickup;I can't pick this up
+action:talkto;Hello stool
+action:use;Its not very comfortable
+action:open;I can't open this
+action:close;I cant close a stool
 }
 
 {
@@ -74,6 +142,15 @@ name:Grandma's Rocking Chair
 x:628
 y:92
 tex:rockingChair
+action:lookat;It's Grandma's Rocking chair
+action:push;Rock-a-bye baby...
+action:pull;Grandma used to rock me to sleep on this chair
+action:lick;It tastes old
+action:pickup;I can't pick this up
+action:talkto;Hi Rocky
+action:use;It's very comfy
+action:open;I can't open this
+action:close;I can't close this
 }
 
 {
@@ -82,6 +159,15 @@ name:Tall Lamp
 x:780
 y:30
 tex:tallLamp
+action:lookat;It's a very nice lamp
+action:push;I can't push that
+action:pull;I can't pull that
+action:lick;Tingly
+action:pickup;I can't pick this up
+action:talkto;Hi big Lampy!
+action:use;Grandma told me not to mess with the lights
+action:open;I can't open this
+action:close;I can't close this
 }
 
 {
@@ -90,6 +176,15 @@ name:TV
 x:14
 y:236
 tex:tv
+action:lookat;I can see faces in the static
+action:push;I can't push that
+action:pull;I can't pull that
+action:lick;Tingly
+action:pickup;I can't pick this up
+action:talkto;Are you ready to talk again tv?
+action:use;I don't want to watch tv right now
+action:open;I can't open this
+action:close;I can't close this
 }
 
 {
@@ -98,6 +193,15 @@ name:Bust of Grandma
 x:220
 y:30
 tex:statue
+action:lookat;It looks like Grandma
+action:push;I don't want to break it
+action:pull;I don't want to break it
+action:lick;It ... tastes like grandma
+action:pickup;I shouldn't pick this up
+action:talkto;Grandma?
+action:use;I can't use this
+action:open;I can't open this
+action:close;I can't close this
 }
 
 {
@@ -106,6 +210,15 @@ name:Cookie Jar
 x:284
 y:90
 tex:cookieJar
+action:lookat;It still has some cookies in it
+action:push;I shouldn't push that
+action:pull;I might break it
+action:lick;It tastes a little like cookies
+action:pickup;Grandma might punish me
+action:talkto;Can I have some cookies, jar?
+action:use;It has a key in it
+action:open;It has a key in it
+action:close;Bye bye cookies
 }
 
 {
@@ -114,6 +227,15 @@ name:Old History Book
 x:334
 y:116
 tex:blueBook
+action:lookat;It's an old history book
+action:push;I shouldn't push that
+action:pull;I shouldn't touch grandpa's things
+action:lick;It tastes like leather
+action:pickup;I shouldn't steal Grandpa's things
+action:talkto;Hello book!
+action:use;It's written in a different language
+action:open;Theres a picture of a man shouting at a crowd
+action:close;Bye bye mustache man
 }
 
 {
@@ -122,6 +244,15 @@ name:Snowball's first scratch marks
 x:286
 y:18
 tex:clawPicture
+action:lookat;It's a picture of Snowball's first scratch marks
+action:push;I can't reach it
+action:pull;I can't reach it
+action:lick;I can't reach it
+action:pickup;I can't reach it
+action:talkto;Hello picture!
+action:use;I can't reach it
+action:open;I can't reach it
+action:close;I can't reach it
 }
 
 {
@@ -130,6 +261,15 @@ name:Big book of Rituals
 x:272
 y:112
 tex:greenBook
+action:lookat;It's one of Grandpa's books from the war
+action:push;It might fall off
+action:pull;It might fall off
+action:lick;It tastes like leather
+action:pickup;I shouldn't steal Grandpa's things
+action:talkto;Hello?
+action:use;Sometimes it whispers to me...
+action:open;It has pictures of pentagrams and demons
+action:close;Bye bye demons...
 }
 
 {
@@ -138,6 +278,15 @@ name:Troll Doll
 x:410
 y:66
 tex:troll
+action:lookat;It's a troll doll called Me-Me
+action:push;He looks sad...
+action:pull;He likes it when I pull him close...
+action:lick;He tastes like chicken
+action:pickup;Come along, me-me
+action:talkto;Hello Me-Me
+action:use;He protects me from the shadows
+action:open;I can't open him
+action:close;I can't close him
 }
 
 {
@@ -146,6 +295,15 @@ name:Picture of Yarn
 x:352
 y:28
 tex:yarnPicture
+action:lookat;It's a picture of Snowball's favourite yarn ball
+action:push;I can't reach it
+action:pull;I can't reach it
+action:lick;I can't reach it
+action:pickup;I can't reach it
+action:talkto;Hello yarn!
+action:use;I can't reach it
+action:open;I can't reach it
+action:close;I can't reach it
 }
 
 {
@@ -154,6 +312,15 @@ name:Picture of Snowball
 x:486
 y:12
 tex:catPicture
+action:lookat;It's a picture of Snowball
+action:push;I can't reach it
+action:pull;I can't reach it
+action:lick;I can't reach it
+action:pickup;I can't reach it
+action:talkto;Hello Snowball!
+action:use;I can't reach it
+action:open;I can't reach it
+action:close;I can't reach it
 }
 
 {
@@ -170,7 +337,7 @@ tex:window
 {
 type:door
 name:smallDoor
-location:outside
+location:garden
 x:320
 y:40
 tex:smallDoor
@@ -476,7 +643,14 @@ location:backhallway
 x:396
 y:0
 tex:northDoor
+action:lookat;It's an old heavy wooden door
+action:lick;Tastes like old mahogany
+action:pickup;I can't pick up a door
+action:talkto;Hello Door!
+action:open;This goes to the back hallway
+action:close;It's already closed
 }
+
 {
 type:door
 name:basementStairs
@@ -484,14 +658,31 @@ location:basement
 x:462
 y:108
 tex:basementStairs
+action:lookat;That leads to the basement
+action:push;I can't push that
+action:pull;I can't pull that
+action:lick;Tastes like stone
+action:pickup;I cant pick this up
+action:talkto;Hello? Who's there?
+action:open;It leads to the basement
+action:close;I cant close that
 }
+
 {
 type:door
-name:stairs
+name:Stairs
 location:upstairshallway
 x:526
 y:0
 tex:stairs
+action:lookat;It leads upstairs
+action:push;I can't push that
+action:pull;I can't pull that
+action:lick;Tastes like carpet
+action:pickup;I cant pick this up
+action:talkto;Hello? Who's there?
+action:open;It leads upstairs
+action:close;I cant close that
 }
 {
 type:object
@@ -499,4 +690,497 @@ name:gargoyle
 x:386
 y:312
 tex:gargoyle
+action:lookat;It's a gargoyle
+action:push;I can't push him
+action:pull;I can't pull him
+action:lick;It seems to shiver
+action:pickup;It's too heavy
+action:open;I can't open him
+action:close;I can't close him
+}
+
+
+
+
+
+
+
+{
+type:location
+name:basement
+}
+{
+type:door
+location:fronthallway
+name:basementStairs1
+x:140
+y:0
+tex:basementStairs1
+}
+{
+type:object
+name:generator
+x:258
+y:174
+tex:generator
+}
+{
+type:object
+name:cage
+x:872
+y:106
+tex:cage
+}
+{
+type:object
+name:pipe
+x:888
+y:16
+tex:pipe
+}
+{
+type:object
+name:pit
+x:24
+y:444
+tex:pit
+}
+{
+type:object
+name:rug
+x:272
+y:332
+tex:rug
+}
+{
+type:object
+name:anvil
+x:338
+y:260
+tex:anvil
+}
+{
+type:object
+name:crates
+x:622
+y:114
+tex:crates
+}
+{
+type:object
+name:tools
+x:136
+y:120
+tex:tools
+}
+{
+type:object
+name:machine
+x:912
+y:376
+tex:machine
+}
+{
+type:object
+name:wood
+x:784
+y:418
+tex:wood
+}
+{
+type:object
+name:skeleton
+x:608
+y:424
+tex:skeleton
+}
+{
+type:object
+name:coal
+x:52
+y:198
+tex:coal
+}
+{
+type:object
+name:cog
+x:64
+y:22
+tex:cog
+}
+{
+type:object
+name:magma
+x:14
+y:336
+tex:magma
+}
+{
+type:object
+name:pick
+x:508
+y:92
+tex:pick
+}
+{
+type:object
+name:container
+x:560
+y:104
+tex:container
+}
+{
+type:object
+name:kettle
+x:468
+y:144
+tex:kettle
+}
+{
+type:object
+name:barrels
+x:476
+y:392
+tex:barrels
+}
+{
+type:object
+name:boiler
+x:764
+y:0
+tex:boiler
+}
+{
+type:object
+name:monsterPlate
+x:930
+y:236
+tex:monsterPlate
+}
+
+
+
+
+
+
+
+
+{
+type:location
+name:garden
+}
+{
+type:object
+name:kitchenDoor
+x:454
+y:440
+tex:kitchenDoor
+}
+{
+type:object
+name:mazeDoor
+x:496
+y:22
+tex:mazeDoor
+}
+{
+type:object
+name:pumpkins
+x:356
+y:274
+tex:pumpkins
+}
+{
+type:object
+name:stones
+x:924
+y:364
+tex:stones
+}
+{
+type:object
+name:lampost
+x:748
+y:128
+tex:lampost
+}
+{
+type:object
+name:log
+x:768
+y:306
+tex:log
+}
+{
+type:object
+name:sculpture
+x:354
+y:360
+tex:sculpture
+}
+{
+type:object
+name:barrelPlant
+x:530
+y:230
+tex:barrelPlant
+}
+{
+type:object
+name:washingLine
+x:108
+y:104
+tex:washingLine
+}
+{
+type:object
+name:gravestones
+x:820
+y:178
+tex:gravestones
+}
+{
+type:object
+name:leafPile
+x:8
+y:350
+tex:leafPile
+}
+{
+type:object
+name:flower
+x:232
+y:224
+tex:flower
+}
+{
+type:object
+name:leaves
+x:148
+y:216
+tex:leaves
+}
+{
+type:object
+name:well
+x:198
+y:270
+tex:well
+}
+{
+type:object
+name:scarecrow
+x:460
+y:238
+tex:scarecrow
+}
+{
+type:object
+name:branchLamps
+x:30
+y:42
+tex:branchLamps
+}
+
+
+
+
+
+
+
+
+{
+type:location
+name:maze1
+}
+{
+type:object
+name:southRoad
+x:506
+y:428
+tex:southRoad
+}
+{
+type:object
+name:northRoad
+x:600
+y:0
+tex:northRoad
+}
+{
+type:object
+name:eastRoad
+x:1000
+y:302
+tex:eastRoad
+}
+{
+type:object
+name:westRoad
+x:0
+y:244
+tex:westRoad
+}
+{
+type:object
+name:rubble
+x:0
+y:0
+tex:rubble
+}
+{
+type:object
+name:darkTree
+x:248
+y:0
+tex:darkTree
+}
+{
+type:object
+name:coffin
+x:260
+y:426
+tex:coffin
+}
+{
+type:object
+name:yellowPlant
+x:760
+y:208
+tex:yellowPlant
+}
+{
+type:object
+name:symbol
+x:1004
+y:74
+tex:symbol
+}
+
+
+
+
+
+
+
+
+{
+type:location
+name:maze2
+}
+{
+type:object
+name:southRoad
+x:506
+y:428
+tex:southRoad
+}
+{
+type:object
+name:northRoad
+x:600
+y:0
+tex:northRoad
+}
+{
+type:object
+name:eastRoad
+x:1000
+y:302
+tex:eastRoad
+}
+{
+type:object
+name:westRoad
+x:0
+y:244
+tex:westRoad
+}
+{
+type:object
+name:rubble
+x:0
+y:0
+tex:rubble
+}
+{
+type:object
+name:darkTree
+x:248
+y:0
+tex:darkTree
+}
+{
+type:object
+name:coffin
+x:260
+y:426
+tex:coffin
+}
+{
+type:object
+name:yellowPlant
+x:760
+y:208
+tex:yellowPlant
+}
+{
+type:object
+name:symbol
+x:1004
+y:74
+tex:symbol
+}
+
+
+
+
+
+
+
+{
+type:location
+name:maze3
+}
+{
+type:object
+name:southRoad
+x:506
+y:428
+tex:southRoad
+}
+{
+type:object
+name:northRoad
+x:600
+y:0
+tex:northRoad
+}
+{
+type:object
+name:eastRoad
+x:1000
+y:302
+tex:eastRoad
+}
+{
+type:object
+name:westRoad
+x:0
+y:244
+tex:westRoad
+}
+{
+type:object
+name:hoodedStatue
+x:60
+y:18
+tex:hoodedStatue
+}
+{
+type:object
+name:sign
+x:1008
+y:150
+tex:sign
 }
