@@ -137,8 +137,7 @@ void MainWindow::Update(Event event)
     if(event == Event::ItemPickedUp)
     {
         list<InventoryObject *> inv = July5::GetInstance().GetItems();
-        int count = 1;
-        string s = "inventory" + to_string(inv.size());
+        string s = "inventory" + to_string(inv.size() - 1);
         cout << s << endl;
         QToolButton * qt = ui->playerInventory->
                 findChild<QToolButton *>(QString::fromStdString(s));
@@ -150,4 +149,72 @@ void MainWindow::Update(Event event)
 
 
     }
+}
+
+void MainWindow::on_inventory0_clicked()
+{
+    InventoryClicked(0);
+}
+
+void MainWindow::on_inventory1_clicked()
+{
+    InventoryClicked(1);
+}
+
+void MainWindow::on_inventory2_clicked()
+{
+    InventoryClicked(2);
+}
+
+void MainWindow::on_inventory3_clicked()
+{
+    InventoryClicked(3);
+}
+
+void MainWindow::on_inventory4_clicked()
+{
+    InventoryClicked(4);
+}
+
+void MainWindow::on_inventory5_clicked()
+{
+    InventoryClicked(5);
+}
+
+void MainWindow::on_inventory6_clicked()
+{
+    InventoryClicked(6);
+}
+
+void MainWindow::on_inventory7_clicked()
+{
+    InventoryClicked(7);
+}
+
+void MainWindow::on_inventory8_clicked()
+{
+    InventoryClicked(8);
+}
+
+void MainWindow::on_inventory9_clicked()
+{
+    InventoryClicked(9);
+}
+
+void MainWindow::InventoryClicked(int index)
+{
+    Verb current = July5::GetInstance().CurrentVerb();
+    list<InventoryObject*> items = July5::GetInstance().GetItems();
+
+    if(current == PICKUP || index >= items.size())
+    {
+        July5::GetInstance().SetVerb(NONE);
+        return;
+    }
+
+    list<InventoryObject*>::iterator it;
+    int i = 0;
+    for(it = items.begin(); it != items.end() && i < index; ++it, ++i)
+        ;
+    (*it)->Interact(current);
 }

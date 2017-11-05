@@ -100,5 +100,4 @@ void LocationUI::ItemPickedUp()
             }
         }
     }
-
 }
