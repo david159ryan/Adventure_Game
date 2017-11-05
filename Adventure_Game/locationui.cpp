@@ -11,6 +11,8 @@ LocationUI::LocationUI(MainWindow * window) :
     this->window = window;
     July5::GetInstance().RegisterListener(Event::LocationChanged, this);
     July5::GetInstance().RegisterListener(Event::ActionPerformed, this);
+    July5::GetInstance().RegisterListener(Event::ItemPickedUp, this);
+
 }
 
 void LocationUI::Update(Event event)
@@ -22,6 +24,9 @@ void LocationUI::Update(Event event)
         break;
     case Event::LocationChanged:
         LocationChanged();
+        break;
+    case Event::ItemPickedUp:
+        ItemPickedUp();
         break;
     default:
         break;
@@ -68,4 +73,32 @@ void LocationUI::LocationChanged()
 void LocationUI::ActionPerformed()
 {
     window->SetActionLabelText(July5::GetInstance().GetLastActionText());
+}
+
+void LocationUI::ItemPickedUp()
+{
+    Object *o = July5::GetInstance().GetItems().back();
+    QGraphicsScene * current = scenes[July5::GetInstance().GetCurrentLocation()->GetName()];
+    QList<QGraphicsItem*> graphicsItemList = current->items();
+
+    foreach(QGraphicsItem* pGraphicsItem, graphicsItemList)
+    {
+        QGraphicsProxyWidget* pProxy = qgraphicsitem_cast<QGraphicsProxyWidget*>(pGraphicsItem);
+        if(pProxy)
+        {
+            cout << pProxy->widget()->objectName().toStdString() << endl;
+            QToolButton* qt = qobject_cast<QToolButton*>(pProxy->widget());
+            if(qt)
+            {
+                if (qt->objectName().toStdString() == o->GetName())
+                {
+                    current->removeItem(pProxy);
+                    delete qt;
+                    qt = NULL;
+                    pProxy = NULL;
+                }
+            }
+        }
+    }
+
 }

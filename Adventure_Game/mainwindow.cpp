@@ -7,8 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    July5::GetInstance().RegisterListener(Event::InventoryChanged, this);
-
+    July5::GetInstance().RegisterListener(ItemPickedUp, this);
     ui->setupUi(this);
     ui->graphicsView->setFrameStyle(QFrame::NoFrame);
     QRect rec = QApplication::desktop()->screenGeometry();
@@ -134,20 +133,21 @@ void MainWindow::on_pullButton_clicked()
 
 void MainWindow::Update(Event event)
 {
-    if(event == Event::InventoryChanged)
+
+    if(event == Event::ItemPickedUp)
     {
         list<InventoryObject *> inv = July5::GetInstance().GetItems();
         int count = 1;
-        list<InventoryObject*>::iterator it;
-        for(it = inv.begin(); it != inv.end() ; ++it, ++count)
-        {
-            string s = "inventory" + to_string(count);
-            cout << s << endl;
-            QToolButton * qt = ui->playerInventory->findChild<QToolButton *>(QString::fromStdString(s));
-            QPixmap pixmap = QPixmap::fromImage(ImageUtilities::GetObjectImageString((*it)->GetTexture()));
-            QIcon icon(pixmap);
-            qt->setIcon(QIcon(pixmap));
-            qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
-        }
+        string s = "inventory" + to_string(inv.size());
+        cout << s << endl;
+        QToolButton * qt = ui->playerInventory->
+                findChild<QToolButton *>(QString::fromStdString(s));
+        QPixmap pixmap = QPixmap::fromImage(
+                    ImageUtilities::GetObjectImageString(inv.back()->GetTexture()));
+        QIcon icon(pixmap);
+        qt->setIcon(QIcon(pixmap));
+        qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
+
+
     }
 }

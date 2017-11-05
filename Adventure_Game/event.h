@@ -4,7 +4,7 @@
 enum Event {
     LocationChanged,
     ActionPerformed,
-    InventoryChanged
+    ItemPickedUp
 };
 
 #endif // EVENT_H

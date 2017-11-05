@@ -9,6 +9,7 @@
 #include <QMediaPlaylist>
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
+#include <QWidget>
 #include <QFile>
 #include <QTimer>
 #include <QToolButton>

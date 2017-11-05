@@ -57,7 +57,7 @@ void July5::SetVerb(Verb verb)
 void July5::AddToInventory(InventoryObject *o)
 {
     playerInventory.AddItem(o);
-    FireEvent(InventoryChanged);
+    FireEvent(ItemPickedUp);
 }
 
 list<InventoryObject *> July5::GetItems()
@@ -69,15 +69,5 @@ void July5::Start()
 {
     MapLoader mp;
     mp.LoadMap("../Adventure_Game/map/map.txt");
-    /*
-    Location * newLocation = new Location("kitchen");
-    newLocation->AddObject(new Door("door", "hallway"));
-    locationManager.AddLocation(newLocation);
-
-    Location * newLocation2 = new Location("hallway");
-    newLocation2->AddObject(new Door("door", "kitchen"));
-    locationManager.AddLocation(newLocation2);
-    GoToLocation(newLocation->GetName());
-    */
 }
 
