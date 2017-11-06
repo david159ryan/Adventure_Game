@@ -26,7 +26,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->actionLabel->setWindowOpacity(0);
     ui->actionLabel->setVisible(false);
     setCentralWidget(ui->centralwidget);
+
+    playlist = new QMediaPlaylist();
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+
     player = new QMediaPlayer;
+    player->setPlaylist(playlist);
     PlayMusic("kitchen");
 }
 
@@ -74,7 +79,7 @@ void MainWindow::PlayMusic(string name)
     // TODO: Fade previous music out and fade new music in.
     string path = "qrc:/sfx/music/"+name+".mp3";
     QString pathString = QString::fromLocal8Bit(path.c_str());
-    player->setMedia(QUrl(pathString));
+    playlist->addMedia(QUrl(pathString));
     player->play();
 }
 
