@@ -11,6 +11,7 @@ class Object
 {
 public:
     Object(string name);
+    virtual ~Object();
     string GetName();
     void SetName(string name);
     int GetX();

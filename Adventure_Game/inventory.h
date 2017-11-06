@@ -8,15 +8,18 @@ using namespace std;
 class Inventory
 {
 public:
-    Inventory();
+    Inventory(){}
+    Inventory(int maxSize);
     void AddItem(InventoryObject * o);
     void RemoveItem(InventoryObject * o);
     InventoryObject* GetItem(string item);
     list<InventoryObject *> GetItems();
     string ToString();
+    int MaxSize();
 
 private:
     list<InventoryObject *> items_;
+    size_t maxSize_;
 };
 
 

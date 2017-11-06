@@ -16,6 +16,7 @@
 #include <QFrame>
 #include <QThread>
 #include "july5.h"
+#include "event.h"
 #include "imageutilities.h"
 
 using namespace std;
@@ -85,6 +86,8 @@ private:
     QMediaPlayer * player;
     QMediaPlaylist * playlist;
     void InventoryClicked(int index);
+    void ItemPickedUp();
+    void ItemRemoved();
 
     // Updateable interface
 public:
