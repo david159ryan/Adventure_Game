@@ -6,6 +6,7 @@ using namespace std;
 Object::Object(string name)
 {
     name_ = name;
+    sound_ = "";
     actionMap_ = {
         { PUSH , "I can't push that." },
         { PULL , "Granny wouldn't want me to pull that." },
@@ -41,6 +42,17 @@ string Object::GetTexture()
     return texture_;
 }
 
+string Object::GetSound()
+{
+    if(sound_.empty())
+    {
+        return "whisper" + to_string(rand() % 7 + 1);
+    }else
+    {
+        return sound_;
+    }
+}
+
 void Object::setActionText(string action, string text)
 {
     map<string, Verb>::const_iterator it = VerbMap.find(action);
@@ -69,6 +81,11 @@ void Object::SetTexture(string tex)
     texture_=tex;
 }
 
+void Object::SetSound(string sound)
+{
+    sound_ = sound;
+}
+
 void Object::setType(string type)
 {
     type_ = type;
@@ -86,6 +103,7 @@ void Object::Interact( Verb verb )
         verb = Verb::LOOKAT;
     }
     July5::GetInstance().SetLastActionText(actionMap_[verb]);
+    July5::GetInstance().PlayOneShot(this->GetSound());
     July5::GetInstance().FireEvent(Event::ActionPerformed);
 }
 

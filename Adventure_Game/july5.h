@@ -4,6 +4,7 @@
 #include "string"
 
 #include "locationmanager.h"
+#include "audiomanager.h"
 #include "verbmanager.h"
 #include "verb.h"
 #include "eventmanager.h"
@@ -33,6 +34,7 @@ public:
     void AddToInventory(InventoryObject *o);
     list<InventoryObject *> GetItems();
     void Start();
+    void PlayOneShot(string sound);
 
 private:
     July5();
@@ -40,6 +42,7 @@ private:
     void operator=(July5 const&);   // Don't implement
     Inventory playerInventory;
     LocationManager locationManager;
+    AudioManager audioManager;
     EventManager eventManager;
     VerbManager verbManager;
 
