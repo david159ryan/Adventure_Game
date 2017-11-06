@@ -109,9 +109,15 @@ void July5::KillOrphans()
     }
 }
 
+void July5::PlayOneShot(string sound)
+{
+    audioManager.PlayOneShot(sound);
+}
+
 void July5::Start()
 {
     MapLoader mp;
     mp.LoadMap("://map/map.txt");
+    audioManager.PlayMusic("kitchen");
 }
 

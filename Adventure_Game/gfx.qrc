@@ -126,5 +126,13 @@
         <file>gfx/backgrounds/upstairsHallway.png</file>
         <file>gfx/backgrounds/wickerman.png</file>
         <file>map/map.txt</file>
+        <file>sfx/whisper1.wav</file>
+        <file>sfx/whisper2.wav</file>
+        <file>sfx/whisper3.wav</file>
+        <file>sfx/whisper4.wav</file>
+        <file>sfx/whisper5.wav</file>
+        <file>sfx/whisper6.wav</file>
+        <file>sfx/whisper7.wav</file>
+        <file>sfx/openDoor.wav</file>
     </qresource>
 </RCC>

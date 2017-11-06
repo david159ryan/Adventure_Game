@@ -5,12 +5,9 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QDesktopWidget>
-#include <QMediaPlayer>
-#include <QMediaPlaylist>
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
 #include <QWidget>
-#include <QFile>
 #include <QTimer>
 #include <QToolButton>
 #include <QFrame>
@@ -36,7 +33,6 @@ public:
     void showEvent(QShowEvent *event);
     Ui::MainWindow *ui;
     QGraphicsView * GetGraphicsView();
-    void PlayMusic(string name);
     void SetActionLabelText(string text);
 //    void ConnectButton(QToolButton * b);
 
@@ -83,8 +79,6 @@ private slots:
 
 private:
     QGraphicsScene *scene;
-    QMediaPlayer * player;
-    QMediaPlaylist * playlist;
     void InventoryClicked(int index);
     void ItemPickedUp();
     void ItemRemoved();

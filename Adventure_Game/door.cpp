@@ -8,6 +8,7 @@ Door::Door(string name, string keyName,string locationName) :
     locked_ = true;
     locationName_ = locationName;
     setType("door");
+    this->SetSound("openDoor");
 }
 
 Door::Door(string name, string locationName) :
@@ -16,6 +17,7 @@ Door::Door(string name, string locationName) :
     locked_ = false; // No key provided
     locationName_ = locationName;
     setType("door");
+    this->SetSound("openDoor");
 }
 
 string Door::GetLocationName()
@@ -44,6 +46,7 @@ void Door::Interact(Verb verb)
     {
     case USE:
         Use();
+        July5::GetInstance().PlayOneShot(this->GetSound());
         break;
     default:
         Object::Interact(verb);

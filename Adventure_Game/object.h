@@ -21,6 +21,8 @@ public:
     void SetX(int x);
     void SetY(int y);
     void SetTexture(string tex);
+    void SetSound(string sound);
+    string GetSound();
 
     string getType();
     void setType(string type);
@@ -32,6 +34,7 @@ private:
     string name_;
     string texture_;
     string type_;
+    string sound_;
     int x_;
     int y_;
 };

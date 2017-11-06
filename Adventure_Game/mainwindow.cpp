@@ -3,6 +3,8 @@
 
 #include "iostream"
 
+#include <QFileInfo>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -28,13 +30,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->actionLabel->setWindowOpacity(0);
     ui->actionLabel->setVisible(false);
     setCentralWidget(ui->centralwidget);
-
-    playlist = new QMediaPlaylist();
-    playlist->setPlaybackMode(QMediaPlaylist::Loop);
-
-    player = new QMediaPlayer;
-    player->setPlaylist(playlist);
-    PlayMusic("kitchen");
 }
 
 MainWindow::~MainWindow()
@@ -76,15 +71,6 @@ void MainWindow::fadeInFromBlack()
     b->start();
 }
 
-void MainWindow::PlayMusic(string name)
-{
-    // TODO: Fade previous music out and fade new music in.
-    string path = "qrc:/sfx/music/"+name+".mp3";
-    QString pathString = QString::fromLocal8Bit(path.c_str());
-    playlist->addMedia(QUrl(pathString));
-    player->play();
-}
-
 void MainWindow::SetActionLabelText(string text)
 {
     ui->actionLabel->setText(QString::fromStdString(text));
@@ -109,7 +95,6 @@ void MainWindow::SetActionLabelText(string text)
     QTimer::singleShot(4000, b, SLOT(start()));
 
 }
-
 
 void MainWindow::showEvent(QShowEvent *) {
     ui->graphicsView->fitInView(scene->sceneRect(),Qt::KeepAspectRatio);
