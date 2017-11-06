@@ -8,7 +8,9 @@ class InventoryObject : public Object
 {
 public:
     InventoryObject(std::string name);
-    std::string PickUp();
+    void Interact(Verb verb) override;
+    void Interact(Verb verb, Object * target) override;
+
 };
 
 #endif // INVENTORYOBJECT_H

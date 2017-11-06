@@ -8,6 +8,20 @@ Key::Key(string name) : InventoryObject(name)
 
 void Key::Interact(Verb verb, Object * target)
 {
+    switch(verb)
+    {
+    case USE:
+        Use(target);
+        break;
+    default:
+        InventoryObject::Interact(verb, target);
+        break;
+    }
+
+}
+
+void Key::Use(Object * target)
+{
     Door* door = dynamic_cast<Door*>(target);
     string text;
     if (door) {
@@ -22,7 +36,7 @@ void Key::Interact(Verb verb, Object * target)
     }
     else
     {
-        InventoryObject::Interact(verb, target);
+        InventoryObject::Interact(USE, target);
     }
     July5::GetInstance().SetLastActionText(text);
 }

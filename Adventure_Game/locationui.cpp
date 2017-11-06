@@ -11,6 +11,8 @@ LocationUI::LocationUI(MainWindow * window) :
     this->window = window;
     July5::GetInstance().RegisterListener(Event::LocationChanged, this);
     July5::GetInstance().RegisterListener(Event::ActionPerformed, this);
+    July5::GetInstance().RegisterListener(Event::ItemPickedUp, this);
+
 }
 
 void LocationUI::Update(Event event)
@@ -22,6 +24,9 @@ void LocationUI::Update(Event event)
         break;
     case Event::LocationChanged:
         LocationChanged();
+        break;
+    case Event::ItemPickedUp:
+        ItemPickedUp();
         break;
     default:
         break;
@@ -37,7 +42,7 @@ void LocationUI::LocationChanged()
     {
         // set up a scene.. add background image
         scenes[name] = new QGraphicsScene();
-        QImage qimage = GetBackgroundString(name);
+        QImage qimage = ImageUtilities::GetBackgroundString(name);
         QPixmap image = QPixmap::fromImage(qimage);
         QGraphicsPixmapItem* pPixmap = scenes[name]->addPixmap(image);
         window->GetGraphicsView()->fitInView(pPixmap);
@@ -51,7 +56,7 @@ void LocationUI::LocationChanged()
             Object * o = newLocation->GetObjectAt(i);
             cout << "making button " << o->GetName() << endl;
             ObjectButton * b = new ObjectButton(o);
-            QPixmap pixmap = QPixmap::fromImage(GetObjectImageString(o->GetTexture()));
+            QPixmap pixmap = QPixmap::fromImage(ImageUtilities::GetObjectImageString(o->GetTexture()));
             QIcon ButtonIcon(pixmap);
             b->setIcon(ButtonIcon);
             b->setIconSize(pixmap.rect().size());
@@ -63,7 +68,6 @@ void LocationUI::LocationChanged()
     QGraphicsScene * scene = scenes[name];
     // Both need to fade
     window->LoadScene(scene);
-    window->PlayMusic(name);
 }
 
 void LocationUI::ActionPerformed()
@@ -71,18 +75,29 @@ void LocationUI::ActionPerformed()
     window->SetActionLabelText(July5::GetInstance().GetLastActionText());
 }
 
-QImage GetBackgroundString(string name)
+void LocationUI::ItemPickedUp()
 {
-    string imageName = ":/gfx/backgrounds/" + name + ".png";
-    QString qImageString = QString::fromLocal8Bit(imageName.c_str());
-    QImage image(qImageString);
-    return image;
-}
+    Object *o = July5::GetInstance().GetItems().back();
+    QGraphicsScene * current = scenes[July5::GetInstance().GetCurrentLocation()->GetName()];
+    QList<QGraphicsItem*> graphicsItemList = current->items();
 
-QImage GetObjectImageString(string name)
-{
-    string imageName = ":/gfx/interactables/" + name + ".png";
-    QString qImageString = QString::fromLocal8Bit(imageName.c_str());
-    QImage image(qImageString);
-    return image;
+    foreach(QGraphicsItem* pGraphicsItem, graphicsItemList)
+    {
+        QGraphicsProxyWidget* pProxy = qgraphicsitem_cast<QGraphicsProxyWidget*>(pGraphicsItem);
+        if(pProxy)
+        {
+            cout << pProxy->widget()->objectName().toStdString() << endl;
+            QToolButton* qt = qobject_cast<QToolButton*>(pProxy->widget());
+            if(qt)
+            {
+                if (qt->objectName().toStdString() == o->GetName())
+                {
+                    current->removeItem(pProxy);
+                    //delete qt;
+                    //qt = NULL;
+                    //pProxy = NULL;
+                }
+            }
+        }
+    }
 }

@@ -12,6 +12,7 @@ public:
     void AddItem(InventoryObject * o);
     void RemoveItem(InventoryObject * o);
     InventoryObject* GetItem(string item);
+    list<InventoryObject *> GetItems();
     string ToString();
 
 private:

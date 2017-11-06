@@ -103,7 +103,7 @@ action:close;Good bye squiggly lines
 }
 
 {
-type:object
+type:inventoryobject
 name:Broken Fingers
 x:898
 y:338
@@ -322,14 +322,6 @@ action:use;I can't reach it
 action:open;I can't reach it
 action:close;I can't reach it
 }
-
-
-
-
-
-
-
-
 
 {
 type:location
