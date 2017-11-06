@@ -7,40 +7,40 @@ MapLoader::MapLoader()
 
 void MapLoader::LoadMap(string filename)
 {
+    QString qFileName = QString::fromStdString(filename);
     cout << "MapLoader Started!" << endl;
     string line;
-    std::ifstream inFile;
     string chunk;
     std::vector<string> chunks;
     bool read=false;
-    inFile.open(filename);
 
-    if (!inFile)
+
+    QFile file(qFileName);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        cerr << "Unable to open file "<<filename;
+        cerr << "Unable to open file q"<<filename;
         exit(1);   // call system to stop
     }
-    else
+    while (!file.atEnd())
     {
-        while (std::getline(inFile, line))
+        QByteArray qline = file.readLine();
+        line = qline.data();
+        line=line.substr(0,line.length()-1);
+        if(line=="{")
         {
-            if(line=="{")
-            {
-                read=true;
-            }
-            else if(line=="}")
-            {
-                read=false;
-                chunks.push_back(chunk.substr(0,chunk.length()-1));
-                chunk="";
-            }
-            if(read&&line!="{")
-            {
-                chunk+=line+"/";
-            }
+            read=true;
+        }
+        else if(line=="}")
+        {
+            read=false;
+            chunks.push_back(chunk.substr(0,chunk.length()-1));
+            chunk="";
+        }
+        if(read&&line!="{")
+        {
+            chunk+=line+"/";
         }
     }
-    inFile.close();
     for(size_t i = 0;i<chunks.size();i++)
     {
         ProcessChunk(chunks[i]);

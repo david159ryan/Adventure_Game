@@ -125,5 +125,6 @@
         <file>gfx/backgrounds/maze3.png</file>
         <file>gfx/backgrounds/upstairsHallway.png</file>
         <file>gfx/backgrounds/wickerman.png</file>
+        <file>map/map.txt</file>
     </qresource>
 </RCC>

@@ -93,9 +93,9 @@ void LocationUI::ItemPickedUp()
                 if (qt->objectName().toStdString() == o->GetName())
                 {
                     current->removeItem(pProxy);
-                    delete qt;
-                    qt = NULL;
-                    pProxy = NULL;
+                    //delete qt;
+                    //qt = NULL;
+                    //pProxy = NULL;
                 }
             }
         }
