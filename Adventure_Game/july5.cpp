@@ -68,6 +68,6 @@ list<InventoryObject *> July5::GetItems()
 void July5::Start()
 {
     MapLoader mp;
-    mp.LoadMap("../Adventure_Game/map/map.txt");
+    mp.LoadMap("://map/map.txt");
 }
 
