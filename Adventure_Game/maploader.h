@@ -10,10 +10,14 @@
 #include <fstream>
 #include <vector>
 
+#include <QString>
+#include <QFile>
+
 #include "location.h"
 #include "object.h"
 #include "door.h"
 #include "july5.h"
+#include "inventoryobject.h"
 
 class MapLoader
 {

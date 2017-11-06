@@ -3,7 +3,8 @@
 
 enum Event {
     LocationChanged,
-    ActionPerformed
+    ActionPerformed,
+    ItemPickedUp
 };
 
 #endif // EVENT_H

@@ -6,9 +6,11 @@
 #include <QBoxLayout>
 #include <QString>
 #include <QGraphicsScene>
+#include <QGraphicsProxyWidget>
 #include <map>
 #include <QToolButton>
 #include "objectbutton.h"
+#include "imageutilities.h"
 
 using namespace std;
 
@@ -19,9 +21,11 @@ public:
     void Update(Event);
 private:
     map<string, QGraphicsScene*> scenes;
+    //map<string, list<QGraphicsProxyWidget> items;
     MainWindow * window;
     void LocationChanged();
     void ActionPerformed();
+    void ItemPickedUp();
 };
 
 #endif // LOCATIONUI_H

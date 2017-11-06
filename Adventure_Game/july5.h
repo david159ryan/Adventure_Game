@@ -5,11 +5,10 @@
 
 #include "locationmanager.h"
 #include "verbmanager.h"
+#include "verb.h"
 #include "eventmanager.h"
 #include "inventory.h"
-#include "key.h"
-#include "door.h"
-#include "maploader.h"
+#include "inventoryobject.h"
 
 using namespace std;
 
@@ -21,7 +20,6 @@ public:
         static July5 instance;
         return instance;
     }
-    Inventory playerInventory;
     void GoToLocation(string locationName);
     void RegisterListener(Event event, Updateable *updateable);
     void FireEvent(Event event);
@@ -32,13 +30,15 @@ public:
     string GetLastActionText();
     Verb CurrentVerb();
     void SetVerb(Verb verb);
+    void AddToInventory(InventoryObject *o);
+    list<InventoryObject *> GetItems();
     void Start();
 
 private:
     July5();
     July5(July5 const&);            // Don't Implement.
     void operator=(July5 const&);   // Don't implement
-
+    Inventory playerInventory;
     LocationManager locationManager;
     EventManager eventManager;
     VerbManager verbManager;

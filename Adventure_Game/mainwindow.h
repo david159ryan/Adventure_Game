@@ -9,11 +9,14 @@
 #include <QMediaPlaylist>
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
+#include <QWidget>
 #include <QFile>
 #include <QTimer>
 #include <QToolButton>
 #include <QFrame>
+#include <QThread>
 #include "july5.h"
+#include "imageutilities.h"
 
 using namespace std;
 
@@ -21,7 +24,7 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, Updateable
 {
     Q_OBJECT
 
@@ -55,10 +58,35 @@ private slots:
 
     void on_pullButton_clicked();
 
+    void on_inventory0_clicked();
+
+    void on_inventory1_clicked();
+
+    void on_inventory2_clicked();
+
+    void on_inventory3_clicked();
+
+    void on_inventory4_clicked();
+
+    void on_inventory5_clicked();
+
+    void on_inventory6_clicked();
+
+    void on_inventory7_clicked();
+
+    void on_inventory8_clicked();
+
+    void on_inventory9_clicked();
+
 private:
     QGraphicsScene *scene;
     QMediaPlayer * player;
     QMediaPlaylist * playlist;
+    void InventoryClicked(int index);
+
+    // Updateable interface
+public:
+    void Update(Event event);
 };
 
 #endif // MAINWINDOW_H

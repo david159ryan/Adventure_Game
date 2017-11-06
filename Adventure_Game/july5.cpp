@@ -1,10 +1,10 @@
 #include "july5.h"
+#include "maploader.h"
 
 July5::July5()
 {
     eventManager = EventManager();
     verbManager = VerbManager();
-
     locationManager = LocationManager();
 }
 
@@ -54,19 +54,20 @@ void July5::SetVerb(Verb verb)
     return verbManager.SetVerb(verb);
 }
 
+void July5::AddToInventory(InventoryObject *o)
+{
+    playerInventory.AddItem(o);
+    FireEvent(ItemPickedUp);
+}
+
+list<InventoryObject *> July5::GetItems()
+{
+    return playerInventory.GetItems();
+}
+
 void July5::Start()
 {
     MapLoader mp;
-    mp.LoadMap("../Adventure_Game/map/map.txt");
-    /*
-    Location * newLocation = new Location("kitchen");
-    newLocation->AddObject(new Door("door", "hallway"));
-    locationManager.AddLocation(newLocation);
-
-    Location * newLocation2 = new Location("hallway");
-    newLocation2->AddObject(new Door("door", "kitchen"));
-    locationManager.AddLocation(newLocation2);
-    GoToLocation(newLocation->GetName());
-    */
+    mp.LoadMap("://map/map.txt");
 }
 
