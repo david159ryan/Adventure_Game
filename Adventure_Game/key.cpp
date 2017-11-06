@@ -6,18 +6,17 @@ Key::Key(string name) : InventoryObject(name)
 {
 }
 
-void Key::Interact(Verb verb, Object * target)
+void Key::Interact(Verb verb, Object *target)
 {
-    switch(verb)
+    if(verb == USE)
     {
-    case USE:
         Use(target);
-        break;
-    default:
-        InventoryObject::Interact(verb, target);
-        break;
     }
+}
 
+void Key::Use()
+{
+    return;
 }
 
 void Key::Use(Object * target)
@@ -27,16 +26,18 @@ void Key::Use(Object * target)
     if (door) {
         if(door->Unlock(this))
         {
+            July5::GetInstance().RemoveFromInventory(this);
             text = "The " + this->GetName() + " unlocks the " + door->GetName() + ".";
         }
         else
         {
             text = "The " + this->GetName() + " doesn't work on the " + door->GetName() + ".";
         }
+        July5::GetInstance().SetLastActionText(text);
     }
     else
     {
-        InventoryObject::Interact(USE, target);
+        Object::Interact(USETARGET, target);
     }
-    July5::GetInstance().SetLastActionText(text);
+    July5::GetInstance().FireEvent(Event::ActionPerformed);
 }

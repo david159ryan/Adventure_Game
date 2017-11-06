@@ -72,7 +72,11 @@ void LocationUI::LocationChanged()
 
 void LocationUI::ActionPerformed()
 {
-    window->SetActionLabelText(July5::GetInstance().GetLastActionText());
+    string text = July5::GetInstance().GetLastActionText();
+    if (!text.empty())
+    {
+        window->SetActionLabelText(text);
+    }
 }
 
 void LocationUI::ItemPickedUp()
@@ -93,9 +97,9 @@ void LocationUI::ItemPickedUp()
                 if (qt->objectName().toStdString() == o->GetName())
                 {
                     current->removeItem(pProxy);
-                    delete qt;
-                    qt = NULL;
-                    pProxy = NULL;
+                    //delete qt;
+                    //qt = NULL;
+                    //pProxy = NULL;
                 }
             }
         }

@@ -10,6 +10,9 @@
 #include <fstream>
 #include <vector>
 
+#include <QString>
+#include <QFile>
+
 #include "location.h"
 #include "object.h"
 #include "door.h"

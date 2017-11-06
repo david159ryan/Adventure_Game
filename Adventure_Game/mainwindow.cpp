@@ -3,25 +3,33 @@
 
 #include "iostream"
 
+#include <QFileInfo>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    July5::GetInstance().RegisterListener(ItemPickedUp, this);
+    July5::GetInstance().RegisterListener(Event::ItemPickedUp, this);
+    July5::GetInstance().RegisterListener(Event::ItemRemoved, this);
+
     ui->setupUi(this);
     ui->graphicsView->setFrameStyle(QFrame::NoFrame);
     QRect rec = QApplication::desktop()->screenGeometry();
     ui->centralwidget->setFixedHeight(rec.height());
     ui->centralwidget->setFixedWidth(rec.width());
+
+    // Hackey, disgusting... to get around that layouts aren't updating
+    ui->graphicsFrame->setFixedWidth(rec.width());
+    ui->graphicsFrame->setFixedHeight(int (rec.height()*(675/float (900))));
+
     ui->graphicsView->setBackgroundBrush(Qt::black);
     ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     ui->actionLabel->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    ui->fadeToBlack->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     ui->actionLabel->setWindowOpacity(0);
     ui->actionLabel->setVisible(false);
     setCentralWidget(ui->centralwidget);
-    player = new QMediaPlayer;
-    PlayMusic("kitchen");
 }
 
 MainWindow::~MainWindow()
@@ -31,23 +39,42 @@ MainWindow::~MainWindow()
 
 void MainWindow::LoadScene(QGraphicsScene * scene)
 {
-
+    ui->graphicsView->setFixedSize(ui->graphicsFrame->size());
     this->scene = scene;
-    ui->graphicsView->setScene(scene);
+
+    QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
+    eff->setProperty("opacity", 0);
+    ui->fadeToBlack->setGraphicsEffect(eff);
+    QPropertyAnimation *a = new QPropertyAnimation(eff,"opacity");
+    a->setDuration(750);
+    a->setStartValue(0);
+    a->setEndValue(1);
+    a->setEasingCurve(QEasingCurve::Linear);
+    a->start();
+
+    QTimer::singleShot(750, this, SLOT(fadeInFromBlack()));
 }
 
-void MainWindow::PlayMusic(string name)
+void MainWindow::fadeInFromBlack()
 {
-    // TODO: Fade previous music out and fade new music in.
-    string path = "qrc:/sfx/music/"+name+".mp3";
-    QString pathString = QString::fromLocal8Bit(path.c_str());
-    player->setMedia(QUrl(pathString));
-    player->play();
+    ui->graphicsView->setScene(this->scene);
+    ui->graphicsView->fitInView(ui->graphicsView->sceneRect());
+
+    QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
+    QPropertyAnimation *b = new QPropertyAnimation(eff, "opacity");
+    eff->setProperty("opacity", 0);
+    ui->fadeToBlack->setGraphicsEffect(eff);
+    b->setDuration(1000);
+    b->setStartValue(1);
+    b->setEndValue(0);
+    b->setEasingCurve(QEasingCurve::Linear);
+    b->start();
 }
 
 void MainWindow::SetActionLabelText(string text)
 {
     ui->actionLabel->setText(QString::fromStdString(text));
+    ui->actionLabel->adjustSize();
     ui->actionLabel->setVisible(true);
 
     QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
@@ -69,7 +96,6 @@ void MainWindow::SetActionLabelText(string text)
 
 }
 
-
 void MainWindow::showEvent(QShowEvent *) {
     ui->graphicsView->fitInView(scene->sceneRect(),Qt::KeepAspectRatio);
 }
@@ -78,13 +104,6 @@ QGraphicsView * MainWindow::GetGraphicsView()
 {
     return ui->graphicsView;
 }
-
-//void MainWindow::ConnectButton(QToolButton * b, Object * o)
-//{
-//    QObject::connect(b, SIGNAL(clicked()), o, SLOT(Interact()));
-//}
-
-
 
 void MainWindow::on_openButton_clicked()
 {
@@ -134,20 +153,51 @@ void MainWindow::on_pullButton_clicked()
 void MainWindow::Update(Event event)
 {
 
-    if(event == Event::ItemPickedUp)
+    switch(event)
     {
-        list<InventoryObject *> inv = July5::GetInstance().GetItems();
-        string s = "inventory" + to_string(inv.size() - 1);
-        cout << s << endl;
+    case Event::ItemPickedUp:
+        ItemPickedUp();
+        break;
+    case Event::ItemRemoved:
+        ItemRemoved();
+    }
+}
+
+void MainWindow::ItemPickedUp()
+{
+    list<InventoryObject *> inv = July5::GetInstance().GetItems();
+    string s = "inventory" + to_string(inv.size() - 1);
+    QToolButton * qt = ui->playerInventory->
+            findChild<QToolButton *>(QString::fromStdString(s));
+    QPixmap pixmap = QPixmap::fromImage(
+                ImageUtilities::GetObjectImageString(inv.back()->GetTexture()));
+    qt->setIcon(QIcon(pixmap));
+    qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
+}
+
+void MainWindow::ItemRemoved()
+{
+    list<InventoryObject *> inv = July5::GetInstance().GetItems();
+    string s = "inventory";
+    for(int i = 0; i < July5::MAX_INVENTORY; i++)
+    {
         QToolButton * qt = ui->playerInventory->
-                findChild<QToolButton *>(QString::fromStdString(s));
-        QPixmap pixmap = QPixmap::fromImage(
-                    ImageUtilities::GetObjectImageString(inv.back()->GetTexture()));
-        QIcon icon(pixmap);
-        qt->setIcon(QIcon(pixmap));
-        qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
+                findChild<QToolButton *>(QString::fromStdString(s + to_string(i)));
+        qt->setIcon(QIcon());
+    }
 
+    int count = 0;
+    for(list<InventoryObject *>::iterator it = inv.begin(); it != inv.end(); ++it, ++count)
+    {
+        QToolButton * qt = ui->playerInventory->
+                findChild<QToolButton *>(QString::fromStdString(s + to_string(count)));
+        if((*it) != NULL ) {
 
+            QPixmap pixmap = QPixmap::fromImage(
+                        ImageUtilities::GetObjectImageString((*it)->GetTexture()));
+            qt->setIcon(QIcon(pixmap));
+            qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
+        }
     }
 }
 
@@ -216,5 +266,5 @@ void MainWindow::InventoryClicked(int index)
     int i = 0;
     for(it = items.begin(); it != items.end() && i < index; ++it, ++i)
         ;
-    (*it)->Interact(current);
+    July5::GetInstance().Interact((*it));
 }
