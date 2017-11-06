@@ -13,10 +13,16 @@ MainWindow::MainWindow(QWidget *parent) :
     QRect rec = QApplication::desktop()->screenGeometry();
     ui->centralwidget->setFixedHeight(rec.height());
     ui->centralwidget->setFixedWidth(rec.width());
+
+    // Hackey, disgusting... to get around that layouts aren't updating
+    ui->graphicsFrame->setFixedWidth(rec.width());
+    ui->graphicsFrame->setFixedHeight(int (rec.height()*(675/float (900))));
+
     ui->graphicsView->setBackgroundBrush(Qt::black);
     ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     ui->actionLabel->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    ui->fadeToBlack->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     ui->actionLabel->setWindowOpacity(0);
     ui->actionLabel->setVisible(false);
     setCentralWidget(ui->centralwidget);
@@ -31,9 +37,36 @@ MainWindow::~MainWindow()
 
 void MainWindow::LoadScene(QGraphicsScene * scene)
 {
-
+    ui->graphicsView->setFixedSize(ui->graphicsFrame->size());
     this->scene = scene;
-    ui->graphicsView->setScene(scene);
+
+    QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
+    eff->setProperty("opacity", 0);
+    ui->fadeToBlack->setGraphicsEffect(eff);
+    QPropertyAnimation *a = new QPropertyAnimation(eff,"opacity");
+    a->setDuration(750);
+    a->setStartValue(0);
+    a->setEndValue(1);
+    a->setEasingCurve(QEasingCurve::Linear);
+    a->start();
+
+    QTimer::singleShot(750, this, SLOT(fadeInFromBlack()));
+}
+
+void MainWindow::fadeInFromBlack()
+{
+    ui->graphicsView->setScene(this->scene);
+    ui->graphicsView->fitInView(ui->graphicsView->sceneRect());
+
+    QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
+    QPropertyAnimation *b = new QPropertyAnimation(eff, "opacity");
+    eff->setProperty("opacity", 0);
+    ui->fadeToBlack->setGraphicsEffect(eff);
+    b->setDuration(1000);
+    b->setStartValue(1);
+    b->setEndValue(0);
+    b->setEasingCurve(QEasingCurve::Linear);
+    b->start();
 }
 
 void MainWindow::PlayMusic(string name)
@@ -48,6 +81,7 @@ void MainWindow::PlayMusic(string name)
 void MainWindow::SetActionLabelText(string text)
 {
     ui->actionLabel->setText(QString::fromStdString(text));
+    ui->actionLabel->adjustSize();
     ui->actionLabel->setVisible(true);
 
     QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
@@ -78,13 +112,6 @@ QGraphicsView * MainWindow::GetGraphicsView()
 {
     return ui->graphicsView;
 }
-
-//void MainWindow::ConnectButton(QToolButton * b, Object * o)
-//{
-//    QObject::connect(b, SIGNAL(clicked()), o, SLOT(Interact()));
-//}
-
-
 
 void MainWindow::on_openButton_clicked()
 {

@@ -40,6 +40,8 @@ public:
 //    void ConnectButton(QToolButton * b);
 
 private slots:
+    void fadeInFromBlack();
+
     void on_openButton_clicked();
 
     void on_lickButton_clicked();
