@@ -341,6 +341,15 @@ name:window
 x:72
 y:0
 tex:window
+action:lookat;It's a lovely day outside
+action:push;I can't push it
+action:pull;I can't pull it
+action:lick;It's warm
+action:pickup;I can't pick that up
+action:talkto;Hello Window!
+action:use;Gran always tells me not to open the windows
+action:open;Gran always tells me not to open the windows
+action:close;It's already closed
 }
 {
 type:door
@@ -349,63 +358,151 @@ location:garden
 x:320
 y:40
 tex:smallDoor
+action:lookat;That door leads to the garden
+action:push;I can't push it
+action:pull;I can't pull it
+action:lick;Tastes like old mahogany
+action:pickup;I can't pick that up
+action:talkto;Hello Door!
+action:close;It's already closed
 }
+
 {
 type:object
 name:window
 x:916
 y:0
 tex:window
+action:lookat;It's a lovely day outside
+action:push;I can't push
+action:pull;I can't pull
+action:lick;It's warm
+action:pickup;I can't pick that up
+action:talkto;Hello Window!
+action:use;Gran always tells me not to open the windows
+action:open;Gran always tells me not to open the windows
+action:close;It's already closed
 }
+
 {
 type:object
 name:splatter1
 x:90
 y:252
 tex:splatter1
+action:lookat;Another stain like the one in the sitting room
+action:push;I can't push it
+action:pull;I can't pull it
+action:lick;It's warm and metallic
+action:pickup;I'd need a container
+action:talkto;Where did you come from?
+action:use;I can't use this
+action:open;I can't open this
+action:close;I can't close this
 }
+
 {
 type:object
 name:marblePlant
 x:656
 y:352
 tex:marblePlant
+action:lookat;Its one of Gran's plants
+action:push;Its kind of slimy
+action:pull;Its kind of slimy
+action:lick;It tastes green
+action:pickup;I shouldn't pick up Grandma's plants
+action:talkto;Hello Plant!
+action:use;I can't use this
+action:open;I don't understand
+action:close;I don't understand
 }
+
 {
 type:object
 name:stove
 x:560
 y:124
 tex:Stove
+action:lookat;Gran usually cooks here
+action:push;It's too heavy
+action:pull;It's too heavy
+action:lick;It's too hot
+action:pickup;I can't pick this up
+action:talkto;Hi stove!
+action:use;I don't know how to cook
+action:open;There's a pie inside, it smells like charred meat
+action:close;Bye pie!
 }
+
 {
 type:object
 name:platesCupboard
 x:200
 y:76
 tex:platesCupboard
+action:lookat;Gran usually cooks here
+action:push;It's too heavy
+action:pull;It's too heavy
+action:lick;It's too hot
+action:pickup;I can't pick this up
+action:talkto;Hi stove!
+action:use;I don't know how to cook
+action:open;There's a pie inside, it smells like charred meat
+action:close;Bye pie!
 }
+
 {
 type:object
 name:chandelier
 x:450
 y:0
 tex:chandelier
+action:lookat;It's swaying gently.
+action:push;I can't reach.
+action:pull;I can't reach.
+action:lick;It's too high up.
+action:pickup;I can't pick this up.
+action:talkto;Hello?
+action:use;I can't reach.
+action:open;It doesn't open.
+action:close;I can't close that.
 }
+
 {
 type:object
 name:clock
 x:12
 y:22
 tex:clock
+action:lookat;It's 2pm.
+action:push;I can't do that.
+action:pull;I can't do that.
+action:lick;It tastes timeless.
+action:pickup;I shouldn't pick this up.
+action:talkto;Hi Clocky!
+action:use;I shouldn't mess with Clocky.
+action:open;I shouldn't mess with Clocky.
+action:close;I shouldn't mess with Clocky.
 }
+
 {
 type:object
 name:books
 x:720
 y:18
 tex:books
+action:lookat;These are Grandma's recipe books.
+action:push;I can't do that.
+action:pull;I can't do that.
+action:lick;It tastes like leather.
+action:pickup;I shouldn't pick this up.
+action:talkto;Hello? Do you talk too?
+action:use;I don't know how to cook.
+action:open;It's a recipe for shepherds pie.
+action:close;I wont learn to cook today.
 }
+
 {
 type:object
 name:potionBooks
@@ -413,6 +510,7 @@ x:656
 y:72
 tex:potionsbooks
 }
+
 {
 type:object
 name:potions
