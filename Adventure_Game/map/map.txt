@@ -1558,7 +1558,7 @@ name:maze1
 {
 type:door
 name:southRoad
-location:maze1
+location:maze2copy
 x:506
 y:428
 tex:southRoad
@@ -1566,7 +1566,7 @@ tex:southRoad
 {
 type:door
 name:northRoad
-location:maze1
+location:maze2copy
 x:600
 y:0
 tex:northRoad
@@ -1582,7 +1582,7 @@ tex:eastRoad
 {
 type:door
 name:westRoad
-location:maze1
+location:maze2copy
 x:0
 y:244
 tex:westRoad
@@ -1639,7 +1639,7 @@ name:maze2
 {
 type:door
 name:southRoad
-location:maze2copy
+location:maze3copy
 x:506
 y:428
 tex:southRoad
@@ -1647,7 +1647,7 @@ tex:southRoad
 {
 type:door
 name:northRoad
-location:maze2copy
+location:maze3copy
 x:600
 y:0
 tex:northRoad
@@ -1655,7 +1655,7 @@ tex:northRoad
 {
 type:door
 name:eastRoad
-location:maze2copy
+location:maze3copy
 x:1000
 y:302
 tex:eastRoad
@@ -1725,7 +1725,7 @@ tex:southRoad
 {
 type:door
 name:northRoad
-location:maze3copy
+location:garden
 x:600
 y:0
 tex:northRoad
@@ -1733,7 +1733,7 @@ tex:northRoad
 {
 type:door
 name:eastRoad
-location:maze3copy
+location:garden
 x:1000
 y:302
 tex:eastRoad
@@ -1741,7 +1741,7 @@ tex:eastRoad
 {
 type:door
 name:westRoad
-location:maze3copy
+location:garden
 x:0
 y:244
 tex:westRoad

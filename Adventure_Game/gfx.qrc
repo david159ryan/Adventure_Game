@@ -142,5 +142,7 @@
         <file>sfx/lockedDoor.wav</file>
         <file>sfx/unlockDoor.wav</file>
         <file>gfx/interactables/key.png</file>
+        <file>gfx/backgrounds/maze2copy.png</file>
+        <file>gfx/backgrounds/maze3copy.png</file>
     </qresource>
 </RCC>
