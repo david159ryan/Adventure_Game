@@ -1,13 +1,13 @@
 #include "inventory.h"
 
-Inventory::Inventory()
+Inventory::Inventory(int maxSize)
 {
-
+    maxSize_ = maxSize;
 }
 
 void Inventory::AddItem(InventoryObject * o)
 {
-    if(items_.size() < 10)
+    if(items_.size() < maxSize_)
     {
         items_.push_back(o);
     }

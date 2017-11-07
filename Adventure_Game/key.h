@@ -10,6 +10,7 @@ public:
     void Interact(Verb verb, Object *target) override;
 
 private:
+    void Use();
     void Use(Object * target);
 };
 
