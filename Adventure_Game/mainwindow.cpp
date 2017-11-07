@@ -3,6 +3,7 @@
 
 #include "iostream"
 
+#include <QFontDatabase>
 #include <QFileInfo>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -18,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->centralwidget->setFixedHeight(rec.height());
     ui->centralwidget->setFixedWidth(rec.width());
 
+    QFontDatabase::addApplicationFont(":/jmh_horror/JMHHORROR-HORROR.ttf");
+    ui->frame->setFont(QFont("JMHHORROR-HORROR", 30, QFont::Normal));
     // Hackey, disgusting... to get around that layouts aren't updating
     ui->graphicsFrame->setFixedWidth(rec.width());
     ui->graphicsFrame->setFixedHeight(int (rec.height()*(675/float (900))));
@@ -76,6 +79,19 @@ void MainWindow::SetActionLabelText(string text)
     ui->actionLabel->setText(QString::fromStdString(text));
     ui->actionLabel->adjustSize();
     ui->actionLabel->setVisible(true);
+
+    int mY = QCursor::pos().y();
+    int mid = ui->graphicsView->size().height()/2;
+    int l = ui->actionLabel->pos().y();
+
+    if(mY < mid && l < mid)
+    {
+        ui->actionLabel->move(ui->actionLabel->pos().x(), l + mid);
+    }
+    else if(mY > mid && l > mid)
+    {
+        ui->actionLabel->move(ui->actionLabel->pos().x(), l - mid);
+    }
 
     QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
     eff->setProperty("opacity", 0);
