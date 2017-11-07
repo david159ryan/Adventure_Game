@@ -94,8 +94,8 @@ void MapLoader::ProcessChunk(string chunk)
                 o=new Door("Mysterious Door","???");
             else if(type[DESC]=="key")
                 o=new Key("Mysterious Key");
-           // else if(type[DESC]=="inventoryobject")
-            //    o=new InventoryObject("Mysterious Object");
+            else if(type[DESC]=="food")
+                o=new Food("Mysterious Object");
 
 
             for(size_t i=1;i<input.size();i++)

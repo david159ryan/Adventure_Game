@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     objectbutton.cpp \
     maploader.cpp \
     imageutilities.cpp \
-    audiomanager.cpp
+    audiomanager.cpp \
+    food.cpp
 
 HEADERS  += \
     object.h \
@@ -52,7 +53,8 @@ HEADERS  += \
     event.h \
     maploader.h \
     imageutilities.h \
-    audiomanager.h
+    audiomanager.h \
+    food.h
 
 FORMS    += \
     mainwindow.ui

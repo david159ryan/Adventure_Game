@@ -18,6 +18,7 @@
 #include "door.h"
 #include "july5.h"
 #include "inventoryobject.h"
+#include "food.h"
 
 class MapLoader
 {
