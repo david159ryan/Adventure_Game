@@ -144,5 +144,7 @@
         <file>sfx/lockedDoor.wav</file>
         <file>jmh_horror/JMH HORROR.otf</file>
         <file>jmh_horror/JMHHORROR-HORROR.ttf</file>
+        <file>gfx/backgrounds/menu.png</file>
+        <file>gfx/interactables/menu.png</file>
     </qresource>
 </RCC>
