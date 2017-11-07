@@ -134,6 +134,14 @@
         <file>sfx/whisper6.wav</file>
         <file>sfx/whisper7.wav</file>
         <file>sfx/openDoor.wav</file>
+        <file>gfx/interactables/key.png</file>
+        <file>sfx/unlockDoor.wav</file>
+        <file>sfx/lockedDoor.wav</file>
+        <file>gfx/backgrounds/maze3copy.png</file>
+        <file>gfx/backgrounds/maze2copy.png</file>
+        <file>gfx/interactables/key.png</file>
+        <file>sfx/unlockDoor.wav</file>
+        <file>sfx/lockedDoor.wav</file>
         <file>jmh_horror/JMH HORROR.otf</file>
         <file>jmh_horror/JMHHORROR-HORROR.ttf</file>
     </qresource>

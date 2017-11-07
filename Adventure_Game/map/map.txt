@@ -22,9 +22,16 @@ action:close;It's already closed
 {
 type:key
 name:Living Room Key
-x:200
-y:200
-tex:chicken
+x:280
+y:165
+tex:key
+action:lookat;It looks like a key.
+action:push;I don't want to push it.
+action:pull;I could pick this up.
+action:lick;Tastes like brass.
+action:talkto;What do you open?
+action:open;I can't open a key.
+action:close;I can't close a key.
 }
 
 {
@@ -356,6 +363,7 @@ action:close;It's already closed
 type:door
 name:smallDoor
 location:garden
+key:Garden Key
 x:320
 y:40
 tex:smallDoor
@@ -730,8 +738,8 @@ action:open;I can't do that.
 action:close;I can't do that.
 }
 {
-type:object
-name:pigHead
+type:food
+name:Porkers
 x:700
 y:128
 tex:pigHead
@@ -739,7 +747,6 @@ action:lookat;That's Porkers, He liked bacon strips for breakfast.
 action:push;He might fall.
 action:pull;I don't want to eat him yet.
 action:lick;He tastes salty.
-action:pickup;I don't want him.
 action:talkto;Hi Porkers, do you want some bacon?
 action:use;I'll eat him later.
 action:open;I can't do that.
@@ -1078,6 +1085,13 @@ name:basementStairs1
 x:140
 y:0
 tex:basementStairs1
+action:lookat;It's leads to the front hall
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;It's dirty.
+action:pickup;I can't pick that up.
+action:talkto;Hello Stairs.
+action:close;I can't close the Stairs
 }
 {
 type:object
@@ -1085,6 +1099,15 @@ name:generator
 x:258
 y:174
 tex:generator
+action:lookat;The generator keeps everything powered...
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tingly
+action:pickup;I can't pick that up.
+action:talkto;Sparky sparky!
+action:use;Grandma told me never to turn off the generator.
+action:open;I can't open the generator.
+action:close;I can't close the generator.
 }
 {
 type:object
@@ -1092,6 +1115,15 @@ name:cage
 x:872
 y:106
 tex:cage
+action:lookat;Look how big you've gotten Snowball...
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tastes like Snowball.
+action:pickup;I can't pick that up.
+action:talkto;You look hungry Snowball.
+action:use;*scratch scratch*
+action:open;I shouldn't let Snowball out when Grandma's not home.
+action:close;It's tightly closed.
 }
 {
 type:object
@@ -1099,6 +1131,15 @@ name:pipe
 x:888
 y:16
 tex:pipe
+action:lookat;The pipes have glowy stuff in them.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;I canth feel by thung...
+action:pickup;I can't pick that up.
+action:talkto;Hello!
+action:use;I can't use this...
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1106,6 +1147,15 @@ name:pit
 x:24
 y:444
 tex:pit
+action:lookat;This wasn't here yesterday...
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;It's dirty.
+action:pickup;I can't pick that up.
+action:talkto;Hello? Who's down there?
+action:use;I can't go down there...
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1113,6 +1163,15 @@ name:rug
 x:272
 y:332
 tex:rug
+action:lookat;Snug as a bug in a rug.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tastes like fur.
+action:pickup;I can't pick that up.
+action:talkto;Snug as a bug in a rug.
+action:use;I can't use this.
+action:open;I can't open that.
+action:close;I can't open that.
 }
 {
 type:object
@@ -1120,6 +1179,15 @@ name:anvil
 x:338
 y:260
 tex:anvil
+action:lookat;Grandpa used to make things here.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tastes like metal.
+action:pickup;It's too heavy.
+action:talkto;Hello.
+action:use;I can't use this.
+action:open;I can't open that.
+action:close;I can't open that.
 }
 {
 type:object
@@ -1127,6 +1195,15 @@ name:crates
 x:622
 y:114
 tex:crates
+action:lookat;There's something moving in there.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tastes like wood.
+action:pickup;It's too heavy.
+action:talkto;Hello? What's in there?
+action:use;I can't use this.
+action:open;I shouldn't open that.
+action:close;It's closed.
 }
 {
 type:object
@@ -1134,6 +1211,15 @@ name:tools
 x:136
 y:120
 tex:tools
+action:lookat;These are Grandpa's tools.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tastes oily.
+action:pickup;I can't reach them.
+action:talkto;Hello?
+action:use;I can't use these.
+action:open;I can't open these.
+action:close;I can't close these.
 }
 {
 type:object
@@ -1141,6 +1227,14 @@ name:machine
 x:912
 y:376
 tex:machine
+action:lookat;I don't know what the machines are for...
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tingly...
+action:pickup;I can't pick that up.
+action:use;I can't use this.
+action:open;I can't open this.
+action:close;I can't close this.
 }
 {
 type:object
@@ -1148,6 +1242,14 @@ name:wood
 x:784
 y:418
 tex:wood
+action:lookat;Grandma makes me chop the wood sometimes..
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tastes like bark.
+action:pickup;I can't pick that up.
+action:use;I can't use this.
+action:open;I can't open this.
+action:close;I can't close this.
 }
 {
 type:object
@@ -1155,6 +1257,14 @@ name:skeleton
 x:608
 y:424
 tex:skeleton
+action:lookat;I wonder when this got here...
+action:push;He crumbles a bit...
+action:pull;He crumbles a bit...
+action:lick;Tastes fresh.
+action:pickup;I don't want him.
+action:use;I can't use him.
+action:open;I can't open him.
+action:close;I can't close him.
 }
 {
 type:object
@@ -1162,6 +1272,16 @@ name:coal
 x:52
 y:198
 tex:coal
+action:lookat;This powers the machines...
+action:push;It crumbles a bit...
+action:pull;It crumbles a bit...
+action:lick;Tastes lovely.
+action:talkto;Hello coal!
+action:pickup;I don't want it.
+action:use;I can't use it.
+action:open;I can't open it.
+action:close;I can't close it.
+
 }
 {
 type:object
@@ -1169,6 +1289,15 @@ name:cog
 x:64
 y:22
 tex:cog
+action:lookat;This is used in the machines.
+action:push;I can't push it.
+action:pull;I can't pull it.
+action:lick;Tastes oily.
+action:talkto;Hello Geary!
+action:pickup;I don't want it.
+action:use;I can't use it.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1176,6 +1305,15 @@ name:magma
 x:14
 y:336
 tex:magma
+action:lookat;This looks hot.
+action:push;It burned me.
+action:pull;It burned me.
+action:lick;Ith burnth by thung...
+action:talkto;Hello Lava-ly!
+action:pickup;I don't want it.
+action:use;I can't use it.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1183,6 +1321,15 @@ name:pick
 x:508
 y:92
 tex:pick
+action:lookat;Grandpa used this to get the coal.
+action:push;It's very heavy.
+action:pull;It's very heavy.
+action:lick;Tastes like coal.
+action:talkto;I pick you.
+action:pickup;I don't want it.
+action:use;I can't use it.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1190,6 +1337,15 @@ name:container
 x:560
 y:104
 tex:container
+action:lookat;I don't know whats in here.
+action:push;It's too heavy.
+action:pull;It's too heavy.
+action:lick;Tastes funny.
+action:talkto;Hello Container!
+action:pickup;I don't want it.
+action:use;I can't use it.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1197,6 +1353,15 @@ name:kettle
 x:468
 y:144
 tex:kettle
+action:lookat;I like tea.
+action:push;It might fall.
+action:pull;It's too hot.
+action:lick;Ith burnth by thung...
+action:pickup;It's too hot.
+action:talkto;Do you have a genie inside you?
+action:use;It's full of hot tea.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -1204,6 +1369,15 @@ name:barrels
 x:476
 y:392
 tex:barrels
+action:lookat;Daddy gave these barrels to Grandpa.
+action:push;It's too heavy.
+action:pull;It's too heavy.
+action:lick;Tastes like pine and cherries.
+action:pickup;I can't pick this up.
+action:talkto;Hello.
+action:use;I can't open it.
+action:open;I can't open it.
+action:close;It's already closed.
 }
 {
 type:object
@@ -1211,6 +1385,15 @@ name:boiler
 x:764
 y:0
 tex:boiler
+action:lookat;The boiler keeps the house warm.
+action:push;It's too heavy.
+action:pull;It's too heavy.
+action:lick;Tastes hot.
+action:pickup;I can't pick this up.
+action:talkto;Hello.
+action:use;I can't open it.
+action:open;I can't open it.
+action:close;It's already closed.
 }
 {
 type:object
@@ -1218,6 +1401,15 @@ name:monsterPlate
 x:930
 y:236
 tex:monsterPlate
+action:lookat;Snowball looks hungry.. I should feed him.
+action:push;Snowball would scratch me.
+action:pull;Snowball would scratch me.
+action:lick;Tastes like bacon.
+action:pickup;Snowball would scratch me.
+action:talkto;I should get some food.
+action:use;I can't open it.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 
 
@@ -1366,7 +1558,7 @@ name:maze1
 {
 type:door
 name:southRoad
-location:maze1
+location:maze2copy
 x:506
 y:428
 tex:southRoad
@@ -1374,7 +1566,7 @@ tex:southRoad
 {
 type:door
 name:northRoad
-location:maze1
+location:maze2copy
 x:600
 y:0
 tex:northRoad
@@ -1390,7 +1582,7 @@ tex:eastRoad
 {
 type:door
 name:westRoad
-location:maze1
+location:maze2copy
 x:0
 y:244
 tex:westRoad
@@ -1447,7 +1639,7 @@ name:maze2
 {
 type:door
 name:southRoad
-location:maze2copy
+location:maze3copy
 x:506
 y:428
 tex:southRoad
@@ -1455,7 +1647,7 @@ tex:southRoad
 {
 type:door
 name:northRoad
-location:maze2copy
+location:maze3copy
 x:600
 y:0
 tex:northRoad
@@ -1463,7 +1655,7 @@ tex:northRoad
 {
 type:door
 name:eastRoad
-location:maze2copy
+location:maze3copy
 x:1000
 y:302
 tex:eastRoad
@@ -1533,7 +1725,7 @@ tex:southRoad
 {
 type:door
 name:northRoad
-location:maze3copy
+location:garden
 x:600
 y:0
 tex:northRoad
@@ -1541,7 +1733,7 @@ tex:northRoad
 {
 type:door
 name:eastRoad
-location:maze3copy
+location:garden
 x:1000
 y:302
 tex:eastRoad
@@ -1549,7 +1741,7 @@ tex:eastRoad
 {
 type:door
 name:westRoad
-location:maze3copy
+location:garden
 x:0
 y:244
 tex:westRoad

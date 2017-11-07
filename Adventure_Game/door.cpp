@@ -8,7 +8,6 @@ Door::Door(string name, string keyName,string locationName) :
     locked_ = true;
     locationName_ = locationName;
     setType("door");
-    this->SetSound("openDoor");
 }
 
 Door::Door(string name, string locationName) :
@@ -17,7 +16,6 @@ Door::Door(string name, string locationName) :
     locked_ = false; // No key provided
     locationName_ = locationName;
     setType("door");
-    this->SetSound("openDoor");
 }
 
 string Door::GetLocationName()
@@ -29,6 +27,7 @@ bool Door::Unlock(Key * key)
 {
     if(key->GetName()==keyName_)
     {
+        July5::GetInstance().PlayOneShot("unlockDoor");
         locked_ = false;
         return true;
     }
@@ -45,8 +44,10 @@ void Door::Interact(Verb verb)
     switch(verb)
     {
     case USE:
+    case PUSH:
+    case PULL:
+    case OPEN:
         Use();
-        July5::GetInstance().PlayOneShot(this->GetSound());
         break;
     default:
         Object::Interact(verb);
@@ -59,10 +60,12 @@ void Door::Use()
 {
     if(locked_)
     {
+        July5::GetInstance().PlayOneShot("lockedDoor");
         July5::GetInstance().SetLastActionText( "The door is firmly locked");
     }
     else
     {
+        July5::GetInstance().PlayOneShot("openDoor");
         July5::GetInstance().GoToLocation(this->GetLocationName());
         July5::GetInstance().SetLastActionText("You walk through the door");
     }
