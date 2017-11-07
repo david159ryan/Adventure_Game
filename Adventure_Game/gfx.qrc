@@ -134,5 +134,7 @@
         <file>sfx/whisper6.wav</file>
         <file>sfx/whisper7.wav</file>
         <file>sfx/openDoor.wav</file>
+        <file>jmh_horror/JMH HORROR.otf</file>
+        <file>jmh_horror/JMHHORROR-HORROR.ttf</file>
     </qresource>
 </RCC>
