@@ -835,6 +835,15 @@ name:nightWindow
 x:462
 y:12
 tex:nightWindow
+action:lookat;Hm.. I thought it was 2pm.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tastes like moonlight.
+action:pickup;I can't pick this up.
+action:talkto;Hello Moon.
+action:use;I can't use this.
+action:open;I shouldn't open the windows, something might come in.
+action:close;It's closed.
 }
 {
 type:object
@@ -842,6 +851,15 @@ name:drawers
 x:462
 y:144
 tex:vanityDrawers
+action:lookat;Grandma keeps her makeup in here.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tastes like wood.
+action:pickup;I can't pick this up.
+action:talkto;Hello.
+action:use;Do I look pretty now?.
+action:open;It's full of makeup.
+action:close;It's closed.
 }
 {
 type:object
@@ -849,6 +867,15 @@ name:barrel
 x:404
 y:156
 tex:barrel
+action:lookat;Daddy gave these barrels to Grandpa.
+action:push;It's too heavy.
+action:pull;It's too heavy.
+action:lick;Tastes like pine and cherries.
+action:pickup;I can't pick this up.
+action:talkto;Hello.
+action:use;I can't open it.
+action:open;I can't open it.
+action:close;It's already closed.
 }
 {
 type:object
@@ -923,6 +950,14 @@ name:alivePlant
 x:588
 y:158
 tex:alivePlant
+action:lookat;Grandma doesn't like flowers, but she uses them for her bottles.
+action:push;Grandma told me not to touch these plants.
+action:pull;Grandma told me not to touch these plants.
+action:lick;My tongue feels numb.
+action:pickup;Grandma told me not to touch these plants.
+action:use;Grandma told me not to touch these plants.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -930,6 +965,14 @@ name:deadPlant
 x:592
 y:334
 tex:deadPlant
+action:lookat;This poor plant looks dead.
+action:push;Grandma told me not to touch the plants.
+action:pull;Grandma told me not to touch the plants.
+action:lick;My tongue feels numb.
+action:pickup;Grandma told me not to touch these plants.
+action:use;Grandma told me not to touch these plants.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 
 
