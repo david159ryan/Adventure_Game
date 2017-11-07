@@ -103,7 +103,7 @@ action:close;Good bye squiggly lines
 }
 
 {
-type:inventoryobject
+type:object
 name:Broken Fingers
 x:898
 y:338
