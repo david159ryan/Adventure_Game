@@ -80,6 +80,8 @@ void MapLoader::ProcessChunk(string chunk)
                 std::vector<string> line = Split(input[i],':');
                 if(line[TAG]=="name")
                     l->SetName(line[DESC]);
+                else if(line[TAG]=="music");
+                    //l->SetMusic(line[DESC]);
             }
             locations_.push_back(l);
         }
@@ -99,6 +101,7 @@ void MapLoader::ProcessChunk(string chunk)
             for(size_t i=1;i<input.size();i++)
             {
                 std::vector<string> line = Split(input[i],':');
+                //All Objects
                 if(line[TAG]=="action")
                 {
                     std::vector<string> out = Split(line[DESC],';');
@@ -112,7 +115,10 @@ void MapLoader::ProcessChunk(string chunk)
                     o->SetY(stoi(line[DESC]));
                 else if(line[TAG]=="tex")
                     o->SetTexture(line[DESC]);
+                else if(line[TAG]=="sfx")
+                    o->SetSound(line[DESC]);
 
+                //Door specific
                 else if(line[TAG]=="location")
                     ((Door*)o)->SetLocation(line[DESC]);
                 else if(line[TAG]=="key")
