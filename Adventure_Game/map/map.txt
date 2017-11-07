@@ -7,6 +7,7 @@ name:livingroom
 type:door
 name:Kitchen door
 location:kitchen
+key:Living Room Key
 x:62
 y:14
 tex:door
@@ -16,6 +17,14 @@ action:pickup;I can't pick up a door
 action:talkto;I don't think it wants to talk
 action:open;This goes to the kitchen
 action:close;It's already closed
+}
+
+{
+type:key
+name:Living Room Key
+x:200
+y:200
+tex:chicken
 }
 
 {

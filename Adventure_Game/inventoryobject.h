@@ -8,8 +8,9 @@ class InventoryObject : public Object
 {
 public:
     InventoryObject(std::string name);
+    ~InventoryObject();
     void Interact(Verb verb) override;
-    void Interact(Verb verb, Object * target) override;
+    virtual void Interact(Verb verb, Object * target)  = 0;
 
 };
 

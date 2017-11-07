@@ -29,7 +29,7 @@ bool Door::Unlock(Key * key)
 {
     if(key->GetName()==keyName_)
     {
-        locked_ = true;
+        locked_ = false;
         return true;
     }
     return false;

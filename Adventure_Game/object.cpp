@@ -12,7 +12,7 @@ Object::Object(string name)
         { PULL , "Granny wouldn't want me to pull that." },
         { PICKUP , "I can't pick that up. That's Grandma's." },
         { USE , "I don't know what to do with that. Maybe Granny knows." },
-        { USETARGET , "I don't think I should use this on the ." },
+        { USETARGET , "I don't think I should use this on the " },
         { LICK , "That tastes funny." },
         { LOOKAT , "Hmm.. that didn't look that way earlier." },
         { TALKTO , "Hello. Can you hear me? Do you want to be my friend?" },
@@ -20,6 +20,11 @@ Object::Object(string name)
         { OPEN , "It won't open." },
         { OPENTARGET , "It won't open the ." }
     };
+}
+
+Object::~Object()
+{
+    cout << name_ << " deleted." << endl;
 }
 
 string Object::GetName()
@@ -98,9 +103,13 @@ string Object::getType()
 
 void Object::Interact( Verb verb )
 {
-    if(verb == Verb::NONE)
+    switch (verb)
     {
-        verb = Verb::LOOKAT;
+    case NONE:
+        verb = LOOKAT;
+        break;
+    default:
+        break;
     }
     July5::GetInstance().SetLastActionText(actionMap_[verb]);
     July5::GetInstance().PlayOneShot(this->GetSound());

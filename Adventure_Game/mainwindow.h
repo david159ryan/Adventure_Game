@@ -13,6 +13,7 @@
 #include <QFrame>
 #include <QThread>
 #include "july5.h"
+#include "event.h"
 #include "imageutilities.h"
 
 using namespace std;
@@ -79,6 +80,8 @@ private slots:
 private:
     QGraphicsScene *scene;
     void InventoryClicked(int index);
+    void ItemPickedUp();
+    void ItemRemoved();
 
     // Updateable interface
 public:
