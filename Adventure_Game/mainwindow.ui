@@ -97,7 +97,7 @@
         <font>
          <family>JMH HORROR</family>
          <pointsize>50</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>true</italic>
          <bold>false</bold>
         </font>
@@ -122,7 +122,7 @@ color: rgb(255, 255, 255);</string>
          <x>-30</x>
          <y>-30</y>
          <width>2191</width>
-         <height>851</height>
+         <height>1141</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -709,8 +709,8 @@ color: rgb(255, 255, 255);
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>940</width>
-            <height>272</height>
+            <width>945</width>
+            <height>279</height>
            </rect>
           </property>
           <layout class="QGridLayout" name="gridLayout_2">

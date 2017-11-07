@@ -803,6 +803,15 @@ name:fishPicture
 x:402
 y:24
 tex:fishPicture
+action:lookat;Looks fishy...
+action:push;I can't push that.
+action:pull;Grandma told me not to pull pictures down.
+action:lick;Tastes like canvas.
+action:pickup;I shouldn't take things.
+action:talkto;Hi fishy.
+action:use;I can't use this.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -810,6 +819,15 @@ name:scaredCatPicture
 x:590
 y:84
 tex:scaredCatPicture
+action:lookat;Snowball looks scared...
+action:push;I can't push that.
+action:pull;Grandma told me not to pull pictures down.
+action:lick;Tastes like canvas.
+action:pickup;I shouldn't take things.
+action:talkto;It's okay Snowball...
+action:use;I can't use this.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -846,6 +864,12 @@ location:fronthallway
 x:398
 y:452
 tex:southDoor
+action:lookat;It's a big wooden door.
+action:lick;Tastes like wood.
+action:pickup;I can't pick that up.
+action:talkto;Hello Door.
+action:open;Grandma told me to keep the doors closed.
+action:close;It's closed.
 }
 {
 type:door
@@ -854,6 +878,12 @@ location:kitchen
 x:372
 y:292
 tex:westDoor
+action:lookat;It's a big wooden door.
+action:lick;Tastes like wood.
+action:pickup;I can't pick that up.
+action:talkto;Hello Door.
+action:open;Grandma told me to keep the doors closed.
+action:close;It's closed.
 }
 {
 type:object
@@ -861,6 +891,15 @@ name:catFullPicture
 x:590
 y:20
 tex:catFullPicture
+action:lookat;Snowball is so cute...
+action:push;I can't push that.
+action:pull;Grandma told me not to pull pictures down.
+action:lick;Tastes like canvas.
+action:pickup;I shouldn't take things.
+action:talkto;*meow*
+action:use;I can't use this.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -868,6 +907,15 @@ name:catBlackPicture
 x:402
 y:92
 tex:catBlackPicture
+action:lookat;I've never seen that cat before...
+action:push;I can't push that.
+action:pull;Grandma told me not to pull pictures down.
+action:lick;Tastes like canvas.
+action:pickup;I shouldn't take things.
+action:talkto;Can you meow for me?
+action:use;I can't use this.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -883,6 +931,8 @@ x:592
 y:334
 tex:deadPlant
 }
+
+
 
 
 
@@ -956,6 +1006,8 @@ action:pickup;It's too heavy
 action:open;I can't open him
 action:close;I can't close him
 }
+
+
 
 
 
@@ -1123,20 +1175,25 @@ tex:monsterPlate
 
 
 
+
 {
 type:location
 name:garden
 }
+
 {
-type:object
+type:door
 name:kitchenDoor
+location:kitchen
 x:454
 y:440
 tex:kitchenDoor
 }
+
 {
-type:object
+type:door
 name:mazeDoor
+location:maze1
 x:496
 y:22
 tex:mazeDoor
@@ -1247,34 +1304,41 @@ tex:branchLamps
 
 
 
+
+//Maze riddle - E W S 
+//maze 1 -------------------------------------------
 {
 type:location
 name:maze1
 }
 {
-type:object
+type:door
 name:southRoad
+location:maze1
 x:506
 y:428
 tex:southRoad
 }
 {
-type:object
+type:door
 name:northRoad
+location:maze1
 x:600
 y:0
 tex:northRoad
 }
 {
-type:object
+type:door
 name:eastRoad
+location:maze2
 x:1000
 y:302
 tex:eastRoad
 }
 {
-type:object
+type:door
 name:westRoad
+location:maze1
 x:0
 y:244
 tex:westRoad
@@ -1322,34 +1386,40 @@ tex:symbol
 
 
 
+
+//maze 2 -------------------------------------------
 {
 type:location
 name:maze2
 }
 {
-type:object
+type:door
 name:southRoad
+location:maze2copy
 x:506
 y:428
 tex:southRoad
 }
 {
-type:object
+type:door
 name:northRoad
+location:maze2copy
 x:600
 y:0
 tex:northRoad
 }
 {
-type:object
+type:door
 name:eastRoad
+location:maze2copy
 x:1000
 y:302
 tex:eastRoad
 }
 {
-type:object
+type:door
 name:westRoad
+location:maze3
 x:0
 y:244
 tex:westRoad
@@ -1395,35 +1465,170 @@ tex:symbol
 
 
 
-
+//maze 3 -------------------------------------------
 {
 type:location
 name:maze3
 }
 {
-type:object
+type:door
 name:southRoad
+location:wickerman
 x:506
 y:428
 tex:southRoad
 }
 {
-type:object
+type:door
 name:northRoad
+location:maze3copy
 x:600
 y:0
 tex:northRoad
 }
 {
-type:object
+type:door
 name:eastRoad
+location:maze3copy
 x:1000
 y:302
 tex:eastRoad
 }
 {
-type:object
+type:door
 name:westRoad
+location:maze3copy
+x:0
+y:244
+tex:westRoad
+}
+{
+type:object
+name:hoodedStatue
+x:60
+y:18
+tex:hoodedStatue
+}
+{
+type:object
+name:sign
+x:1008
+y:150
+tex:sign
+}
+
+
+
+
+
+
+
+
+//maze 2 copy -------------------------------------------
+{
+type:location
+name:maze2copy
+}
+{
+type:door
+name:southRoad
+location:maze3copy
+x:506
+y:428
+tex:southRoad
+}
+{
+type:door
+name:northRoad
+location:maze3copy
+x:600
+y:0
+tex:northRoad
+}
+{
+type:door
+name:eastRoad
+location:maze3copy
+x:1000
+y:302
+tex:eastRoad
+}
+{
+type:door
+name:westRoad
+location:maze3copy
+x:0
+y:244
+tex:westRoad
+}
+{
+type:object
+name:rubble
+x:0
+y:0
+tex:rubble
+}
+{
+type:object
+name:darkTree
+x:248
+y:0
+tex:darkTree
+}
+{
+type:object
+name:coffin
+x:260
+y:426
+tex:coffin
+}
+{
+type:object
+name:yellowPlant
+x:760
+y:208
+tex:yellowPlant
+}
+{
+type:object
+name:symbol
+x:1004
+y:74
+tex:symbol
+}
+//maze 3 copy -------------------------------------------
+{
+type:location
+name:maze3copy
+}
+{
+type:door
+name:southRoad
+location:garden
+x:506
+y:428
+tex:southRoad
+}
+{
+type:door
+name:northRoad
+location:garden
+x:600
+y:0
+tex:northRoad
+}
+{
+type:door
+name:eastRoad
+location:garden
+x:1000
+y:302
+tex:eastRoad
+}
+{
+type:door
+name:westRoad
+location:garden
 x:0
 y:244
 tex:westRoad
