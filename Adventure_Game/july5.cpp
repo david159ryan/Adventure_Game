@@ -103,10 +103,12 @@ list<InventoryObject *> July5::GetItems()
 
 void July5::KillOrphans()
 {
+
     for(list<Object*>::iterator it = orphans_.begin(); it != orphans_.end(); it++)
     {
         delete (*it);
     }
+    orphans_.clear();
 }
 
 void July5::PlayOneShot(string sound)
