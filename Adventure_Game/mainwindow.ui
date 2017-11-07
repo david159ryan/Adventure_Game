@@ -543,7 +543,7 @@ color: rgb(255, 255, 255);
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>OPEN</string>
+            <string>Open</string>
            </property>
           </widget>
          </item>
@@ -710,7 +710,7 @@ color: rgb(255, 255, 255);
             <x>0</x>
             <y>0</y>
             <width>945</width>
-            <height>279</height>
+            <height>270</height>
            </rect>
           </property>
           <layout class="QGridLayout" name="gridLayout_2">
