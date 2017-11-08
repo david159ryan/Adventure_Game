@@ -36,7 +36,7 @@ void MapLoader::LoadMap(string filename)
             chunks.push_back(chunk.substr(0,chunk.length()-1));
             chunk="";
         }
-        if(read&&line!="{")
+        else if(read&&line!="{")
         {
             chunk+=line+"/";
         }

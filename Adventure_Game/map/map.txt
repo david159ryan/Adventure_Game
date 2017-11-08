@@ -902,7 +902,7 @@ action:pull;I can't pull that.
 action:lick;Tastes like wood.
 action:pickup;I can't pick this up.
 action:talkto;Hello.
-action:use;Do I look pretty now?.
+action:use;Do I look pretty now?
 action:open;It's full of makeup.
 action:close;It's closed.
 }
@@ -1977,7 +1977,7 @@ action:push;He won't budge.
 action:pull;He won't budge.
 action:lick;Tastes like
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2026,7 +2026,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2042,7 +2042,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2058,7 +2058,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2074,7 +2074,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2090,7 +2090,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2107,7 +2107,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2123,7 +2123,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2139,7 +2139,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2155,7 +2155,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2171,7 +2171,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2187,7 +2187,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2203,7 +2203,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2219,7 +2219,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2235,7 +2235,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2251,7 +2251,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2267,7 +2267,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2283,7 +2283,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2299,7 +2299,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2315,7 +2315,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2331,7 +2331,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2347,7 +2347,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2363,7 +2363,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2379,7 +2379,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2395,7 +2395,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2411,7 +2411,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2427,7 +2427,7 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
@@ -2444,23 +2444,24 @@ action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
 }
+
 {
 type:object
 name:candle28
 x:946
 y:290
 tex:candle28
-action:lookat;Candles are meant to attract spirits. 1..
+action:lookat;Candles are meant to attract spirits.
 action:push;It won't budge.
 action:pull;It won't budge.
 action:lick;Tastes like dead people.
 action:pickup;I can't pick this up.
-action:talkto;Who's there?.
+action:talkto;Who's there?
 action:use;It's warm but cold at the same time.
 action:open;I can't open it.
 action:close;I can't close a candle.
