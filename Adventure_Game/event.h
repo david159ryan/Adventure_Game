@@ -5,7 +5,8 @@ enum Event {
     LocationChanged,
     ActionPerformed,
     ItemPickedUp,
-    ItemRemoved
+    ItemRemoved,
+    StartTimer
 };
 
 #endif // EVENT_H

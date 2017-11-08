@@ -10,28 +10,36 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    July5::GetInstance().RegisterListener(Event::ItemPickedUp, this);
-    July5::GetInstance().RegisterListener(Event::ItemRemoved, this);
-
     ui->setupUi(this);
-    ui->graphicsView->setFrameStyle(QFrame::NoFrame);
     QRect rec = QApplication::desktop()->screenGeometry();
-    ui->centralwidget->setFixedHeight(rec.height());
-    ui->centralwidget->setFixedWidth(rec.width());
 
     QFontDatabase::addApplicationFont(":/jmh_horror/JMHHORROR-HORROR.ttf");
     ui->frame->setFont(QFont("JMHHORROR-HORROR", 30, QFont::Normal));
+
+    July5::GetInstance().RegisterListener(Event::ItemPickedUp, this);
+    July5::GetInstance().RegisterListener(Event::ItemRemoved, this);
+    July5::GetInstance().RegisterListener(Event::StartTimer, this);
+
     // Hackey, disgusting... to get around that layouts aren't updating
     ui->graphicsFrame->setFixedWidth(rec.width());
     ui->graphicsFrame->adjustSize();
 
+    ui->graphicsView->setFrameStyle(QFrame::NoFrame);
     ui->graphicsView->setBackgroundBrush(Qt::black);
     ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
+
     ui->actionLabel->setAttribute(Qt::WA_TransparentForMouseEvents, true);
-    ui->fadeToBlack->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     ui->actionLabel->setWindowOpacity(0);
     ui->actionLabel->setVisible(false);
+
+    ui->fadeToBlack->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+
+    ui->timerLabel->setVisible(false);
+
+    ui->centralwidget->setFixedHeight(rec.height());
+    ui->centralwidget->setFixedWidth(rec.width());
+
     setCentralWidget(ui->centralwidget);
 }
 
@@ -121,6 +129,102 @@ QGraphicsView * MainWindow::GetGraphicsView()
     return ui->graphicsView;
 }
 
+void MainWindow::Update(Event event)
+{
+
+    switch(event)
+    {
+    case Event::ItemPickedUp:
+        ItemPickedUp();
+        break;
+    case Event::ItemRemoved:
+        ItemRemoved();
+        break;
+    case Event::StartTimer:
+        StartTimer();
+        break;
+    default:
+        break;
+    }
+}
+
+void MainWindow::ItemPickedUp()
+{
+    list<InventoryObject *> inv = July5::GetInstance().GetItems();
+    string s = "inventory" + to_string(inv.size() - 1);
+    QToolButton * qt = ui->playerInventory->
+            findChild<QToolButton *>(QString::fromStdString(s));
+    QPixmap pixmap = QPixmap::fromImage(
+                ImageUtilities::GetObjectImageString(inv.back()->GetTexture()));
+    qt->setIcon(QIcon(pixmap));
+    qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
+}
+
+void MainWindow::StartTimer()
+{
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(UpdateTimer()));
+    timer->start(5000);
+    ui->timerLabel->setText("1:00");
+    ui->timerLabel->setVisible(true);
+}
+
+void MainWindow::UpdateTimer()
+{
+    static int currentTime = July5::TIMER_START;
+    currentTime--;
+    ui->timerLabel->setText(QString::fromStdString("0:" + to_string(currentTime)));
+    if(currentTime == 0)
+    {
+        timer->stop();
+        //TODO GRAMMA'S HOME!
+    }
+}
+
+void MainWindow::ItemRemoved()
+{
+    list<InventoryObject *> inv = July5::GetInstance().GetItems();
+    string s = "inventory";
+    for(int i = 0; i < July5::MAX_INVENTORY; i++)
+    {
+        QToolButton * qt = ui->playerInventory->
+                findChild<QToolButton *>(QString::fromStdString(s + to_string(i)));
+        qt->setIcon(QIcon());
+    }
+
+    int count = 0;
+    for(list<InventoryObject *>::iterator it = inv.begin(); it != inv.end(); ++it, ++count)
+    {
+        QToolButton * qt = ui->playerInventory->
+                findChild<QToolButton *>(QString::fromStdString(s + to_string(count)));
+        if((*it) != NULL ) {
+
+            QPixmap pixmap = QPixmap::fromImage(
+                        ImageUtilities::GetObjectImageString((*it)->GetTexture()));
+            qt->setIcon(QIcon(pixmap));
+            qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
+        }
+    }
+}
+
+void MainWindow::InventoryClicked(size_t index)
+{
+    Verb current = July5::GetInstance().CurrentVerb();
+    list<InventoryObject*> items = July5::GetInstance().GetItems();
+
+    if(current == PICKUP || index >= items.size())
+    {
+        July5::GetInstance().SetVerb(NONE);
+        return;
+    }
+
+    list<InventoryObject*>::iterator it;
+    size_t i = 0;
+    for(it = items.begin(); it != items.end() && i < index; ++it, ++i)
+        ;
+    July5::GetInstance().Interact((*it));
+}
+
 void MainWindow::on_openButton_clicked()
 {
     July5::GetInstance().SetVerb(Verb::OPEN);
@@ -164,57 +268,6 @@ void MainWindow::on_pickUpButton_clicked()
 void MainWindow::on_pullButton_clicked()
 {
     July5::GetInstance().SetVerb(Verb::PULL);
-}
-
-void MainWindow::Update(Event event)
-{
-
-    switch(event)
-    {
-    case Event::ItemPickedUp:
-        ItemPickedUp();
-        break;
-    case Event::ItemRemoved:
-        ItemRemoved();
-    }
-}
-
-void MainWindow::ItemPickedUp()
-{
-    list<InventoryObject *> inv = July5::GetInstance().GetItems();
-    string s = "inventory" + to_string(inv.size() - 1);
-    QToolButton * qt = ui->playerInventory->
-            findChild<QToolButton *>(QString::fromStdString(s));
-    QPixmap pixmap = QPixmap::fromImage(
-                ImageUtilities::GetObjectImageString(inv.back()->GetTexture()));
-    qt->setIcon(QIcon(pixmap));
-    qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
-}
-
-void MainWindow::ItemRemoved()
-{
-    list<InventoryObject *> inv = July5::GetInstance().GetItems();
-    string s = "inventory";
-    for(int i = 0; i < July5::MAX_INVENTORY; i++)
-    {
-        QToolButton * qt = ui->playerInventory->
-                findChild<QToolButton *>(QString::fromStdString(s + to_string(i)));
-        qt->setIcon(QIcon());
-    }
-
-    int count = 0;
-    for(list<InventoryObject *>::iterator it = inv.begin(); it != inv.end(); ++it, ++count)
-    {
-        QToolButton * qt = ui->playerInventory->
-                findChild<QToolButton *>(QString::fromStdString(s + to_string(count)));
-        if((*it) != NULL ) {
-
-            QPixmap pixmap = QPixmap::fromImage(
-                        ImageUtilities::GetObjectImageString((*it)->GetTexture()));
-            qt->setIcon(QIcon(pixmap));
-            qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
-        }
-    }
 }
 
 void MainWindow::on_inventory0_clicked()
@@ -265,22 +318,4 @@ void MainWindow::on_inventory8_clicked()
 void MainWindow::on_inventory9_clicked()
 {
     InventoryClicked(9);
-}
-
-void MainWindow::InventoryClicked(int index)
-{
-    Verb current = July5::GetInstance().CurrentVerb();
-    list<InventoryObject*> items = July5::GetInstance().GetItems();
-
-    if(current == PICKUP || index >= items.size())
-    {
-        July5::GetInstance().SetVerb(NONE);
-        return;
-    }
-
-    list<InventoryObject*>::iterator it;
-    int i = 0;
-    for(it = items.begin(); it != items.end() && i < index; ++it, ++i)
-        ;
-    July5::GetInstance().Interact((*it));
 }

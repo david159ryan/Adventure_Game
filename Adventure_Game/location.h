@@ -1,7 +1,7 @@
 #ifndef LOCATION_H
 #define LOCATION_H
 
-#include <vector>
+#include <list>
 #include "object.h"
 
 using namespace std;
@@ -14,14 +14,13 @@ public:
     ~Location();
     string GetName();
     void AddObject(Object *o);
-    Object * GetObjectAt(int i);
-    int GetObjectNum();
+    list<Object*> GetObjects() const;
     Object * GetObject(string name);
-    void RemoveObject(Object o);
+    void RemoveObject(Object * o);
     void SetName(string name);
 
 private:
-    vector<Object*> objects_;
+    list<Object*> objects_;
     string name_;
 };
 

@@ -79,8 +79,8 @@ void MapLoader::ProcessChunk(string chunk)
                 std::vector<string> line = Split(input[i],':');
                 if(line[TAG]=="name")
                     l->SetName(line[DESC]);
-                else if(line[TAG]=="music");
-                    //l->SetMusic(line[DESC]);
+                //else if(line[TAG]=="music")
+                  //  l->SetMusic(line[DESC]);
             }
             locations_.push_back(l);
         }

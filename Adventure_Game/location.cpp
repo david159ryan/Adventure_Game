@@ -23,28 +23,23 @@ void Location::AddObject(Object * o)
     objects_.push_back(o);
 }
 
-void Location::RemoveObject(Object o)
+void Location::RemoveObject(Object * o)
 {
-
+    objects_.remove(o);
 }
 
-Object * Location::GetObjectAt(int i)
+list<Object *> Location::GetObjects() const
 {
-    return objects_.at(i);
-}
-
-int Location::GetObjectNum()
-{
-    return objects_.size();
+    return objects_;
 }
 
 Object * Location::GetObject(string name)
 {
-    for(unsigned long i = 0; i < objects_.size(); i++)
+    for(list<Object*>::iterator it = objects_.begin(); it != objects_.end(); ++it)
     {
-        if (objects_.at(i)->GetName() == name)
+        if ((*it)->GetName() == name)
         {
-            return (objects_.at(i));
+            return *it;
         }
     }
     return nullptr;
