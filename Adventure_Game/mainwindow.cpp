@@ -207,7 +207,7 @@ void MainWindow::ItemRemoved()
     }
 }
 
-void MainWindow::InventoryClicked(int index)
+void MainWindow::InventoryClicked(size_t index)
 {
     Verb current = July5::GetInstance().CurrentVerb();
     list<InventoryObject*> items = July5::GetInstance().GetItems();
@@ -219,7 +219,7 @@ void MainWindow::InventoryClicked(int index)
     }
 
     list<InventoryObject*>::iterator it;
-    int i = 0;
+    size_t i = 0;
     for(it = items.begin(); it != items.end() && i < index; ++it, ++i)
         ;
     July5::GetInstance().Interact((*it));

@@ -63,7 +63,7 @@ private slots:
 
 private:
     QGraphicsScene *scene;
-    void InventoryClicked(int index);
+    void InventoryClicked(size_t index);
     void ItemPickedUp();
     void ItemRemoved();
     void StartTimer();

@@ -3,6 +3,8 @@
 #include <QSoundEffect>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
+#include <QApplication>
+#include <QDesktopWidget>
 
 using namespace std;
 
