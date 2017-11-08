@@ -1,3 +1,11 @@
+
+/Game reads this file.
+/It will use the tags (name:/type:/etc:) to determine
+/how and what to create in game.
+/
+/MapLoader class is responsible for reading the map
+/and populating the game world.
+
 {
 type:location
 name:menu
@@ -10,6 +18,12 @@ location:livingroom
 x:0
 y:0
 tex:menu
+action:lookat;It's the button to start the game.
+action:pull;You should use it.
+action:lick;Tastes like procrastination.
+action:pickup;You can pick up this game for $500.
+action:talkto;Knock Knock. Who's there? Play the game!
+action:close;That's not how you exit the game...
 }
 
 
@@ -753,7 +767,7 @@ action:open;I can't do that.
 action:close;I can't do that.
 }
 {
-type:food
+type:porkers
 name:Porkers
 x:700
 y:128
@@ -1921,32 +1935,69 @@ name:wickerman
 }
 
 {
-type:object
-name:wickerRoad
+type:door
+name:Wicker Road
 x:506
 y:456
 tex:wickerRoad
+action:lookat;I don't know where it goes...
+action:push;I can't do that.
+action:pull;I can't do that.
+action:lick;Tastes like dirt.
+action:pickup;I can't pick this up.
+action:talkto;Hello Road.
+action:use;I can't open it.
+action:close;I can't close that.
 }
+
 {
 type:object
-name:wickerman
+name:Wickerman
 x:480
 y:26
 tex:wickerman
+action:lookat;The shadow of The Wickerman is rising again.
+action:push;He's too heavy.
+action:pull;He's too heavy.
+action:lick;He tastes like charcoal.
+action:pickup;I can't pick him up.
+action:talkto;Your time will come...
+action:use;I can't open him.
+action:open;I can't open him.
+action:close;I can't close him.
 }
 {
 type:object
-name:jibby
+name:Jibby
 x:526
 y:135
 tex:jibby
+action:lookat;Weren't you in Daddy's shed?
+action:push;He won't budge.
+action:pull;He won't budge.
+action:lick;Tastes like
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
+
 {
 type:object
 name:screen2
 x:788
 y:66
 tex:screen2
+action:lookat;Grandma says that I'm too young to understand these.
+action:push;It's too heavy.
+action:pull;It's too heavy.
+action:lick;I want to take a byte.
+action:pickup;I can't pick this up.
+action:talkto;beep boop!.
+action:use;I don't know how.
+action:open;I can't open it.
+action:close;It's already closed.
 }
 {
 type:object
@@ -1954,6 +2005,15 @@ name:screen1
 x:54
 y:66
 tex:screen1
+action:lookat;It makes my hair go funny.
+action:push;It's too heavy.
+action:pull;It's too heavy.
+action:lick;I want to nibble on it.
+action:pickup;I can't pick this up.
+action:talkto;beep boop!.
+action:use;I don't know how to use this.
+action:open;I can't open it.
+action:close;It's already closed.
 }
 {
 type:object
@@ -1961,6 +2021,15 @@ name:candle1
 x:400
 y:302
 tex:candle1
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -1968,6 +2037,15 @@ name:candle2
 x:424
 y:232
 tex:candle2
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -1975,6 +2053,15 @@ name:candle3
 x:334
 y:238
 tex:candle3
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -1982,6 +2069,15 @@ name:candle4
 x:364
 y:166
 tex:candle4
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -1989,13 +2085,32 @@ name:candle5
 x:374
 y:110
 tex:candle5
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
+
 {
 type:object
 name:candle6
 x:448
 y:130
 tex:candle6
+action:lookat;This one belongs to Sun Dave...
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2003,6 +2118,15 @@ name:candle7
 x:472
 y:60
 tex:candle7
+action:lookat;This one belongs to Moon Dave...
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2010,6 +2134,15 @@ name:candle8
 x:406
 y:50
 tex:candle8
+action:lookat;This one belongs to Chris...
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2017,6 +2150,15 @@ name:candle9
 x:338
 y:68
 tex:candle9
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2024,6 +2166,15 @@ name:candle10
 x:294
 y:140
 tex:candle10
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2031,6 +2182,15 @@ name:candle11
 x:194
 y:200
 tex:candle11
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2038,13 +2198,31 @@ name:candle12
 x:260
 y:288
 tex:candle12
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
 name:candle13
 x:182
-y:116
+y:316
 tex:candle13
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2052,6 +2230,15 @@ name:candle14
 x:102
 y:290
 tex:candle14
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2059,6 +2246,15 @@ name:candle15
 x:594
 y:302
 tex:candle15
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2066,6 +2262,15 @@ name:candle16
 x:642
 y:232
 tex:candle16
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2073,6 +2278,15 @@ name:candle17
 x:708
 y:238
 tex:candle17
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2080,6 +2294,15 @@ name:candle18
 x:664
 y:166
 tex:candle18
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2087,6 +2310,15 @@ name:candle19
 x:692
 y:110
 tex:candle19
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2094,6 +2326,15 @@ name:candle20
 x:620
 y:130
 tex:candle20
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2101,6 +2342,15 @@ name:candle21
 x:596
 y:60
 tex:candle21
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2108,6 +2358,15 @@ name:candle22
 x:662
 y:50
 tex:candle22
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2115,6 +2374,15 @@ name:candle23
 x:730
 y:68
 tex:candle23
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2122,6 +2390,15 @@ name:candle24
 x:758
 y:140
 tex:candle24
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2129,6 +2406,15 @@ name:candle25
 x:800
 y:200
 tex:candle25
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2136,13 +2422,32 @@ name:candle26
 x:792
 y:288
 tex:candle26
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
+
 {
 type:object
 name:candle27
 x:886
-y:116
+y:316
 tex:candle27
+action:lookat;Candles are meant to attract spirits.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }
 {
 type:object
@@ -2150,4 +2455,13 @@ name:candle28
 x:946
 y:290
 tex:candle28
+action:lookat;Candles are meant to attract spirits. 1..
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like dead people.
+action:pickup;I can't pick this up.
+action:talkto;Who's there?.
+action:use;It's warm but cold at the same time.
+action:open;I can't open it.
+action:close;I can't close a candle.
 }

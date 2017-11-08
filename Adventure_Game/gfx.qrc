@@ -143,5 +143,38 @@
         <file>jmh_horror/JMHHORROR-HORROR.ttf</file>
         <file>gfx/backgrounds/menu.png</file>
         <file>gfx/interactables/menu.png</file>
+        <file>gfx/interactables/candle1.png</file>
+        <file>gfx/interactables/candle2.png</file>
+        <file>gfx/interactables/candle3.png</file>
+        <file>gfx/interactables/candle4.png</file>
+        <file>gfx/interactables/candle5.png</file>
+        <file>gfx/interactables/candle6.png</file>
+        <file>gfx/interactables/candle7.png</file>
+        <file>gfx/interactables/candle8.png</file>
+        <file>gfx/interactables/candle9.png</file>
+        <file>gfx/interactables/candle10.png</file>
+        <file>gfx/interactables/candle11.png</file>
+        <file>gfx/interactables/candle12.png</file>
+        <file>gfx/interactables/candle13.png</file>
+        <file>gfx/interactables/candle14.png</file>
+        <file>gfx/interactables/candle15.png</file>
+        <file>gfx/interactables/candle16.png</file>
+        <file>gfx/interactables/candle17.png</file>
+        <file>gfx/interactables/candle18.png</file>
+        <file>gfx/interactables/candle19.png</file>
+        <file>gfx/interactables/candle20.png</file>
+        <file>gfx/interactables/candle21.png</file>
+        <file>gfx/interactables/candle22.png</file>
+        <file>gfx/interactables/candle23.png</file>
+        <file>gfx/interactables/candle24.png</file>
+        <file>gfx/interactables/candle25.png</file>
+        <file>gfx/interactables/candle26.png</file>
+        <file>gfx/interactables/candle27.png</file>
+        <file>gfx/interactables/candle28.png</file>
+        <file>gfx/interactables/jibby.png</file>
+        <file>gfx/interactables/screen1.png</file>
+        <file>gfx/interactables/screen2.png</file>
+        <file>gfx/interactables/wickerman.png</file>
+        <file>gfx/interactables/wickerRoad.png</file>
     </qresource>
 </RCC>
