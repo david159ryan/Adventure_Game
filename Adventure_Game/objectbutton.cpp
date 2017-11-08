@@ -10,7 +10,6 @@ ObjectButton::ObjectButton( Object *object, QWidget *parent) : QToolButton(paren
 
 void ObjectButton::Interact()
 {
-    Verb v = July5::GetInstance().CurrentVerb();
     July5::GetInstance().Interact(object_);
     July5::GetInstance().SetVerb(Verb::NONE);
 }
