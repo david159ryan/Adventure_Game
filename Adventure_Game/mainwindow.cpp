@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->frame->setFont(QFont("JMHHORROR-HORROR", 30, QFont::Normal));
     // Hackey, disgusting... to get around that layouts aren't updating
     ui->graphicsFrame->setFixedWidth(rec.width());
-    ui->graphicsFrame->setFixedHeight(int (rec.height()*(675/float (900))));
+    ui->graphicsFrame->adjustSize();
 
     ui->graphicsView->setBackgroundBrush(Qt::black);
     ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );

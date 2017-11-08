@@ -140,7 +140,7 @@ color: rgb(255, 255, 255);</string>
        <bool>true</bool>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -709,8 +709,8 @@ color: rgb(255, 255, 255);
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>945</width>
-            <height>270</height>
+            <width>942</width>
+            <height>341</height>
            </rect>
           </property>
           <layout class="QGridLayout" name="gridLayout_2">
