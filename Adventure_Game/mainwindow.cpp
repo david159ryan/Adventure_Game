@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Hackey, disgusting... to get around that layouts aren't updating
     ui->graphicsFrame->setFixedWidth(rec.width());
-    ui->graphicsFrame->setFixedHeight(int (rec.height()*(675/float (900))));
+    ui->graphicsFrame->adjustSize();
 
     ui->graphicsView->setFrameStyle(QFrame::NoFrame);
     ui->graphicsView->setBackgroundBrush(Qt::black);

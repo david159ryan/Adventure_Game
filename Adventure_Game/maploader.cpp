@@ -36,7 +36,7 @@ void MapLoader::LoadMap(string filename)
             chunks.push_back(chunk.substr(0,chunk.length()-1));
             chunk="";
         }
-        if(read&&line!="{")
+        else if(read&&line!="{")
         {
             chunk+=line+"/";
         }
@@ -50,7 +50,6 @@ void MapLoader::LoadMap(string filename)
         cout<<locations_[i]->GetName()<<endl;
         July5::GetInstance().AddLocation(locations_[i]);
     }
-    July5::GetInstance().GoToLocation("livingroom");
     cout<<"Map Loaded!"<<endl;
 }
 
