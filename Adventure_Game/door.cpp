@@ -65,7 +65,7 @@ void Door::Use()
     }
     else
     {
-        July5::GetInstance().PlayOneShot("openDoor");
+        //July5::GetInstance().PlayOneShot("openDoor");
         July5::GetInstance().GoToLocation(this->GetLocationName());
         July5::GetInstance().SetLastActionText("You walk through the door");
     }

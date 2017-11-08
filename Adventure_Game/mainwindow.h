@@ -36,45 +36,29 @@ public:
     void SetActionLabelText(string text);
 //    void ConnectButton(QToolButton * b);
 
+public slots:
+    void UpdateTimer();
+
 private slots:
     void fadeInFromBlack();
-
     void on_openButton_clicked();
-
     void on_lickButton_clicked();
-
     void on_useButton_clicked();
-
     void on_pushButton_clicked();
-
     void on_closeButton_clicked();
-
     void on_lookAtButton_clicked();
-
     void on_talkToButton_clicked();
-
     void on_pickUpButton_clicked();
-
     void on_pullButton_clicked();
-
     void on_inventory0_clicked();
-
     void on_inventory1_clicked();
-
     void on_inventory2_clicked();
-
     void on_inventory3_clicked();
-
     void on_inventory4_clicked();
-
     void on_inventory5_clicked();
-
     void on_inventory6_clicked();
-
     void on_inventory7_clicked();
-
     void on_inventory8_clicked();
-
     void on_inventory9_clicked();
 
 private:
@@ -82,7 +66,8 @@ private:
     void InventoryClicked(int index);
     void ItemPickedUp();
     void ItemRemoved();
-
+    void StartTimer();
+    QTimer *timer;
     // Updateable interface
 public:
     void Update(Event event);
