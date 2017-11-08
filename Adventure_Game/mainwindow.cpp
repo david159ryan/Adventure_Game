@@ -82,7 +82,7 @@ void MainWindow::fadeInFromBlack()
     b->start();
 }
 
-void MainWindow::SetActionLabelText(string text)
+void MainWindow::SetActionLabelText(string text, int duration)
 {
     ui->actionLabel->setText(QString::fromStdString(text));
     ui->actionLabel->adjustSize();
@@ -112,7 +112,7 @@ void MainWindow::SetActionLabelText(string text)
     a->start();
 
     QPropertyAnimation *b = new QPropertyAnimation(eff, "opacity");
-    b->setDuration(2000);
+    b->setDuration(duration);
     b->setStartValue(1);
     b->setEndValue(0);
     b->setEasingCurve(QEasingCurve::Linear);

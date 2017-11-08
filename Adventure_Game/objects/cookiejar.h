@@ -12,6 +12,7 @@ public:
 
 private:
     void PickUp();
+    bool used;
 };
 
 #endif // COOKIEJAR_H

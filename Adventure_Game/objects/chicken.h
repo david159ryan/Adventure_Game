@@ -1,13 +1,13 @@
-#ifndef PORKERS_H
-#define PORKERS_H
+#ifndef CHICKEN_H
+#define CHICKEN_H
 
 #include "inventoryobject.h"
 #include "game_logic/verb.h"
 
-class Porkers : public InventoryObject
+class Chicken : public InventoryObject
 {
 public:
-    Porkers(string name);
+    Chicken(string name);
     void Interact(Verb verb, Object *target) override;
 
 private:

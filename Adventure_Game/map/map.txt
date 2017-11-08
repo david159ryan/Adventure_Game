@@ -736,7 +736,7 @@ action:open;I can't do that.
 action:close;I can't do that.
 }
 {
-type:object
+type:chicken
 name:chicken
 x:738
 y:132
@@ -745,7 +745,7 @@ action:lookat;That's Clucky, I enjoyed chasing him around.
 action:push;He might fall.
 action:pull;I don't want to eat him yet.
 action:lick;He tastes nice.
-action:pickup;I don't want him.
+action:pickup;Come along Clucky!
 action:talkto;Hi Clucky, how are you feeling?
 action:use;I'll eat him later.
 action:open;I can't do that.

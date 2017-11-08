@@ -33,7 +33,7 @@ public:
     void showEvent(QShowEvent *event);
     Ui::MainWindow *ui;
     QGraphicsView * GetGraphicsView();
-    void SetActionLabelText(string text);
+    void SetActionLabelText(string text, int duration = 1000);
 //    void ConnectButton(QToolButton * b);
 
 public slots:

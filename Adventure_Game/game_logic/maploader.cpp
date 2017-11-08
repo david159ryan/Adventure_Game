@@ -97,6 +97,8 @@ void MapLoader::ProcessChunk(string chunk)
                 o=new Key("Mysterious Key");
             else if(desc=="porkers")
                 o=new Porkers("Porkers");
+            else if(desc=="chicken")
+                o=new Porkers("Chicken");
             else if(desc=="cookiejar")
                 o=new CookieJar("Cookie Jar");
 
