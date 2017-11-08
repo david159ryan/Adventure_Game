@@ -1050,9 +1050,8 @@ action:close;I cant close that
 }
 
 {
-type:door
+type:object
 name:Stairs
-location:upstairshallway
 x:526
 y:0
 tex:stairs
@@ -1078,6 +1077,7 @@ action:lick;It seems to shiver
 action:pickup;It's too heavy
 action:open;I can't open him
 action:close;I can't close him
+action:talkto;<font size="1" color="red"><i>My first is twice in apple but not once in tart.<br>My second is in liver but not in heart.<br>My third is in giant and also in ghost.<br>Whole I’m best when I am roast.<br>What am I?</i></font>
 }
 
 
