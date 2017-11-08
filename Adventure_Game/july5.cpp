@@ -120,6 +120,7 @@ void July5::Start()
 {
     MapLoader mp;
     mp.LoadMap("://map/map.txt");
+    GoToLocation("menu");
     audioManager.PlayMusic("kitchen");
 }
 

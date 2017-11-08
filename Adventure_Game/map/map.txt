@@ -1,5 +1,20 @@
 {
 type:location
+name:menu
+}
+
+{
+type:door
+name:Menu door
+location:livingroom
+x:0
+y:0
+tex:menu
+}
+
+
+{
+type:location
 name:livingroom
 }
 
