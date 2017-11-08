@@ -132,6 +132,47 @@ color: rgb(255, 255, 255);</string>
         <string/>
        </property>
       </widget>
+      <widget class="QLabel" name="timerLabel">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>1660</x>
+         <y>20</y>
+         <width>191</width>
+         <height>122</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>JMH HORROR</family>
+         <pointsize>50</pointsize>
+         <weight>50</weight>
+         <italic>true</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 150);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>1:00</string>
+       </property>
+       <property name="margin">
+        <number>30</number>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::NoTextInteraction</set>
+       </property>
+      </widget>
      </widget>
     </item>
     <item>

@@ -48,12 +48,12 @@ void LocationUI::LocationChanged()
         window->GetGraphicsView()->fitInView(pPixmap);
 
         //add interactable objects
-        cout << "making location with " << newLocation->GetObjectNum() << " objects" << endl;
+        list<Object*> objects = newLocation->GetObjects();
+        cout << "making location with " << objects.size() << " objects" << endl;
 
-        int oSize = newLocation->GetObjectNum();
-        for(int i = 0; i < oSize; i++)
+        for(list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it)
         {
-            Object * o = newLocation->GetObjectAt(i);
+            Object * o = (*it);
             cout << "making button " << o->GetName() << endl;
             ObjectButton * b = new ObjectButton(o);
             QPixmap pixmap = QPixmap::fromImage(ImageUtilities::GetObjectImageString(o->GetTexture()));

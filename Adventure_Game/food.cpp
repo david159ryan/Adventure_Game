@@ -39,6 +39,7 @@ void Food::Use(Object * target)
         k->setActionText("talkto","What do you unlock?");
         July5::GetInstance().AddToInventory(k);
         July5::GetInstance().SetLastActionText(text);
+        July5::GetInstance().FireEvent(Event::StartTimer);
     }
     else
     {

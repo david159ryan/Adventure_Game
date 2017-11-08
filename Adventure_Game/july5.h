@@ -23,14 +23,13 @@ public:
     }
 
     static const int MAX_INVENTORY = 10;
-
+    static const int TIMER_START = 60;
     void GoToLocation(string locationName);
     void RegisterListener(Event event, Updateable *updateable);
     void FireEvent(Event event);
     void Interact(Object * obj);
     Location * GetCurrentLocation();
     void AddLocation(Location *);
-
     void SetLastActionText(string text);
     void SetActiveItem(InventoryObject * obj);
     bool hasActiveItem();
