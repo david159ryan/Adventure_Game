@@ -15,17 +15,18 @@ void Porkers::Interact(Verb verb, Object *target)
     }
 }
 
-void Porkers::Use()
-{
-    return;
-}
-
 void Porkers::Use(Object * target)
 {
     string text;
     if (target->GetName()=="gargoyle")
     {
-        //text = "DAS";
+        target->setActionText("talkto", "<font size=\"1\" color=\"red\">"
+                                        "<i>First sunrise, then sunset.<br>"
+                                         "Of two remaining, south is best.<br>"
+                                         "Hurry child, for I do fret...<br>"
+                                         "The old bird returns to her nest."
+                                         "</i></font>");
+        target->Interact(TALKTO);
         July5::GetInstance().RemoveFromInventory(this);
         July5::GetInstance().FireEvent(Event::StartTimer);
     }

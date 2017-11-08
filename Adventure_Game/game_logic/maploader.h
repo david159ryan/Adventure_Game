@@ -21,6 +21,7 @@
 #include "objects/inventoryobject.h"
 #include "objects/porkers.h"
 #include "objects/cookiejar.h"
+#include "objects/chicken.h"
 
 class MapLoader
 {

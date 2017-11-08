@@ -1055,7 +1055,7 @@ name:Stairs
 x:526
 y:0
 tex:stairs
-action:lookat;It leads upstairs
+action:lookat;Grandma does't let me go upstairs by myself...
 action:push;I can't push that
 action:pull;I can't pull that
 action:lick;Tastes like carpet
@@ -1563,8 +1563,14 @@ tex:branchLamps
 
 
 
-//Maze riddle - E W S
-//maze 1 -------------------------------------------
+/Maze riddle - E W S -
+/
+/First sunrise, then sunset.
+/Of two remaining, south is best.
+/Hurry child, for I do fret...
+/The old bird return to her nest.
+/
+/maze 1 -------------------------------------------
 {
 type:location
 name:maze1
