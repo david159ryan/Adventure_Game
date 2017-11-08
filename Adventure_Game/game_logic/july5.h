@@ -4,12 +4,13 @@
 #include "string"
 
 #include "locationmanager.h"
-#include "audiomanager.h"
+#include "inventory.h"
 #include "verbmanager.h"
 #include "verb.h"
-#include "eventmanager.h"
-#include "inventory.h"
-#include "inventoryobject.h"
+
+#include "utility/audiomanager.h"
+#include "utility/eventmanager.h"
+#include "objects/inventoryobject.h"
 
 using namespace std;
 

@@ -1,6 +1,5 @@
 #include "locationui.h"
-#include "iostream"
-#include "eventmanager.h"
+#include "utility/eventmanager.h"
 
 QImage GetBackgroundString(string);
 QImage GetObjectImageString(string);

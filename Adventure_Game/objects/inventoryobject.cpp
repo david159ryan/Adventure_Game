@@ -1,5 +1,5 @@
 #include "inventoryobject.h"
-#include "july5.h"
+#include "game_logic/july5.h"
 
 InventoryObject::InventoryObject(string name) :
     Object(name)

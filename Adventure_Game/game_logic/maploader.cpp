@@ -14,7 +14,6 @@ void MapLoader::LoadMap(string filename)
     std::vector<string> chunks;
     bool read=false;
 
-
     QFile file(qFileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
@@ -70,9 +69,12 @@ void MapLoader::ProcessChunk(string chunk)
 {
     std::vector<string> input = Split(chunk,'/');
     std::vector<string> type = Split(input[0],':');
-    if(type[TAG]=="type")
+    string tag = type[TAG];
+    string desc = type[DESC];
+
+    if(tag=="type")
     {
-        if(type[DESC]=="location")
+        if(desc=="location")
         {
             Location *l = new Location("???");
             for(size_t i=1;i<input.size();i++)
@@ -88,15 +90,16 @@ void MapLoader::ProcessChunk(string chunk)
         else
         {
             Object *o;
-            if(type[DESC]=="object")
+            if(desc=="object")
                 o=new Object("Mysterious Object");
-            else if(type[DESC]=="door")
+            else if(desc=="door")
                 o=new Door("Mysterious Door","???");
-            else if(type[DESC]=="key")
+            else if(desc=="key")
                 o=new Key("Mysterious Key");
-            else if(type[DESC]=="food")
-                o=new Food("Mysterious Object");
-
+            else if(desc=="porkers")
+                o=new Porkers("Porkers");
+            else if(desc=="cookiejar")
+                o=new CookieJar("Cookie Jar");
 
             for(size_t i=1;i<input.size();i++)
             {

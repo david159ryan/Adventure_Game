@@ -12,9 +12,9 @@
 #include <QToolButton>
 #include <QFrame>
 #include <QThread>
-#include "july5.h"
-#include "event.h"
-#include "imageutilities.h"
+#include "game_logic/july5.h"
+#include "utility/event.h"
+#include "utility/imageutilities.h"
 
 using namespace std;
 

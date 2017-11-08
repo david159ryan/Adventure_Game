@@ -1,5 +1,5 @@
 #include "door.h"
-#include "july5.h"
+#include "game_logic/july5.h"
 
 Door::Door(string name, string keyName,string locationName) :
     Object(name)

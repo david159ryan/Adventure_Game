@@ -1,7 +1,7 @@
 #ifndef LOCATIONMANAGER_H
 #define LOCATIONMANAGER_H
 #include "location.h"
-#include "eventmanager.h"
+#include "utility/eventmanager.h"
 #include <vector>
 
 using namespace std;

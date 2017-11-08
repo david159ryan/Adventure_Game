@@ -1,12 +1,12 @@
-#ifndef KEY_H
-#define KEY_H
+#ifndef FOOD_H
+#define FOOD_H
 #include "inventoryobject.h"
-#include "verb.h"
+#include "game_logic/verb.h"
 
-class Key : public InventoryObject
+class Porkers : public InventoryObject
 {
 public:
-    Key(string name);
+    Porkers(string name);
     void Interact(Verb verb, Object *target) override;
 
 private:
@@ -14,4 +14,4 @@ private:
     void Use(Object * target);
 };
 
-#endif // KEY_H
+#endif

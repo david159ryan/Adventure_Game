@@ -3,7 +3,7 @@
 
 #include <string>
 #include <map>
-#include "verb.h"
+#include "game_logic/verb.h"
 
 using namespace std;
 

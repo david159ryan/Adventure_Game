@@ -1,16 +1,19 @@
 #ifndef LOCATIONUI_H
 #define LOCATIONUI_H
-#include "updateable.h"
 #include "mainwindow.h"
-#include <string>
+
 #include <QBoxLayout>
 #include <QString>
 #include <QGraphicsScene>
 #include <QGraphicsProxyWidget>
-#include <map>
 #include <QToolButton>
-#include "objectbutton.h"
-#include "imageutilities.h"
+
+#include <map>
+#include <string>
+
+#include "ui/objectbutton.h"
+#include "utility/updateable.h"
+#include "utility/imageutilities.h"
 
 using namespace std;
 

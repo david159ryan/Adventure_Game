@@ -2,7 +2,7 @@
 #define LOCATION_H
 
 #include <list>
-#include "object.h"
+#include "objects/object.h"
 
 using namespace std;
 

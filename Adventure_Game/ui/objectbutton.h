@@ -4,8 +4,8 @@
 #include <QToolButton>
 #include <QGraphicsPixmapItem>
 
-#include "object.h"
-#include "july5.h"
+#include "objects/object.h"
+#include "game_logic/july5.h"
 
 class ObjectButton : public QToolButton
 {

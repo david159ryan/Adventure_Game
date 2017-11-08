@@ -14,11 +14,13 @@
 #include <QFile>
 
 #include "location.h"
-#include "object.h"
-#include "door.h"
 #include "july5.h"
-#include "inventoryobject.h"
-#include "food.h"
+
+#include "objects/object.h"
+#include "objects/door.h"
+#include "objects/inventoryobject.h"
+#include "objects/porkers.h"
+#include "objects/cookiejar.h"
 
 class MapLoader
 {

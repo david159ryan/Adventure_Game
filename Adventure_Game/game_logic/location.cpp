@@ -1,6 +1,5 @@
-#include "location.h"
-
 #include "iostream"
+#include "location.h"
 
 
 Location::Location()

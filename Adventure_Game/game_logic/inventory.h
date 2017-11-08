@@ -1,7 +1,7 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 #include <list>
-#include "inventoryobject.h"
+#include "objects/inventoryobject.h"
 using namespace std;
 
 

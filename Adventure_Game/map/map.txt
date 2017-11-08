@@ -20,21 +20,6 @@ action:close;It's already closed
 }
 
 {
-type:key
-name:Living Room Key
-x:280
-y:165
-tex:key
-action:lookat;It looks like a key.
-action:push;I don't want to push it.
-action:pull;I could pick this up.
-action:lick;Tastes like brass.
-action:talkto;What do you open?
-action:open;I can't open a key.
-action:close;I can't close a key.
-}
-
-{
 type:object
 name:Grandma's Lamp
 x:510
@@ -221,7 +206,7 @@ action:close;I can't close this
 }
 
 {
-type:object
+type:cookiejar
 name:Cookie Jar
 x:284
 y:90

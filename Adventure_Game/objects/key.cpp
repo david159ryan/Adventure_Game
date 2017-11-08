@@ -1,9 +1,11 @@
 #include "key.h"
 #include "door.h"
-#include "july5.h"
+#include "game_logic/july5.h"
 
 Key::Key(string name) : InventoryObject(name)
 {
+    SetTexture("key");
+
 }
 
 void Key::Interact(Verb verb, Object *target)
