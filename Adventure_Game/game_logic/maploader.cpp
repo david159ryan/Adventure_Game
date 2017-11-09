@@ -46,7 +46,6 @@ void MapLoader::LoadMap(string filename)
     }
     for(size_t i = 0;i<locations_.size();i++)
     {
-        cout<<locations_[i]->GetName()<<endl;
         July5::GetInstance().AddLocation(locations_[i]);
     }
     locations_.clear();

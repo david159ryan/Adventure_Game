@@ -35,6 +35,5 @@ void CookieJar::PickUp()
     setActionText("pickup", "It was a coo-key jar...");
     setActionText("open", "It was a coo-key jar...");
     July5::GetInstance().AddToInventory(k);
-    July5::GetInstance().SetLastActionText("<font color=\"yellow\">You find a key<i>");
     July5::GetInstance().FireEvent(Event::ActionPerformed);
 }

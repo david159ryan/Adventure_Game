@@ -1051,6 +1051,14 @@ action:close;I cant close that
 
 {
 type:object
+name:carpet
+x:462
+y:108
+tex:eastCarpet
+}
+
+{
+type:object
 name:Stairs
 x:526
 y:0
@@ -1256,7 +1264,7 @@ name:wood
 x:784
 y:418
 tex:wood
-action:lookat;Grandma makes me chop the wood sometimes..
+action:lookat;Grandma makes me chop wood sometimes...
 action:push;I can't push that.
 action:pull;I can't pull that.
 action:lick;Tastes like bark.
@@ -1455,13 +1463,28 @@ location:maze1
 x:496
 y:22
 tex:mazeDoor
+action:lookat;That goes to Grandma's maze...
+action:pull;I can't pull that.
+action:lick;Tastes like dirt.
+action:pickup;I can't pick that up.
+action:talkto;Hello? Who's there?
+action:close;I can't close that.
 }
 {
 type:object
-name:pumpkins
+name:Pumpkins
 x:356
 y:274
 tex:pumpkins
+action:lookat;Sometimes the Pumpkins watch me play...
+action:push;They're too creepy.
+action:pull;They're too creepy.
+action:lick;Tastes like Pumpkin.
+action:pickup;I'd need a shovel...
+action:talkto;Hello Jack.
+action:use;I do like pumpkin...
+action:open;I can't open them.
+action:close;I can't close them.
 }
 {
 type:object
@@ -1472,17 +1495,36 @@ tex:stones
 }
 {
 type:object
-name:lampost
+name:Lampost
 x:748
 y:128
 tex:lampost
+action:lookat;It's a lovely Lampost.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It's cold...
+action:pickup;I can't do that.
+action:talkto;Hello Lampy.
+action:use;I feel warm next to it...
+action:open;I can't open it.
+action:close;I can't close it.
 }
+
 {
 type:object
 name:log
 x:768
 y:306
 tex:log
+action:lookat;Mansion log, stardate 8.6.1945.<br>Grandpa should be testing his<br>new hunting weapons in Japan today...
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It's damp.
+action:pickup;I can't do that.
+action:talkto;Hello.
+action:use;It's a pretty uncomfortable seat.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1490,6 +1532,15 @@ name:sculpture
 x:354
 y:360
 tex:sculpture
+action:lookat;Its a sculpture.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It's damp.
+action:pickup;I can't do that.
+action:talkto;Hello.
+action:use;It's whispering to me...
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1497,6 +1548,15 @@ name:barrelPlant
 x:530
 y:230
 tex:barrelPlant
+action:lookat;It's a plant.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It's woody tasting...
+action:pickup;I can't do that.
+action:talkto;Hello Plant.
+action:use;It sways by itself.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1504,27 +1564,65 @@ name:washingLine
 x:108
 y:104
 tex:washingLine
+action:lookat;I don't like the washing line...
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;I don't want to.
+action:pickup;I can't do that.
+action:talkto;Hello again...
+action:use;Grandpa hung me on this once...
+action:open;I can't open it.
+action:close;I can't close it.
 }
+
 {
 type:object
 name:gravestones
 x:820
 y:178
 tex:gravestones
+action:lookat;We bury people here.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes like bones.
+action:pickup;I can't do that.
+action:talkto;How are you?
+action:use;I'm not dead yet...
+action:open;I can't open it.
+action:close;I can't close it.
 }
+
 {
 type:object
 name:leafPile
 x:8
 y:350
 tex:leafPile
+action:lookat;Something is hiding under there...
+action:push;I don't want them to leaf...
+action:pull;Come here leaves...
+action:lick;They taste of fear.
+action:pickup;I can't carry them all.
+action:talkto;I love you leafs.
+action:use;They're comfortable.
+action:open;I can't open them.
+action:close;I can't close them.
 }
+
 {
 type:object
 name:flower
 x:232
 y:224
 tex:flower
+action:lookat;Grandma doesn't like flowers, but she uses them for her bottles.
+action:push;Grandma told me not to touch these plants.
+action:pull;Grandma told me not to touch these plants.
+action:lick;My tongue feels numb.
+action:pickup;Grandma told me not to touch these plants.
+action:use;Grandma told me not to touch these plants.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -1532,20 +1630,49 @@ name:leaves
 x:148
 y:216
 tex:leaves
+action:lookat;Those leafs have moved...
+action:push;I don't want them to leaf...
+action:pull;Come here leaves...
+action:lick;They taste of fear.
+action:pickup;I can't carry them all.
+action:talkto;I love you leafs.
+action:use;They're comfortable.
+action:open;I can't open them.
+action:close;I can't close them.
 }
+
 {
 type:object
 name:well
 x:198
 y:270
 tex:well
+action:lookat;That well is very old.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Its very hot...
+action:pickup;I can't pick it up.
+action:talkto;I can hear voices coming from it...
+action:use;I don't want to go down there,<br>thats where the goat man lives...
+action:open;I can't open it.
+action:close;I can't close it.
 }
+
 {
 type:object
 name:scarecrow
 x:460
 y:238
 tex:scarecrow
+action:lookat;That scarecrow always moves.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;He tastes like chicken.
+action:pickup;I can't pick him up.
+action:talkto;Hello Mr. Scare Crow.
+action:use;He's not very useful...
+action:open;He's full of blood and organs...
+action:close;I can't close him.
 }
 {
 type:object
@@ -1553,6 +1680,15 @@ name:branchLamps
 x:30
 y:42
 tex:branchLamps
+action:lookat;Grandpa grew this himself.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes like wood
+action:pickup;I can't pick it up.
+action:talkto;Why were you made?
+action:use;Its very bright.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 
 
@@ -1613,13 +1749,32 @@ name:rubble
 x:0
 y:0
 tex:rubble
+action:lookat;This used to be a building.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes 1,000,000 years old.
+action:pickup;I can't pick it up.
+action:talkto;How old are you?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
+
 {
 type:object
 name:darkTree
 x:248
 y:0
 tex:darkTree
+action:lookat;This tree is old.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes 1,000,000 years old.
+action:pickup;I can't pick it up.
+action:talkto;How old are you?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1627,6 +1782,15 @@ name:coffin
 x:260
 y:426
 tex:coffin
+action:lookat;Granny likes ordering coffins.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes like coal.
+action:pickup;I can't pick it up.
+action:talkto;Anybody home?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1634,6 +1798,14 @@ name:yellowPlant
 x:760
 y:208
 tex:yellowPlant
+action:lookat;Grandma doesn't like flowers, but she uses them for her bottles.
+action:push;Grandma told me not to touch these plants.
+action:pull;Grandma told me not to touch these plants.
+action:lick;My tongue feels numb.
+action:pickup;Grandma told me not to touch these plants.
+action:use;Grandma told me not to touch these plants.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -1641,6 +1813,15 @@ name:symbol
 x:1004
 y:74
 tex:symbol
+action:lookat;Grandpa and Grandma pray to this sometimes...
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes Egyptian.
+action:pickup;I can't pick it up.
+action:talkto;Can I pray too?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 
 
@@ -1694,27 +1875,65 @@ name:rubble
 x:0
 y:0
 tex:rubble
+action:lookat;This used to be a building.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes 1,000,000 years old.
+action:pickup;I can't pick it up.
+action:talkto;How old are you?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
+
 {
 type:object
 name:darkTree
 x:248
 y:0
 tex:darkTree
+action:lookat;This tree is old.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes 1,000,000 years old.
+action:pickup;I can't pick it up.
+action:talkto;How old are you?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
+
 {
 type:object
 name:coffin
 x:260
 y:426
 tex:coffin
+action:lookat;Granny likes ordering coffins.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes like coal.
+action:pickup;I can't pick it up.
+action:talkto;Anybody home?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
+
 {
 type:object
 name:yellowPlant
 x:760
 y:208
 tex:yellowPlant
+action:lookat;Grandma doesn't like flowers, but she uses them for her bottles.
+action:push;Grandma told me not to touch these plants.
+action:pull;Grandma told me not to touch these plants.
+action:lick;My tongue feels numb.
+action:pickup;Grandma told me not to touch these plants.
+action:use;Grandma told me not to touch these plants.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -1722,6 +1941,15 @@ name:symbol
 x:1004
 y:74
 tex:symbol
+action:lookat;Grandpa and Grandma pray to this sometimes...
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes Egyptian.
+action:pickup;I can't pick it up.
+action:talkto;Can I pray too?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 
 
@@ -1772,6 +2000,14 @@ name:hoodedStatue
 x:60
 y:18
 tex:hoodedStatue
+action:lookat;It says "Sadsehteb Noitaerc Tik".
+action:push;That would be a grave mistake...
+action:pull;That would be a grave mistake...
+action:lick;Tastes like papyrus.
+action:pickup;That would be a grave mistake...
+action:use;If I look away it moves...
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -1779,6 +2015,14 @@ name:sign
 x:1008
 y:150
 tex:sign
+action:lookat;It says "Beware".
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like caution.
+action:pickup;I can't do that.
+action:use;It's useless.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 
 
@@ -1831,6 +2075,15 @@ name:rubble
 x:0
 y:0
 tex:rubble
+action:lookat;This used to be a building.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes 1,000,000 years old.
+action:pickup;I can't pick it up.
+action:talkto;How old are you?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1838,6 +2091,15 @@ name:darkTree
 x:248
 y:0
 tex:darkTree
+action:lookat;This tree is old.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes 1,000,000 years old.
+action:pickup;I can't pick it up.
+action:talkto;How old are you?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1845,6 +2107,15 @@ name:coffin
 x:260
 y:426
 tex:coffin
+action:lookat;Granny likes ordering coffins.
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes like coal.
+action:pickup;I can't pick it up.
+action:talkto;Anybody home?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
 {
 type:object
@@ -1852,6 +2123,14 @@ name:yellowPlant
 x:760
 y:208
 tex:yellowPlant
+action:lookat;Grandma doesn't like flowers, but she uses them for her bottles.
+action:push;Grandma told me not to touch these plants.
+action:pull;Grandma told me not to touch these plants.
+action:lick;My tongue feels numb.
+action:pickup;Grandma told me not to touch these plants.
+action:use;Grandma told me not to touch these plants.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -1859,7 +2138,25 @@ name:symbol
 x:1004
 y:74
 tex:symbol
+action:lookat;Grandpa and Grandma pray to this sometimes...
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;It tastes Egyptian.
+action:pickup;I can't pick it up.
+action:talkto;Can I pray too?
+action:use;I can't use that.
+action:open;I can't open it.
+action:close;I can't close it.
 }
+
+
+
+
+
+
+
+
+
 //maze 3 copy -------------------------------------------
 {
 type:location
@@ -1903,6 +2200,14 @@ name:hoodedStatue
 x:60
 y:18
 tex:hoodedStatue
+action:lookat;It says "Sadsehteb Noitaerc Tik".
+action:push;That would be a grave mistake...
+action:pull;That would be a grave mistake...
+action:lick;Tastes like papyrus.
+action:pickup;That would be a grave mistake...
+action:use;If I look away it moves...
+action:open;I can't do that.
+action:close;I can't do that.
 }
 {
 type:object
@@ -1910,6 +2215,14 @@ name:sign
 x:1008
 y:150
 tex:sign
+action:lookat;It says "Beware".
+action:push;It won't budge.
+action:pull;It won't budge.
+action:lick;Tastes like caution.
+action:pickup;I can't do that.
+action:use;It's useless.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 
 
@@ -1928,6 +2241,7 @@ name:wickerman
 {
 type:door
 name:Wicker Road
+location:garden
 x:506
 y:456
 tex:wickerRoad
