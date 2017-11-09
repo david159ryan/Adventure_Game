@@ -1091,6 +1091,7 @@ action:lick;It seems to shiver
 action:pickup;It's too heavy
 action:open;I can't open him
 action:close;I can't close him
+action:talkto;<font size="1" color="red"><i>My first is twice in apple but not once in tart.<br>My second is in liver but not in heart.<br>My third is in giant and also in ghost.<br>Whole I’m best when I am roast.<br>What am I?</i></font>
 }
 
 
@@ -2279,7 +2280,7 @@ y:135
 tex:gibby
 action:lookat;Weren't you in Daddy's shed?
 action:push;He won't budge.
-action:pull;He won't budge.
+action:pull;Thank you, young one.<br>Sleep now child, It's all going to be okay...
 action:lick;Tastes like
 action:pickup;I can't pick this up.
 action:talkto;Who's there?
