@@ -12,6 +12,7 @@ LocationUI::LocationUI(MainWindow * window) :
     July5::GetInstance().RegisterListener(Event::ActionPerformed, this);
     July5::GetInstance().RegisterListener(Event::ItemPickedUp, this);
     July5::GetInstance().RegisterListener(Event::RestartGame, this);
+    July5::GetInstance().RegisterListener(Event::ItemMoved, this);
 }
 
 LocationUI::~LocationUI()
@@ -36,6 +37,9 @@ void LocationUI::Update(Event event)
     case Event::ItemPickedUp:
         ItemPickedUp();
         break;
+    case Event::ItemMoved:
+        ItemMoved();
+        break;
     default:
         break;
     }
@@ -57,12 +61,10 @@ void LocationUI::LocationChanged()
 
         //add interactable objects
         list<Object*> objects = newLocation->GetObjects();
-        //cout << "making location with " << objects.size() << " objects" << endl;
 
         for(list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it)
         {
             Object * o = (*it);
-            //cout << "making button " << o->GetName() << endl;
             ObjectButton * b = new ObjectButton(o, window);
             QPixmap pixmap = QPixmap::fromImage(ImageUtilities::GetObjectImageString(o->GetTexture()));
             QIcon ButtonIcon(pixmap);
@@ -105,6 +107,29 @@ void LocationUI::ItemPickedUp()
                 if (qt->objectName().toStdString() == o->GetName())
                 {
                     current->removeItem(pProxy);
+                }
+            }
+        }
+    }
+}
+
+void LocationUI::ItemMoved()
+{
+    QGraphicsScene * current = scenes[July5::GetInstance().GetCurrentLocation()->GetName()];
+    Object * o = July5::GetInstance().GetMovedItem();
+    QList<QGraphicsItem*> graphicsItemList = current->items();
+
+    foreach(QGraphicsItem* pGraphicsItem, graphicsItemList)
+    {
+        QGraphicsProxyWidget* pProxy = qgraphicsitem_cast<QGraphicsProxyWidget*>(pGraphicsItem);
+        if(pProxy)
+        {
+            QToolButton* qt = qobject_cast<QToolButton*>(pProxy->widget());
+            if(qt)
+            {
+                if (qt->objectName().toStdString() == o->GetName())
+                {
+                    qt->move(o->GetX(), o->GetY());
                 }
             }
         }

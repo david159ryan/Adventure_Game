@@ -29,7 +29,7 @@ void Key::Use(Object * target)
         if(door->Unlock(this))
         {
             July5::GetInstance().RemoveFromInventory(this);
-            text = "The " + this->GetName() + " unlocks the " + door->GetName() + ".";
+            text = "<font color=\"yellow\">The " + this->GetName() + " unlocks the " + door->GetName() + ".</font>";
         }
         else
         {

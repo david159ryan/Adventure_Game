@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     objects/porkers.cpp \
     objects/chicken.cpp \
     objects/gibby.cpp \
-    objects/menudoor.cpp
+    objects/menudoor.cpp \
+    objects/basementblock.cpp
 
 HEADERS  += \
     game_logic/inventory.h \
@@ -60,7 +61,9 @@ HEADERS  += \
     objects/porkers.h \
     objects/chicken.h \
     objects/gibby.h \
-    objects/menudoor.h
+    objects/menudoor.h \
+    objects/basementblock.h
+    objects/basementblock.h
 
 FORMS    += \
     mainwindow.ui

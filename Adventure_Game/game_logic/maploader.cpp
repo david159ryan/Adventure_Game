@@ -105,6 +105,8 @@ void MapLoader::ProcessChunk(string chunk)
                 o=new Gibby("Gibby");
             else if(desc=="menudoor")
                 o=new MenuDoor("Menu", "???");
+            else if(desc=="basementblock")
+                o=new BasementBlock("block");
 
             for(size_t i=1;i<input.size();i++)
             {

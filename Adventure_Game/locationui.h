@@ -31,6 +31,7 @@ private:
     void ActionPerformed();
     void ItemPickedUp();
     void RestartGame();
+    void ItemMoved();
 };
 
 #endif // LOCATIONUI_H

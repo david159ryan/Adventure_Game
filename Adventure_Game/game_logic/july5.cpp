@@ -139,4 +139,14 @@ void July5::Restart()
     Start();
 }
 
+Object * July5::GetMovedItem()
+{
+    return movedItem_;
+}
+
+void July5::SetMovedItem(Object * o)
+{
+    movedItem_ = o;
+}
+
 

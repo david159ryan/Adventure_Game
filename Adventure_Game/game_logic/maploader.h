@@ -24,6 +24,7 @@
 #include "objects/chicken.h"
 #include "objects/gibby.h"
 #include "objects/menudoor.h"
+#include "objects/basementblock.h"
 
 class MapLoader
 {

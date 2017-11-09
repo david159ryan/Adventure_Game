@@ -37,6 +37,7 @@ void Chicken::Use(Object * target)
         k->setActionText("close","It doesn't close.");
         k->setActionText("talkto","I wonder what you unlock...");
         July5::GetInstance().AddToInventory(k);
+        July5::GetInstance().FireEvent(Event::StartTimer);
     }
     else
     {

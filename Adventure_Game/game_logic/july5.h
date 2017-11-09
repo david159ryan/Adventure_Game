@@ -46,6 +46,8 @@ public:
     void KillOrphans();
     void Start();
     void Restart();
+    Object * GetMovedItem();
+    void SetMovedItem(Object *);
     void PlayOneShot(string sound);
 
 private:
@@ -61,6 +63,7 @@ private:
 
     string lastActionText_;
     InventoryObject * activeObject_;
+    Object * movedItem_;
     list<Object *> orphans_;
 };
 

@@ -39,7 +39,6 @@ public:
 
 public slots:
     void UpdateTimer();
-    void RestartGame();
 
 private slots:
     void fadeInFromBlack();
@@ -63,6 +62,7 @@ private slots:
     void on_inventory7_clicked();
     void on_inventory8_clicked();
     void on_inventory9_clicked();
+    void GrannyRestart();
 
 private:
     QGraphicsScene *scene;
@@ -71,6 +71,7 @@ private:
     void ItemRemoved();
     void StartTimer();
     void ItemMoved();
+    void RestartGame();
     QTimer *timer;
    int currentTime;
 

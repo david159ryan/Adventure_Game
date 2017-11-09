@@ -377,7 +377,7 @@ action:close;It's already closed
 type:door
 name:smallDoor
 location:garden
-key:Garden Key
+key:Heavy Key
 x:320
 y:40
 tex:smallDoor
@@ -1036,7 +1036,7 @@ action:close;It's already closed
 type:door
 name:basementStairs
 location:basement
-x:462
+x:480
 y:108
 tex:basementStairs
 action:lookat;That leads to the basement
@@ -1052,15 +1052,20 @@ action:close;I cant close that
 {
 type:basementblock
 name:carpet
-x:462
+x:480
 y:108
-tex:eastCarpet
+tex:eastDoor
+action:lookat;There's something under there...
+action:lick;Tastes like carpet.
+action:pickup;I cant pick this up.
+action:talkto;Hello? Who's there?
+action:open;I can't open it.
+action:close;I cant close that.
 }
 
 {
 type:object
 name:Stairs
-location:upstairshallway
 x:526
 y:0
 tex:stairs
@@ -2265,6 +2270,7 @@ action:use;I can't open him.
 action:open;I can't open him.
 action:close;I can't close him.
 }
+
 {
 type:gibby
 name:Gibby

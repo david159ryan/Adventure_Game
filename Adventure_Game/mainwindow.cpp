@@ -18,9 +18,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QFontDatabase::addApplicationFont(":/jmh_horror/JMHHORROR-HORROR.ttf");
     ui->frame->setFont(QFont("JMHHORROR-HORROR", 30, QFont::Normal));
 
+    // Register listeners
     July5::GetInstance().RegisterListener(Event::ItemPickedUp, this);
     July5::GetInstance().RegisterListener(Event::ItemRemoved, this);
     July5::GetInstance().RegisterListener(Event::StartTimer, this);
+    July5::GetInstance().RegisterListener(Event::RestartGame, this);
 
     ui->graphicsFrame->setFixedWidth(rec.width());
     ui->graphicsFrame->adjustSize();
@@ -160,6 +162,9 @@ void MainWindow::Update(Event event)
     case Event::StartTimer:
         StartTimer();
         break;
+    case Event::RestartGame:
+        RestartGame();
+        break;
     default:
         break;
     }
@@ -175,14 +180,6 @@ void MainWindow::ItemPickedUp()
                 ImageUtilities::GetObjectImageString(inv.back()->GetTexture()));
     qt->setIcon(QIcon(pixmap));
     qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
-}
-
-void MainWindow::ItemMoved()
-{
-    Object * o = July5::GetInstance().GetActiveObject();
-    QToolButton * qt = ui->playerInventory->
-            findChild<QToolButton *>(QString::fromStdString(o->GetName()));
-    qt->move(o->GetX(), o->GetY());
 }
 
 void MainWindow::StartTimer()
@@ -205,8 +202,13 @@ void MainWindow::UpdateTimer()
         timer->stop();
         SetActionLabelText("Granny's home...", 3000);
         fadeToBlack();
-        QTimer::singleShot(4000, this, SLOT(RestartGame()));
+        QTimer::singleShot(4000, this, SLOT(GrannyRestart()));
     }
+}
+
+void MainWindow::GrannyRestart()
+{
+    July5::GetInstance().FireEvent(Event::RestartGame);
 }
 
 void MainWindow::RestartGame()
@@ -214,7 +216,6 @@ void MainWindow::RestartGame()
     timer->stop();
     ui->graphicsView->items().clear();
     ui->timerLabel->setVisible(false);
-    July5::GetInstance().FireEvent(Event::RestartGame);
     new LocationUI(this);
     July5::GetInstance().Restart();
 }
