@@ -2263,7 +2263,7 @@ name:Wickerman
 x:480
 y:26
 tex:wickerman
-action:lookat;The shadow of The Wickerman is rising again.
+action:lookat;The shadow of The Wickerman is rising up again.
 action:push;He's too heavy.
 action:pull;He's too heavy.
 action:lick;He tastes like charcoal.
