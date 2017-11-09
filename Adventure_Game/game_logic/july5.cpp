@@ -21,6 +21,11 @@ void July5::RegisterListener(Event event, Updateable *updateable)
     eventManager.RegisterListener(event, updateable);
 }
 
+void July5::UnRegisterListener(Event event, Updateable *updateable)
+{
+    eventManager.RegisterListener(event, updateable);
+}
+
 void July5::FireEvent(Event event)
 {
     eventManager.FireEvent(event);
@@ -123,4 +128,13 @@ void July5::Start()
     GoToLocation("menu");
     audioManager.PlayMusic("kitchen");
 }
+
+void July5::Restart()
+{
+    playerInventory.clearLocations();
+    locationManager.ClearAllLocations();
+    FireEvent(Event::ItemRemoved);
+    Start();
+}
+
 

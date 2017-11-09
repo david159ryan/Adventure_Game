@@ -19,6 +19,7 @@ public:
     void AddLocation(Location *location);
     Location * GetCurrentLocation();
     void GoToLocation(string locationName);
+    void ClearAllLocations();
 };
 
 #endif // LOCATIONMANAGER_H

@@ -7,7 +7,6 @@ class Updateable
 {
 public:
     Updateable();
-    ~Updateable();
     void virtual Update(Event event)=0;
 };
 

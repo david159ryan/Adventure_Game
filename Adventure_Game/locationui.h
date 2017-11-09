@@ -21,6 +21,7 @@ class LocationUI : public virtual Updateable
 {
 public:
     LocationUI(MainWindow * window);
+    ~LocationUI();
     void Update(Event);
 private:
     map<string, QGraphicsScene*> scenes;
@@ -29,6 +30,7 @@ private:
     void LocationChanged();
     void ActionPerformed();
     void ItemPickedUp();
+    void RestartGame();
 };
 
 #endif // LOCATIONUI_H

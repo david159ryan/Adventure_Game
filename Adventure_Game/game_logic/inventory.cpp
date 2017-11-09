@@ -32,6 +32,15 @@ list<InventoryObject *> Inventory::GetItems()
     return items_;
 }
 
+void Inventory::clearLocations()
+{
+    for(list<InventoryObject*>::iterator it = items_.begin(); it != items_.end(); it++)
+    {
+        delete (*it);
+    }
+    items_.clear();
+}
+
 string Inventory::ToString()
 {
     string result = "";

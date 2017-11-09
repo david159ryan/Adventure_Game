@@ -6,8 +6,3 @@ Updateable::Updateable()
 {
 
 }
-
-Updateable::~Updateable()
-{
-
-}

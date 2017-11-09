@@ -49,6 +49,7 @@ void MapLoader::LoadMap(string filename)
         cout<<locations_[i]->GetName()<<endl;
         July5::GetInstance().AddLocation(locations_[i]);
     }
+    locations_.clear();
     cout<<"Map Loaded!"<<endl;
 }
 

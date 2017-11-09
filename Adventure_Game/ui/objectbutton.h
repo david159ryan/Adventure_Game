@@ -6,15 +6,17 @@
 
 #include "objects/object.h"
 #include "game_logic/july5.h"
+#include "mainwindow.h"
 
 class ObjectButton : public QToolButton
 {
     Q_OBJECT
 public:
-    explicit ObjectButton(Object *object, QWidget *parent = nullptr);
+    explicit ObjectButton(Object *object, MainWindow *parent = nullptr);
 
 private:
     Object* object_;
+    MainWindow* window_;
 
 signals:
 

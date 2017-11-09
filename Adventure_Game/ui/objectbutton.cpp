@@ -1,8 +1,9 @@
 #include "objectbutton.h"
 
-ObjectButton::ObjectButton( Object *object, QWidget *parent) : QToolButton(parent)
+ObjectButton::ObjectButton( Object *object, MainWindow *parent) : QToolButton(nullptr)
 {
     object_ = object;
+    window_ = parent;
     QObject::connect(this, SIGNAL(clicked()), this, SLOT(Interact()));
     this->setObjectName(QString::fromStdString(object_->GetName()));
     this->setStyleSheet("QToolButton { background-color: rgba(0,0,0,0) }");
@@ -11,5 +12,5 @@ ObjectButton::ObjectButton( Object *object, QWidget *parent) : QToolButton(paren
 void ObjectButton::Interact()
 {
     July5::GetInstance().Interact(object_);
-    July5::GetInstance().SetVerb(Verb::NONE);
+    window_->UnsetInventoryButtonBorders();
 }

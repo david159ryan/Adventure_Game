@@ -14,6 +14,7 @@ public:
     void RemoveItem(InventoryObject * o);
     InventoryObject* GetItem(string item);
     list<InventoryObject *> GetItems();
+    void clearLocations();
     string ToString();
     int MaxSize();
 

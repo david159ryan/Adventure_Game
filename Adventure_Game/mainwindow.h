@@ -34,13 +34,16 @@ public:
     Ui::MainWindow *ui;
     QGraphicsView * GetGraphicsView();
     void SetActionLabelText(string text, int duration = 1000);
-//    void ConnectButton(QToolButton * b);
+    void UnsetInventoryButtonBorders();
+    void UnsetActionButtonBorders();
 
 public slots:
     void UpdateTimer();
+    void RestartGame();
 
 private slots:
     void fadeInFromBlack();
+    void fadeToBlack();
     void on_openButton_clicked();
     void on_lickButton_clicked();
     void on_useButton_clicked();
@@ -68,6 +71,8 @@ private:
     void ItemRemoved();
     void StartTimer();
     QTimer *timer;
+   int currentTime;
+
     // Updateable interface
 public:
     void Update(Event event);

@@ -17,6 +17,7 @@ private:
 public:
     EventManager();
     void RegisterListener(Event event, Updateable * updateable);
+    void UnRegisterListener(Event event, Updateable * updateable);
     void FireEvent(Event event);
 };
 

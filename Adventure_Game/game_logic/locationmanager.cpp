@@ -25,3 +25,11 @@ void LocationManager::GoToLocation(string locationName)
         }
     }
 }
+
+void LocationManager::ClearAllLocations()
+{
+    for(vector<Location*>::iterator it = locations_.begin(); it != locations_.end(); ++it) {
+        delete (*it);
+    }
+    locations_.clear();
+}

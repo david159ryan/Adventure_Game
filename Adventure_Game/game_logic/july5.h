@@ -17,6 +17,7 @@ using namespace std;
 class July5
 {
 public:
+    //https://stackoverflow.com/questions/270947/can-any-one-provide-me-a-sample-of-singleton-in-c/271104#271104
     static July5& GetInstance()
     {
         static July5 instance;
@@ -24,9 +25,10 @@ public:
     }
 
     static const int MAX_INVENTORY = 10;
-    static const int TIMER_START = 60;
+    static const int TIMER_START = 5;
     void GoToLocation(string locationName);
     void RegisterListener(Event event, Updateable *updateable);
+    void UnRegisterListener(Event event, Updateable *updateable);
     void FireEvent(Event event);
     void Interact(Object * obj);
     Location * GetCurrentLocation();
@@ -43,6 +45,7 @@ public:
     list<InventoryObject *> GetItems();
     void KillOrphans();
     void Start();
+    void Restart();
     void PlayOneShot(string sound);
 
 private:
