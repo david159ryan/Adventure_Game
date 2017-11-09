@@ -12,9 +12,9 @@
 #include <QToolButton>
 #include <QFrame>
 #include <QThread>
-#include "july5.h"
-#include "event.h"
-#include "imageutilities.h"
+#include "game_logic/july5.h"
+#include "utility/event.h"
+#include "utility/imageutilities.h"
 
 using namespace std;
 
@@ -33,14 +33,16 @@ public:
     void showEvent(QShowEvent *event);
     Ui::MainWindow *ui;
     QGraphicsView * GetGraphicsView();
-    void SetActionLabelText(string text);
-//    void ConnectButton(QToolButton * b);
+    void SetActionLabelText(string text, int duration = 1000);
+    void UnsetInventoryButtonBorders();
+    void UnsetActionButtonBorders();
 
 public slots:
     void UpdateTimer();
 
 private slots:
     void fadeInFromBlack();
+    void fadeToBlack();
     void on_openButton_clicked();
     void on_lickButton_clicked();
     void on_useButton_clicked();
@@ -60,6 +62,7 @@ private slots:
     void on_inventory7_clicked();
     void on_inventory8_clicked();
     void on_inventory9_clicked();
+    void GrannyRestart();
 
 private:
     QGraphicsScene *scene;
@@ -67,9 +70,13 @@ private:
     void ItemPickedUp();
     void ItemRemoved();
     void StartTimer();
+    void ItemMoved();
+    void RestartGame();
     QTimer *timer;
-    // Updateable interface
+   int currentTime;
+
 public:
+   // Updateable interface
     void Update(Event event);
 };
 

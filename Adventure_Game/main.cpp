@@ -2,7 +2,7 @@
 #include <QApplication>
 #include <QBoxLayout>
 #include "locationui.h"
-#include "july5.h"
+#include "game_logic/july5.h"
 
 using namespace std;
 

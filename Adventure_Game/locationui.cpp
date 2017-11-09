@@ -1,6 +1,5 @@
 #include "locationui.h"
-#include "iostream"
-#include "eventmanager.h"
+#include "utility/eventmanager.h"
 
 QImage GetBackgroundString(string);
 QImage GetObjectImageString(string);
@@ -12,7 +11,17 @@ LocationUI::LocationUI(MainWindow * window) :
     July5::GetInstance().RegisterListener(Event::LocationChanged, this);
     July5::GetInstance().RegisterListener(Event::ActionPerformed, this);
     July5::GetInstance().RegisterListener(Event::ItemPickedUp, this);
+    July5::GetInstance().RegisterListener(Event::RestartGame, this);
+    July5::GetInstance().RegisterListener(Event::ItemMoved, this);
+}
 
+LocationUI::~LocationUI()
+{
+    for(map<string, QGraphicsScene*>::iterator it = scenes.begin(); it != scenes.end(); it++)
+    {
+        delete (*it).second;
+    }
+    scenes.clear();
 }
 
 void LocationUI::Update(Event event)
@@ -27,6 +36,9 @@ void LocationUI::Update(Event event)
         break;
     case Event::ItemPickedUp:
         ItemPickedUp();
+        break;
+    case Event::ItemMoved:
+        ItemMoved();
         break;
     default:
         break;
@@ -49,13 +61,11 @@ void LocationUI::LocationChanged()
 
         //add interactable objects
         list<Object*> objects = newLocation->GetObjects();
-        cout << "making location with " << objects.size() << " objects" << endl;
 
         for(list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it)
         {
             Object * o = (*it);
-            cout << "making button " << o->GetName() << endl;
-            ObjectButton * b = new ObjectButton(o);
+            ObjectButton * b = new ObjectButton(o, window);
             QPixmap pixmap = QPixmap::fromImage(ImageUtilities::GetObjectImageString(o->GetTexture()));
             QIcon ButtonIcon(pixmap);
             b->setIcon(ButtonIcon);
@@ -90,18 +100,47 @@ void LocationUI::ItemPickedUp()
         QGraphicsProxyWidget* pProxy = qgraphicsitem_cast<QGraphicsProxyWidget*>(pGraphicsItem);
         if(pProxy)
         {
-            cout << pProxy->widget()->objectName().toStdString() << endl;
+            //cout << pProxy->widget()->objectName().toStdString() << endl;
             QToolButton* qt = qobject_cast<QToolButton*>(pProxy->widget());
             if(qt)
             {
                 if (qt->objectName().toStdString() == o->GetName())
                 {
                     current->removeItem(pProxy);
-                    //delete qt;
-                    //qt = NULL;
-                    //pProxy = NULL;
                 }
             }
         }
     }
+}
+
+void LocationUI::ItemMoved()
+{
+    QGraphicsScene * current = scenes[July5::GetInstance().GetCurrentLocation()->GetName()];
+    Object * o = July5::GetInstance().GetMovedItem();
+    QList<QGraphicsItem*> graphicsItemList = current->items();
+
+    foreach(QGraphicsItem* pGraphicsItem, graphicsItemList)
+    {
+        QGraphicsProxyWidget* pProxy = qgraphicsitem_cast<QGraphicsProxyWidget*>(pGraphicsItem);
+        if(pProxy)
+        {
+            QToolButton* qt = qobject_cast<QToolButton*>(pProxy->widget());
+            if(qt)
+            {
+                if (qt->objectName().toStdString() == o->GetName())
+                {
+                    qt->move(o->GetX(), o->GetY());
+                }
+            }
+        }
+    }
+}
+
+void LocationUI::RestartGame()
+{
+    July5::GetInstance().UnRegisterListener(Event::LocationChanged, this);
+    July5::GetInstance().UnRegisterListener(Event::ActionPerformed, this);
+    July5::GetInstance().UnRegisterListener(Event::ItemPickedUp, this);
+    July5::GetInstance().UnRegisterListener(Event::RestartGame, this);
+    delete this;
 }

@@ -171,10 +171,10 @@
         <file>gfx/interactables/candle26.png</file>
         <file>gfx/interactables/candle27.png</file>
         <file>gfx/interactables/candle28.png</file>
-        <file>gfx/interactables/jibby.png</file>
         <file>gfx/interactables/screen1.png</file>
         <file>gfx/interactables/screen2.png</file>
         <file>gfx/interactables/wickerman.png</file>
         <file>gfx/interactables/wickerRoad.png</file>
+        <file>gfx/interactables/gibby.png</file>
     </qresource>
 </RCC>

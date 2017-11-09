@@ -1,16 +1,19 @@
 #ifndef LOCATIONUI_H
 #define LOCATIONUI_H
-#include "updateable.h"
 #include "mainwindow.h"
-#include <string>
+
 #include <QBoxLayout>
 #include <QString>
 #include <QGraphicsScene>
 #include <QGraphicsProxyWidget>
-#include <map>
 #include <QToolButton>
-#include "objectbutton.h"
-#include "imageutilities.h"
+
+#include <map>
+#include <string>
+
+#include "ui/objectbutton.h"
+#include "utility/updateable.h"
+#include "utility/imageutilities.h"
 
 using namespace std;
 
@@ -18,6 +21,7 @@ class LocationUI : public virtual Updateable
 {
 public:
     LocationUI(MainWindow * window);
+    virtual ~LocationUI();
     void Update(Event);
 private:
     map<string, QGraphicsScene*> scenes;
@@ -26,6 +30,8 @@ private:
     void LocationChanged();
     void ActionPerformed();
     void ItemPickedUp();
+    void RestartGame();
+    void ItemMoved();
 };
 
 #endif // LOCATIONUI_H
