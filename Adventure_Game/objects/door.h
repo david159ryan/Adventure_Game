@@ -18,6 +18,8 @@ private:
     string keyName_;     //If != 0 then keyID is the ID of the key that unlocks this door
     string locationName_;    //Name of the room this door will take you to
     bool locked_;
+
+protected:
     void Use();
 };
 

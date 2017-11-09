@@ -36,39 +36,26 @@ bool Door::Unlock(Key * key)
 
 void Door::Interact(Verb verb)
 {
-    if(verb == Verb::NONE)
-    {
-        verb = Verb::USE;
-    }
-
-    switch(verb)
-    {
-    case USE:
-    case PUSH:
-    case PULL:
-    case OPEN:
+    if(!locked_)
         Use();
-        break;
-    default:
+    else
         Object::Interact(verb);
-        break;
-    }
-
 }
 
 void Door::Use()
 {
+    string text;
     if(locked_)
     {
         July5::GetInstance().PlayOneShot("lockedDoor");
-        July5::GetInstance().SetLastActionText( "The door is firmly locked");
+        locked_ = "The door is firmly locked";
     }
     else
     {
-        //July5::GetInstance().PlayOneShot("openDoor");
         July5::GetInstance().GoToLocation(this->GetLocationName());
-        July5::GetInstance().SetLastActionText("You walk through the door");
+        text = "<font color=\"yellow\">You walk through the door</font>";
     }
+    July5::GetInstance().SetLastActionText(text);
 }
 
 void Door::SetLocation(string location)

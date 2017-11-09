@@ -70,6 +70,7 @@ private:
     void ItemPickedUp();
     void ItemRemoved();
     void StartTimer();
+    void ItemMoved();
     QTimer *timer;
    int currentTime;
 

@@ -7,7 +7,8 @@ enum Event {
     ItemPickedUp,
     ItemRemoved,
     StartTimer,
-    RestartGame
+    RestartGame,
+    ItemMoved
 };
 
 #endif // EVENT_H

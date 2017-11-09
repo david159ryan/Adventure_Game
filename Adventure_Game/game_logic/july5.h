@@ -25,7 +25,7 @@ public:
     }
 
     static const int MAX_INVENTORY = 10;
-    static const int TIMER_START = 5;
+    static const int TIMER_START = 60;
     void GoToLocation(string locationName);
     void RegisterListener(Event event, Updateable *updateable);
     void UnRegisterListener(Event event, Updateable *updateable);

@@ -22,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent) :
     July5::GetInstance().RegisterListener(Event::ItemRemoved, this);
     July5::GetInstance().RegisterListener(Event::StartTimer, this);
 
-    // Hackey, disgusting... to get around that layouts aren't updating
     ui->graphicsFrame->setFixedWidth(rec.width());
     ui->graphicsFrame->adjustSize();
 
@@ -178,9 +177,17 @@ void MainWindow::ItemPickedUp()
     qt->setIconSize(QSize(qt->size().width() - 10, qt->size().height() - 10));
 }
 
+void MainWindow::ItemMoved()
+{
+    Object * o = July5::GetInstance().GetActiveObject();
+    QToolButton * qt = ui->playerInventory->
+            findChild<QToolButton *>(QString::fromStdString(o->GetName()));
+    qt->move(o->GetX(), o->GetY());
+}
+
 void MainWindow::StartTimer()
 {
-    currentTime = 5;
+    currentTime = July5::TIMER_START;
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(UpdateTimer()));
     timer->start(5000);
@@ -204,6 +211,7 @@ void MainWindow::UpdateTimer()
 
 void MainWindow::RestartGame()
 {
+    timer->stop();
     ui->graphicsView->items().clear();
     ui->timerLabel->setVisible(false);
     July5::GetInstance().FireEvent(Event::RestartGame);
