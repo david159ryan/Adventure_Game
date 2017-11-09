@@ -63,6 +63,7 @@ void LocationUI::LocationChanged()
         {
             Object * o = (*it);
             //cout << "making button " << o->GetName() << endl;
+            ObjectButton *b = new ObjectButton(o,window);
             QPixmap pixmap = QPixmap::fromImage(ImageUtilities::GetObjectImageString(o->GetTexture()));
             QIcon ButtonIcon(pixmap);
             b->setIcon(ButtonIcon);

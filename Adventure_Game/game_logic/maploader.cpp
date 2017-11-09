@@ -101,6 +101,8 @@ void MapLoader::ProcessChunk(string chunk)
                 o=new Chicken("Chicken");
             else if(desc=="cookiejar")
                 o=new CookieJar("Cookie Jar");
+            else if(desc=="basementblock")
+                o=new BasementBlock("block");
 
             for(size_t i=1;i<input.size();i++)
             {

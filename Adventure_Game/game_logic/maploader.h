@@ -22,6 +22,7 @@
 #include "objects/porkers.h"
 #include "objects/cookiejar.h"
 #include "objects/chicken.h"
+#include "objects/basementblock.h"
 
 class MapLoader
 {
