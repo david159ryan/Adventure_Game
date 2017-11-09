@@ -4,8 +4,9 @@
 
 BasementBlock::BasementBlock(string name) : Object(name)
 {
-
+    moved_ = false;
 }
+
 void BasementBlock::Interact(Verb verb)
 {
     switch(verb)
@@ -26,6 +27,6 @@ void BasementBlock::Move()
         SetY(GetY() + 108);
         July5::GetInstance().SetMovedItem(this);
         July5::GetInstance().FireEvent(Event::ItemMoved);
-        moved_ = false;
+        moved_ = true;
     }
 }

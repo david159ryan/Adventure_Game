@@ -40,12 +40,13 @@ key:Living Room Key
 x:62
 y:14
 tex:door
-action:lookat;It's an old heavy wooden door
+action:use;It's locked. I should find a key.
+action:lookat;It's locked. I should find a key.
 action:lick;Tastes like old mahogany
-action:pickup;I can't pick up a door
-action:talkto;I don't think it wants to talk
-action:open;This goes to the kitchen
-action:close;It's already closed
+action:pickup;It's locked. I should find a key.
+action:talkto;Hello Door.
+action:open;It's locked. I should find a key.
+action:close;It's locked. I should find a key.
 }
 
 {
@@ -54,15 +55,15 @@ name:Grandma's Lamp
 x:510
 y:70
 tex:smallLamp
-action:lookat;It's Grandma's lamp
-action:push;It may fall off
-action:pull;I probably shouldn't do that
-action:lick;Tingly
-action:pickup;I shouldn't mess with Grandma's things
-action:talkto;Hello Lampy
-action:use;Grandma told me not to play with the lights
-action:open;I can't open a lamp
-action:close;I can't close a lamp
+action:lookat;It's Grandma's lamp.
+action:push;It may fall off.
+action:pull;I probably shouldn't do that.
+action:lick;Tingly.
+action:pickup;I shouldn't mess with Grandma's things.
+action:talkto;Hello Lampy.
+action:use;Grandma told me not to play with the lights.
+action:open;I can't open a lamp.
+action:close;I can't close a lamp.
 }
 
 {
@@ -71,15 +72,15 @@ name:Small stain
 x:311
 y:253
 tex:stain
-action:lookat;There's stains like this all over the house
-action:push;It's slimy
-action:pull;I shouldn't touch that
-action:lick;Tastes metallic
-action:pickup;I'd need a container
+action:lookat;There's stains like this all over the house.
+action:push;It's slimy.
+action:pull;I shouldn't touch that.
+action:lick;Tastes metallic.
+action:pickup;I'd need a container.
 action:talkto;Where did you come from?
-action:use;I can't use this
-action:open;I can't open this
-action:close;I can't close this
+action:use;I can't use this.
+action:open;I can't open this.
+action:close;I can't close this.
 }
 
 {
@@ -88,15 +89,15 @@ name:Locked Drawers
 x:214
 y:172
 tex:drawers
-action:lookat;Gran always keeps these locked
-action:push;I can't push that
-action:pull;It's locked
-action:lick;Tastes like wood
-action:pickup;I can't pick this up
+action:lookat;Gran always keeps these locked.
+action:push;I can't push that.
+action:pull;It's locked.
+action:lick;Tastes like wood.
+action:pickup;I can't pick this up.
 action:talkto;Hello drawers!
-action:use;I can't use this
-action:open;It's locked
-action:close;I can't close this
+action:use;I can't use this.
+action:open;It's locked.
+action:close;I can't close this.
 }
 
 {
@@ -105,15 +106,15 @@ name:Grand Piano
 x:908
 y:100
 tex:piano
-action:lookat;It's Grandpa's grand piano
-action:push;I can't push that
-action:pull;I can't pull that
-action:lick;I can taste notes of varnish and old ebony
-action:pickup;I can't pick this up
+action:lookat;It's Grandpa's grand piano.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;I can taste notes of varnish and old ebony.
+action:pickup;I can't pick this up.
 action:talkto;Will you play for me again?
-action:use;*tink tink tink*
-action:open;The keys are made from ivory
-action:close;Those fingers are stopping it from closing
+action:use;<font color="yellow"><i>*tink tink tink*</i></font>
+action:open;The keys are made from ivory.
+action:close;Those fingers are stopping it from closing.
 }
 
 {
@@ -122,14 +123,14 @@ name:Music Sheets
 x:960
 y:176
 tex:musicSheet
-action:lookat;These are music sheets for "Victory Hail Victoria"
-action:push;I can't push that
-action:pull;I can't pull that
-action:lick;It's dry and papery
-action:pickup;I shouldn't take Grandpa's music sheets
-action:use;I can't play the piano
-action:open;Its full of music notes
-action:close;Good bye squiggly lines
+action:lookat;These are music sheets for "Victory Hail Victoria".
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;It's dry and papery.
+action:pickup;I shouldn't take Grandpa's music sheets.
+action:use;I can't play the piano.
+action:open;Its full of music notes.
+action:close;Good bye squiggly lines.
 }
 
 {
@@ -138,15 +139,15 @@ name:Broken Fingers
 x:898
 y:338
 tex:fingers
-action:lookat;These fingers weren't here yesterday
-action:push;I don't want to push that
-action:pull;I don't want to pull that
-action:lick;No thanks
-action:pickup;I don't want those
+action:lookat;These fingers weren't here yesterday.
+action:push;I don't want to push that.
+action:pull;I don't want to pull that.
+action:lick;No thanks.
+action:pickup;I don't want those.
 action:talkto;Were you the ones playing the piano earlier?
-action:use;I can't use these
-action:open;I can't do that
-action:close;I can't do that
+action:use;I can't use these.
+action:open;I can't do that.
+action:close;I can't do that.
 }
 
 {
@@ -155,32 +156,32 @@ name:Short Stool
 x:834
 y:300
 tex:stool
-action:lookat;It's a simple stool
-action:push;It's wobbly
-action:pull;I don't want it to fall
-action:lick;Tastes like wood
-action:pickup;I can't pick this up
-action:talkto;Hello stool
-action:use;Its not very comfortable
-action:open;I can't open this
-action:close;I cant close a stool
+action:lookat;It's a simple stool.
+action:push;It's wobbly.
+action:pull;I don't want it to fall.
+action:lick;Tastes like wood.
+action:pickup;I can't pick this up.
+action:talkto;Hello stool.
+action:use;Its not very comfortable.
+action:open;I can't open this.
+action:close;I cant close a stool.
 }
 
 {
 type:object
-name:Grandma's Rocking Chair
+name:Rocking Chair
 x:628
 y:92
 tex:rockingChair
-action:lookat;It's Grandma's Rocking chair
+action:lookat;It's Grandma's Rocking chair.
 action:push;Rock-a-bye baby...
-action:pull;Grandma used to rock me to sleep on this chair
-action:lick;It tastes old
-action:pickup;I can't pick this up
-action:talkto;Hi Rocky
-action:use;It's very comfy
-action:open;I can't open this
-action:close;I can't close this
+action:pull;Grandma used to rock me to sleep on this chair.
+action:lick;It tastes old.
+action:pickup;I can't pick this up.
+action:talkto;Hi Rocky.
+action:use;It's very comfy.
+action:open;I can't open this.
+action:close;I can't close this.
 }
 
 {
@@ -189,15 +190,15 @@ name:Tall Lamp
 x:780
 y:30
 tex:tallLamp
-action:lookat;It's a very nice lamp
-action:push;I can't push that
-action:pull;I can't pull that
-action:lick;Tingly
-action:pickup;I can't pick this up
+action:lookat;It's a very nice lamp.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tingly.
+action:pickup;I can't pick this up.
 action:talkto;Hi big Lampy!
-action:use;Grandma told me not to mess with the lights
-action:open;I can't open this
-action:close;I can't close this
+action:use;Grandma told me not to mess with the lights.
+action:open;I can't open this.
+action:close;I can't close this.
 }
 
 {
@@ -206,15 +207,15 @@ name:TV
 x:14
 y:236
 tex:tv
-action:lookat;I can see faces in the static
-action:push;I can't push that
-action:pull;I can't pull that
-action:lick;Tingly
-action:pickup;I can't pick this up
+action:lookat;I can see faces in the static.
+action:push;I can't push that.
+action:pull;I can't pull that.
+action:lick;Tingly.
+action:pickup;I can't pick this up.
 action:talkto;Are you ready to talk again tv?
-action:use;I don't want to watch tv right now
-action:open;I can't open this
-action:close;I can't close this
+action:use;I don't want to watch tv right now.
+action:open;I can't open this.
+action:close;I can't close this.
 }
 
 {
@@ -223,15 +224,15 @@ name:Bust of Grandma
 x:220
 y:30
 tex:statue
-action:lookat;It looks like Grandma
-action:push;I don't want to break it
-action:pull;I don't want to break it
-action:lick;It ... tastes like grandma
-action:pickup;I shouldn't pick this up
+action:lookat;It looks like Grandma.
+action:push;I don't want to break it.
+action:pull;I don't want to break it.
+action:lick;It ... tastes like grandma.
+action:pickup;I shouldn't pick this up.
 action:talkto;Grandma?
-action:use;I can't use this
-action:open;I can't open this
-action:close;I can't close this
+action:use;I can't use this.
+action:open;I can't open this.
+action:close;I can't close this.
 }
 
 {
@@ -240,15 +241,15 @@ name:Cookie Jar
 x:284
 y:90
 tex:cookieJar
-action:lookat;It still has some cookies in it
-action:push;I shouldn't push that
-action:pull;I might break it
-action:lick;It tastes a little like cookies
-action:pickup;Grandma might punish me
+action:lookat;There's something shiny in there...
+action:push;I shouldn't push that.
+action:pull;I might break it.
+action:lick;It tastes a little like cookies.
+action:pickup;Grandma might punish me.
 action:talkto;Can I have some cookies, jar?
-action:use;It has a key in it
-action:open;It has a key in it
-action:close;Bye bye cookies
+action:use;It has a key in it.
+action:open;It has a key in it.
+action:close;Bye bye cookies.
 }
 
 {
@@ -257,15 +258,15 @@ name:Old History Book
 x:334
 y:116
 tex:blueBook
-action:lookat;It's an old history book
-action:push;I shouldn't push that
-action:pull;I shouldn't touch grandpa's things
-action:lick;It tastes like leather
-action:pickup;I shouldn't steal Grandpa's things
+action:lookat;It's an old history book.
+action:push;I shouldn't push that.
+action:pull;I shouldn't touch grandpa's things.
+action:lick;It tastes like leather.
+action:pickup;I shouldn't steal Grandpa's things.
 action:talkto;Hello book!
-action:use;It's written in a different language
-action:open;Theres a picture of a man shouting at a crowd
-action:close;Bye bye mustache man
+action:use;It's written in a different language.
+action:open;Theres a picture of a man shouting at a crowd.
+action:close;Bye bye mustache man.
 }
 
 {
@@ -274,15 +275,15 @@ name:Snowball's first scratch marks
 x:286
 y:18
 tex:clawPicture
-action:lookat;It's a picture of Snowball's first scratch marks
-action:push;I can't reach it
-action:pull;I can't reach it
-action:lick;I can't reach it
-action:pickup;I can't reach it
+action:lookat;It's a picture of Snowball's first scratch marks.
+action:push;I can't reach it.
+action:pull;I can't reach it.
+action:lick;I can't reach it.
+action:pickup;I can't reach it.
 action:talkto;Hello picture!
-action:use;I can't reach it
-action:open;I can't reach it
-action:close;I can't reach it
+action:use;I can't reach it.
+action:open;I can't reach it.
+action:close;I can't reach it.
 }
 
 {
@@ -291,14 +292,14 @@ name:Big book of Rituals
 x:272
 y:112
 tex:greenBook
-action:lookat;It's one of Grandpa's books from the war
-action:push;It might fall off
-action:pull;It might fall off
-action:lick;It tastes like leather
-action:pickup;I shouldn't steal Grandpa's things
+action:lookat;It's one of Grandpa's books from the war.
+action:push;It might fall off.
+action:pull;It might fall off.
+action:lick;It tastes like leather.
+action:pickup;I shouldn't steal Grandpa's things.
 action:talkto;Hello?
 action:use;Sometimes it whispers to me...
-action:open;It has pictures of pentagrams and demons
+action:open;It has pictures of pentagrams and demons.
 action:close;Bye bye demons...
 }
 
@@ -308,15 +309,15 @@ name:Troll Doll
 x:410
 y:66
 tex:troll
-action:lookat;It's a troll doll called Me-Me
+action:lookat;It's a troll doll called Me-Me.
 action:push;He looks sad...
 action:pull;He likes it when I pull him close...
 action:lick;He tastes like chicken
-action:pickup;Come along, me-me
-action:talkto;Hello Me-Me
-action:use;He protects me from the shadows
-action:open;I can't open him
-action:close;I can't close him
+action:pickup;Come along, Me-Me?
+action:talkto;<font color="red"><i>Make sure you talk to the gargoyle...</i></font>
+action:use;He protects me from the shadows.
+action:open;I can't open him.
+action:close;I can't close him.
 }
 
 {
@@ -325,15 +326,15 @@ name:Picture of Yarn
 x:352
 y:28
 tex:yarnPicture
-action:lookat;It's a picture of Snowball's favourite yarn ball
-action:push;I can't reach it
-action:pull;I can't reach it
-action:lick;I can't reach it
-action:pickup;I can't reach it
+action:lookat;It's a picture of Snowball's favourite yarn ball.
+action:push;I can't reach it.
+action:pull;I can't reach it.
+action:lick;I can't reach it.
+action:pickup;I can't reach it.
 action:talkto;Hello yarn!
-action:use;I can't reach it
-action:open;I can't reach it
-action:close;I can't reach it
+action:use;I can't reach it.
+action:open;I can't reach it.
+action:close;I can't reach it.
 }
 
 {
@@ -342,15 +343,15 @@ name:Picture of Snowball
 x:486
 y:12
 tex:catPicture
-action:lookat;It's a picture of Snowball
-action:push;I can't reach it
-action:pull;I can't reach it
-action:lick;I can't reach it
-action:pickup;I can't reach it
+action:lookat;It's a picture of Snowball.
+action:push;I can't reach it.
+action:pull;I can't reach it.
+action:lick;I can't reach it.
+action:pickup;I can't reach it.
 action:talkto;Hello Snowball!
-action:use;I can't reach it
-action:open;I can't reach it
-action:close;I can't reach it
+action:use;I can't reach it.
+action:open;I can't reach it.
+action:close;I can't reach it.
 }
 
 {
@@ -363,31 +364,32 @@ name:window
 x:72
 y:0
 tex:window
-action:lookat;It's a lovely day outside
-action:push;I can't push it
-action:pull;I can't pull it
-action:lick;It's warm
-action:pickup;I can't pick that up
+action:lookat;It's a lovely day outside.
+action:push;I can't push it.
+action:pull;I can't pull it.
+action:lick;It's warm.
+action:pickup;I can't pick that up.
 action:talkto;Hello Window!
-action:use;Gran always tells me not to open the windows
-action:open;Gran always tells me not to open the windows
-action:close;It's already closed
+action:use;Gran always tells me not to open the windows.
+action:open;Gran always tells me not to open the windows.
+action:close;It's already closed.
 }
 {
 type:door
-name:smallDoor
+name:Garden Door
 location:garden
 key:Heavy Key
 x:320
 y:40
 tex:smallDoor
-action:lookat;That door leads to the garden
-action:push;I can't push it
-action:pull;I can't pull it
-action:lick;Tastes like old mahogany
-action:pickup;I can't pick that up
+action:lookat;That door leads to the garden.
+action:use;I need a key.
+action:push;I can't push it.
+action:pull;I can't pull it.
+action:lick;Tastes like old mahogany.
+action:pickup;I can't pick that up.
 action:talkto;Hello Door!
-action:close;It's already closed
+action:close;It's already closed.
 }
 
 {
@@ -396,15 +398,15 @@ name:window
 x:916
 y:0
 tex:window
-action:lookat;It's a lovely day outside
-action:push;I can't push
-action:pull;I can't pull
-action:lick;It's warm
-action:pickup;I can't pick that up
+action:lookat;It's a lovely day outside.
+action:push;I can't push.
+action:pull;I can't pull.
+action:lick;It's warm.
+action:pickup;I can't pick that up.
 action:talkto;Hello Window!
-action:use;Gran always tells me not to open the windows
-action:open;Gran always tells me not to open the windows
-action:close;It's already closed
+action:use;Gran always tells me not to open the windows.
+action:open;Gran always tells me not to open the windows.
+action:close;It's already closed.
 }
 
 {
@@ -413,15 +415,15 @@ name:splatter1
 x:90
 y:252
 tex:splatter1
-action:lookat;Another stain like the one in the sitting room
-action:push;I can't push it
-action:pull;I can't pull it
-action:lick;It's warm and metallic
-action:pickup;I'd need a container
+action:lookat;Another stain like the one in the sitting room.
+action:push;I can't push it.
+action:pull;I can't pull it.
+action:lick;It's warm and metallic.
+action:pickup;I'd need a container.
 action:talkto;Where did you come from?
-action:use;I can't use this
-action:open;I can't open this
-action:close;I can't close this
+action:use;I can't use this.
+action:open;I can't open this.
+action:close;I can't close this.
 }
 
 {
@@ -430,15 +432,15 @@ name:marblePlant
 x:656
 y:352
 tex:marblePlant
-action:lookat;Its one of Gran's plants
-action:push;Its kind of slimy
-action:pull;Its kind of slimy
+action:lookat;Its one of Gran's plants.
+action:push;Its kind of slimy.
+action:pull;Its kind of slimy.
 action:lick;It tastes green
-action:pickup;I shouldn't pick up Grandma's plants
+action:pickup;I shouldn't pick up Grandma's plants.
 action:talkto;Hello Plant!
-action:use;I can't use this
-action:open;I don't understand
-action:close;I don't understand
+action:use;I can't use this.
+action:open;I don't understand.
+action:close;I don't understand.
 }
 
 {
@@ -447,14 +449,14 @@ name:stove
 x:560
 y:124
 tex:Stove
-action:lookat;Gran usually cooks here
-action:push;It's too heavy
-action:pull;It's too heavy
-action:lick;It's too hot
-action:pickup;I can't pick this up
+action:lookat;Gran usually cooks here.
+action:push;It's too heavy.
+action:pull;It's too heavy.
+action:lick;It's too hot.
+action:pickup;I can't pick this up.
 action:talkto;Hi stove!
-action:use;I don't know how to cook
-action:open;There's a pie inside, it smells like charred meat
+action:use;I don't know how to cook.
+action:open;There's a pie inside, it smells like charred meat.
 action:close;Bye pie!
 }
 
@@ -584,7 +586,7 @@ action:push;Its bolted tight to the wall.
 action:pull;Its bolted tight to the wall.
 action:lick;It tastes like iron.
 action:pickup;Its bolted tight to the wall.
-action:talkto;Hello? Are you hungry Jerry?
+action:talkto;<font color="red" size="1"><i>Pssssst, try pulling the carpet next to the gargoyle...</i></font>
 action:use;I can't use this.
 action:open;Its bolted shut.
 action:close;It's already closed.
@@ -1148,7 +1150,7 @@ action:push;I can't push that.
 action:pull;I can't pull that.
 action:lick;Tastes like Snowball.
 action:pickup;I can't pick that up.
-action:talkto;You look hungry Snowball.
+action:talkto;You look hungry Snowball, want some chicken?
 action:use;*scratch scratch*
 action:open;I shouldn't let Snowball out when Grandma's not home.
 action:close;It's tightly closed.
@@ -1432,7 +1434,7 @@ tex:monsterPlate
 action:lookat;Snowball looks hungry.. I should feed him.
 action:push;Snowball would scratch me.
 action:pull;Snowball would scratch me.
-action:lick;Tastes like bacon.
+action:lick;Tastes like chicken.
 action:pickup;Snowball would scratch me.
 action:talkto;I should get some food.
 action:use;I can't open it.
@@ -2279,14 +2281,14 @@ x:526
 y:135
 tex:gibby
 action:lookat;Weren't you in Daddy's shed?
-action:push;He won't budge.
-action:pull;Thank you, young one.<br>Sleep now child, It's all going to be okay...
-action:lick;Tastes like
-action:pickup;I can't pick this up.
-action:talkto;Who's there?
-action:use;It's warm but cold at the same time.
+action:push;It won't budge.
+action:pull;<font color="red"><i>Thank you, young one.<br>Sleep now child, It's all going to be okay...</i></font>
+action:lick;Tastes alien...
+action:pickup;I can't pick it up.
+action:talkto;<font color="red"><i>Please child... pull me out of here...</i></font>
+action:use;It's warm and throbbing.
 action:open;I can't open it.
-action:close;I can't close a candle.
+action:close;I can't close it.
 }
 
 {

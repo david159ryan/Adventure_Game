@@ -28,7 +28,6 @@ void Porkers::Use(Object * target)
                                          "</i></font>");
         target->Interact(TALKTO);
         July5::GetInstance().RemoveFromInventory(this);
-        July5::GetInstance().FireEvent(Event::StartTimer);
     }
     else
     {
