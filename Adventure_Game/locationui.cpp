@@ -57,12 +57,12 @@ void LocationUI::LocationChanged()
 
         //add interactable objects
         list<Object*> objects = newLocation->GetObjects();
-        cout << "making location with " << objects.size() << " objects" << endl;
+        //cout << "making location with " << objects.size() << " objects" << endl;
 
         for(list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it)
         {
             Object * o = (*it);
-            cout << "making button " << o->GetName() << endl;
+            //cout << "making button " << o->GetName() << endl;
             ObjectButton * b = new ObjectButton(o, window);
             QPixmap pixmap = QPixmap::fromImage(ImageUtilities::GetObjectImageString(o->GetTexture()));
             QIcon ButtonIcon(pixmap);
@@ -98,7 +98,7 @@ void LocationUI::ItemPickedUp()
         QGraphicsProxyWidget* pProxy = qgraphicsitem_cast<QGraphicsProxyWidget*>(pGraphicsItem);
         if(pProxy)
         {
-            cout << pProxy->widget()->objectName().toStdString() << endl;
+            //cout << pProxy->widget()->objectName().toStdString() << endl;
             QToolButton* qt = qobject_cast<QToolButton*>(pProxy->widget());
             if(qt)
             {

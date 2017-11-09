@@ -74,8 +74,8 @@ private:
     QTimer *timer;
    int currentTime;
 
-    // Updateable interface
 public:
+   // Updateable interface
     void Update(Event event);
 };
 

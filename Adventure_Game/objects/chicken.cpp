@@ -27,7 +27,7 @@ void Chicken::Use(Object * target)
     {
         text = "Eat up snowball...";
         July5::GetInstance().RemoveFromInventory(this);
-        Key *k = new Key("Garden Key");
+        Key *k = new Key("Heavy Key");
         k->setActionText("lookat","It's a key.");
         k->setActionText("pickup","I already have it.");
         k->setActionText("push","I can't do that.");

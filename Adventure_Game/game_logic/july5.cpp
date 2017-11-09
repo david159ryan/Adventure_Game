@@ -90,6 +90,8 @@ void July5::SetVerb(Verb verb)
 
 void July5::AddToInventory(InventoryObject *o)
 {
+    SetLastActionText("<font color=\"yellow\">You got a "+o->GetName()+".<i>");
+    FireEvent(Event::ActionPerformed);
     playerInventory.AddItem(o);
     FireEvent(ItemPickedUp);
 }
