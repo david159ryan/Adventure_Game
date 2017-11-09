@@ -31,9 +31,9 @@ void CookieJar::PickUp()
 {
     used = true;
     Key *k = new Key("Living Room Key");
-    setActionText("use", "Granny says no cookies before dinner");
-    setActionText("pickup", "Granny says no cookies before dinner");
-    setActionText("open", "It's already open");
+    setActionText("use", "It was a coo-key jar...");
+    setActionText("pickup", "It was a coo-key jar...");
+    setActionText("open", "It was a coo-key jar...");
     July5::GetInstance().AddToInventory(k);
     July5::GetInstance().SetLastActionText("<font color=\"yellow\">You find a key<i>");
     July5::GetInstance().FireEvent(Event::ActionPerformed);

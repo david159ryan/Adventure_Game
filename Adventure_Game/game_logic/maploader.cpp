@@ -99,7 +99,7 @@ void MapLoader::ProcessChunk(string chunk)
             else if(desc=="porkers")
                 o=new Porkers("Porkers");
             else if(desc=="chicken")
-                o=new Porkers("Chicken");
+                o=new Chicken("Chicken");
             else if(desc=="cookiejar")
                 o=new CookieJar("Cookie Jar");
 
