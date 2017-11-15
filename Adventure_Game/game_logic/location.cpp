@@ -14,7 +14,11 @@ Location::Location(string name)
 
 Location::~Location()
 {
-    // Destroy stuff
+    for(list<Object*>::iterator it = objects_.begin(); it != objects_.end(); ++it)
+    {
+        delete *it;
+    }
+    objects_.clear();
 }
 
 void Location::AddObject(Object * o)

@@ -17,6 +17,11 @@ LocationUI::LocationUI(MainWindow * window) :
 
 LocationUI::~LocationUI()
 {
+    July5::GetInstance().UnRegisterListener(Event::LocationChanged, this);
+    July5::GetInstance().UnRegisterListener(Event::ActionPerformed, this);
+    July5::GetInstance().UnRegisterListener(Event::ItemPickedUp, this);
+    July5::GetInstance().UnRegisterListener(Event::RestartGame, this);
+    July5::GetInstance().UnRegisterListener(Event::ItemMoved, this);
     for(map<string, QGraphicsScene*>::iterator it = scenes.begin(); it != scenes.end(); it++)
     {
         delete (*it).second;
@@ -100,13 +105,13 @@ void LocationUI::ItemPickedUp()
         QGraphicsProxyWidget* pProxy = qgraphicsitem_cast<QGraphicsProxyWidget*>(pGraphicsItem);
         if(pProxy)
         {
-            //cout << pProxy->widget()->objectName().toStdString() << endl;
-            QToolButton* qt = qobject_cast<QToolButton*>(pProxy->widget());
+            ObjectButton* qt = qobject_cast<ObjectButton*>(pProxy->widget());
             if(qt)
             {
                 if (qt->objectName().toStdString() == o->GetName())
                 {
                     current->removeItem(pProxy);
+                    July5::GetInstance().GetCurrentLocation()->RemoveObject(qt->getObject());
                 }
             }
         }
@@ -138,9 +143,5 @@ void LocationUI::ItemMoved()
 
 void LocationUI::RestartGame()
 {
-    July5::GetInstance().UnRegisterListener(Event::LocationChanged, this);
-    July5::GetInstance().UnRegisterListener(Event::ActionPerformed, this);
-    July5::GetInstance().UnRegisterListener(Event::ItemPickedUp, this);
-    July5::GetInstance().UnRegisterListener(Event::RestartGame, this);
     delete this;
 }

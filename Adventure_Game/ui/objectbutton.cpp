@@ -9,6 +9,15 @@ ObjectButton::ObjectButton( Object *object, MainWindow *parent) : QToolButton(nu
     this->setStyleSheet("QToolButton { background-color: rgba(0,0,0,0) }");
 }
 
+ObjectButton::~ObjectButton()
+{
+}
+
+Object *ObjectButton::getObject()
+{
+    return object_;
+}
+
 void ObjectButton::Interact()
 {
     July5::GetInstance().Interact(object_);

@@ -13,6 +13,8 @@ class ObjectButton : public QToolButton
     Q_OBJECT
 public:
     explicit ObjectButton(Object *object, MainWindow *parent = nullptr);
+    ~ObjectButton();
+    Object * getObject();
 
 private:
     Object* object_;

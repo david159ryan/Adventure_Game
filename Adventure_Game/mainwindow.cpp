@@ -111,13 +111,13 @@ void MainWindow::SetActionLabelText(string text, int duration)
     int mid = ui->graphicsView->size().height()/2;
     int l = ui->actionLabel->pos().y();
 
-    if(mY < mid && l < mid)
+    if(mY < mid )
     {
-        ui->actionLabel->move(ui->actionLabel->pos().x(), l + mid);
+        ui->actionLabel->move(ui->actionLabel->pos().x(), 100 + 300);
     }
-    else if(mY > mid && l > mid)
+    else if(mY > mid )
     {
-        ui->actionLabel->move(ui->actionLabel->pos().x(), l - mid);
+        ui->actionLabel->move(ui->actionLabel->pos().x(), 100);
     }
 
     QGraphicsOpacityEffect *eff = new QGraphicsOpacityEffect(this);
