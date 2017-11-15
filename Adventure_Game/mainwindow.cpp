@@ -109,7 +109,6 @@ void MainWindow::SetActionLabelText(string text, int duration)
 
     int mY = QCursor::pos().y();
     int mid = ui->graphicsView->size().height()/2;
-    int l = ui->actionLabel->pos().y();
 
     if(mY < mid )
     {
